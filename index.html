@@ -157,6 +157,27 @@
         </div>
     </header>
 
+    <!-- Mobile Nav (hidden by default) -->
+    <nav id="mobile-nav" class="lg:hidden hidden fixed inset-0 bg-white z-50">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Roatan Dunis Tours" class="h-10">
+                </a>
+                <button id="mobile-menu-close" class="text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mt-8 flex flex-col space-y-6 text-xl">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#tours" class="nav-link">Excursions</a>
+                <a href="#about" class="nav-link">Our Story</a>
+                <a href="#isla" class="nav-link">The Island</a>
+                <a href="https://wa.me/50493921971" class="bg-gray-900 text-white px-6 py-3 rounded-full w-max">BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section id="home" class="relative h-screen flex items-center justify-center pt-20">
         <div class="absolute inset-0 z-0">
@@ -206,7 +227,7 @@
         <div class="container mx-auto grid lg:grid-cols-2 gap-20 items-center">
             <div class="relative" data-aos="fade-right">
                 <div class="absolute -z-10 top-0 left-0 w-full h-full bg-emerald-50 rounded-[3rem] rotate-3"></div>
-                <img src="assets/IMG-20260109-WA0176.jpg" class="rounded-[3rem] shadow-2xl" alt="[Tour Experience]">
+                <img src="assets/IMG-20260109-WA0176.jpg" class="rounded-[3rem] shadow-2xl w-full h-auto object-cover" alt="[Tour Experience]">
                 <div class="absolute -bottom-6 -right-6 bg-orange-600 text-white p-6 rounded-3xl shadow-xl hidden md:block">
                     <i class="fas fa-quote-left text-2xl opacity-50 mb-4 block"></i>
                     <p class="font-bold italic max-w-[200px]">"The best private tour we've ever had in the Caribbean."</p>
@@ -395,6 +416,21 @@
                 }
             });
         });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        if (menuBtn && mobileNav) {
+            menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+        }
+        if (mobileClose && mobileNav) {
+            mobileClose.addEventListener('click', () => mobileNav.classList.add('hidden'));
+        }
+        // Close mobile nav when clicking an anchor inside it
+        if (mobileNav) {
+            mobileNav.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => mobileNav.classList.add('hidden')));
+        }
     </script>
 </body>
 </html>
