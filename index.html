@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roatan Dunis Tours | Luxury Caribbean Shore Excursions</title>
+    <!-- Favicons and Open Graph (use assets/logo.png) -->
+    <link rel="icon" href="assets/logo.png" sizes="any">
+    <link rel="shortcut icon" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <meta property="og:title" content="Roatan Dunis Tours | Luxury Caribbean Shore Excursions">
+    <meta property="og:description" content="Experience the authentic beauty of Roatan with locals who know every secret corner of this Caribbean gem.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Icons & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -124,8 +134,11 @@
     <!-- Header -->
     <header id="main-header" class="fixed w-full top-0 z-[100] py-6 transition-all duration-300">
         <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
-            <a href="#" class="font-sync text-lg md:text-xl font-bold tracking-tighter">
-                <span class="text-orange-600">ROATAN</span> <span class="text-emerald-700">DUNIS</span>
+            <a href="#" class="flex items-center space-x-3">
+                <img src="assets/logo.png" alt="Roatan Dunis Tours" class="h-10">
+                <span class="font-sync text-lg md:text-xl font-bold tracking-tighter hidden sm:inline">
+                    <span class="text-orange-600">ROATAN</span> <span class="text-emerald-700">DUNIS</span>
+                </span>
             </a>
             
             <!-- Desktop Nav -->
@@ -147,7 +160,7 @@
     <!-- Hero Section -->
     <section id="home" class="relative h-screen flex items-center justify-center pt-20">
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/hero-area.jpg" class="w-full h-full object-cover" alt="[Roatan Beach]">
+            <img src="assets/hero.jpg" class="w-full h-full object-cover" alt="[Roatan Beach]">
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
 
@@ -193,7 +206,7 @@
         <div class="container mx-auto grid lg:grid-cols-2 gap-20 items-center">
             <div class="relative" data-aos="fade-right">
                 <div class="absolute -z-10 top-0 left-0 w-full h-full bg-emerald-50 rounded-[3rem] rotate-3"></div>
-                <img src="assets/images/about_image.jpg" class="rounded-[3rem] shadow-2xl" alt="[Tour Experience]">
+                <img src="assets/IMG-20260109-WA0176.jpg" class="rounded-[3rem] shadow-2xl" alt="[Tour Experience]">
                 <div class="absolute -bottom-6 -right-6 bg-orange-600 text-white p-6 rounded-3xl shadow-xl hidden md:block">
                     <i class="fas fa-quote-left text-2xl opacity-50 mb-4 block"></i>
                     <p class="font-bold italic max-w-[200px]">"The best private tour we've ever had in the Caribbean."</p>
@@ -241,12 +254,12 @@
                 <!-- Tour 1 -->
                 <div class="tour-card group overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="assets/images/blog-1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="[Snorkel]">
+                        <img src="assets/IMG-20260109-WA0182.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="[Snorkel]">
                         <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest text-emerald-700 shadow-sm uppercase">Marine Life</div>
                     </div>
                     <div class="p-8">
-                        <h4 class="text-2xl font-extrabold mb-3 text-slate-900">Crystal Reef Snorkel</h4>
-                        <p class="text-slate-500 text-sm mb-6">Swim through the Mesoamerican Barrier Reef. Private boat and high-end gear included.</p>
+                        <h4 class="text-2xl font-extrabold mb-3 text-slate-900">Wildlife Sanctuary Visit</h4>
+                        <p class="text-slate-500 text-sm mb-6">Visit a nearby wildlife sanctuary to see sloths, macaws and rescued animals up close. Guided conservation talks included.</p>
                         <div class="flex items-center justify-between pt-6 border-t border-slate-100">
                             <span class="text-slate-400 text-xs font-bold"><i class="far fa-clock mr-2"></i>3-4 HOURS</span>
                             <a href="https://wa.me/50493921971" class="text-orange-600 font-black text-xs tracking-widest uppercase hover:text-emerald-600">INQUIRE <i class="fas fa-chevron-right ml-1"></i></a>
@@ -257,7 +270,7 @@
                 <!-- Tour 2 -->
                 <div class="tour-card group overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="assets/images/blog-2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="[Sloth]">
+                        <img src="assets/IMG-20260109-WA0178.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="[Sloth]">
                         <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest text-emerald-700 shadow-sm uppercase">Wildlife</div>
                     </div>
                     <div class="p-8">
@@ -273,7 +286,7 @@
                 <!-- Tour 3 -->
                 <div class="tour-card group overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="assets/images/blog-3.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="[Beach]">
+                        <img src="assets/IMG-20260109-WA0179.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="[Beach]">
                         <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest text-emerald-700 shadow-sm uppercase">Relaxation</div>
                     </div>
                     <div class="p-8">
@@ -310,8 +323,8 @@
                 </p>
             </div>
             <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4" data-aos="fade-left">
-                <img src="assets/images/blog-2.jpg" class="rounded-3xl h-64 w-full object-cover" alt="[Island View 1]">
-                <img src="assets/images/blog-3.jpg" class="rounded-3xl h-64 w-full object-cover mt-12" alt="[Island View 2]">
+                <img src="assets/IMG-20260109-WA0180.jpg" class="rounded-3xl h-64 w-full object-cover" alt="[Island View 1]">
+                <img src="assets/IMG-20260109-WA0181.jpg" class="rounded-3xl h-64 w-full object-cover mt-12" alt="[Island View 2]">
             </div>
         </div>
     </section>
@@ -327,9 +340,9 @@
                     Your luxury gateway to Roatan. We specialize in private excursions that focus on authenticity, safety, and comfort for families and groups.
                 </p>
                 <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all"><i class="fab fa-tripadvisor"></i></a>
+                    <a href="https://www.instagram.com/roatanislandvacationandtours?igsh=c3dlNmlhbzFxdG95" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/17xHibFQci/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-slate-900 transition-all"><i class="fab fa-tripadvisor"></i></a>
                 </div>
             </div>
             <div>
