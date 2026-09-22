@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&display=swap');
         :root { --emerald: #059669; --orange: #ea580c; --light-bg: #ffffff; --text-main: #0f172a; --text-muted: #64748b; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--light-bg); color: var(--text-main); overflow-x: hidden; }
         html, body { max-width: 100%; overflow-x: hidden; }
@@ -38,6 +38,9 @@
         .promise .price em { font-style: normal; color: #fb923c; font-weight: 800; }
         .promise .back { font-size: clamp(1.05rem, 2.4vw, 1.35rem); font-weight: 700; color: #f8fafc; letter-spacing: -0.015em; }
         .promise .back span { color: #fb923c; }
+        .promise .rule { width: 36px; height: 1px; background: rgba(255,255,255,.35); margin: 10px 0 8px; }
+        .promise .route { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(1.05rem, 2.2vw, 1.35rem); color: #fff; line-height: 1.35; max-width: 18rem; }
+        .promise .pick { margin-top: 8px; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(248,250,252,.7); font-weight: 700; }
     </style>
 </head>
 <body class="bg-mesh">
@@ -86,11 +89,9 @@
             <div class="promise" data-aos="fade-up">
                 <div class="price">$70 <em>all-in</em></div>
                 <div class="back">Back <span>90 minutes</span> before all-aboard</div>
-            </div>
-            <div class="max-w-xl mx-auto mb-10" data-aos="fade-up">
-                <p class="text-slate-800 text-sm md:text-base font-semibold tracking-wide">Mayan Eden · chocolate · rum</p>
-                <p class="text-slate-600 text-sm md:text-base mt-1">Then West Bay — chair, umbrella, wifi, shower</p>
-                <p class="text-slate-400 text-xs md:text-sm mt-3 tracking-[0.12em] uppercase">Ship or airport pickup</p>
+                <div class="rule"></div>
+                <p class="route">Park, chocolate, rum — then a chair on West Bay</p>
+                <p class="pick">Ship or airport pickup</p>
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up">
                 <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20the%20%2470%20island%20day" class="w-full sm:w-auto px-10 py-5 bg-emerald-600 text-white font-bold rounded-2xl hover:bg-gray-900 transition-all shadow-xl shadow-emerald-200">WHATSAPP TO BOOK</a>
