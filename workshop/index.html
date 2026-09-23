@@ -26,20 +26,20 @@
         .nav-link { position: relative; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: var(--orange); transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
-        .hero-gradient { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); }
+        .hero-gradient { background: linear-gradient(to right, rgba(15,23,42,0) 0%, rgba(15,23,42,0.15) 55%, rgba(15,23,42,0.45) 100%); }
         .tour-card { background: #ffffff; border-radius: 24px; border: 1px solid #f1f5f9; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .tour-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.08); border-color: var(--emerald); }
         .wa-float { position: fixed; bottom: 28px; right: 24px; background: #25d366; color: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 99999; box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35); animation: pulse-wa 2s infinite; }
         @media (max-width: 640px) { .wa-float { right: 16px; bottom: 18px; width: 56px; height: 56px; font-size: 26px; } }
         @keyframes pulse-wa { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
         .bg-mesh { background-image: radial-gradient(at 0% 0%, hsla(161,71%,95%,1) 0, transparent 50%), radial-gradient(at 100% 100%, hsla(24,94%,95%,1) 0, transparent 50%); }
-        .promise { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; background: rgba(15,23,42,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 20px 32px 22px; margin: 0 auto 28px; box-shadow: 0 24px 60px rgba(15,23,42,.35); border: 1px solid rgba(255,255,255,.12); }
-        .promise .price { font-size: clamp(2.25rem, 6vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: #fff; }
+        .promise { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; background: rgba(15,23,42,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 16px 26px 18px; margin: 0 auto 18px; box-shadow: 0 24px 60px rgba(15,23,42,.35); border: 1px solid rgba(255,255,255,.12); }
+        .promise .price { font-size: clamp(2rem, 4.5vw, 2.85rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: #fff; }
         .promise .price em { font-style: normal; color: #fb923c; font-weight: 800; }
         .promise .back { font-size: clamp(1.05rem, 2.4vw, 1.35rem); font-weight: 700; color: #f8fafc; letter-spacing: -0.015em; }
         .promise .back span { color: #fb923c; }
         .promise .rule { width: 36px; height: 1px; background: rgba(255,255,255,.35); margin: 10px 0 8px; }
-        .promise .route { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(1.05rem, 2.2vw, 1.35rem); color: #fff; line-height: 1.45; max-width: 26rem; }
+        .promise .route { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(0.95rem, 1.8vw, 1.15rem); color: #fff; line-height: 1.4; max-width: 22rem; }
         .promise .who { margin-top: 6px; font-size: 0.95rem; font-weight: 700; color: #fff; letter-spacing: 0.02em; }
         .promise .pick { margin-top: 6px; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(248,250,252,.7); font-weight: 700; }
     </style>
@@ -80,24 +80,23 @@
             </div>
         </div>
     </nav>
-    <section id="home" class="relative h-screen flex items-center justify-center pt-20">
+    <section id="home" class="relative h-screen flex items-center justify-end pt-20">
         <div class="absolute inset-0 z-0">
-            <img src="/assets/hero.jpg" class="w-full h-full object-cover" alt="Dunis and a cruise ship in Roatán">
+            <img src="/assets/hero.jpg" class="w-full h-full object-cover" style="object-position:18% center" alt="Dunis and a cruise ship in Roatán">
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
-        <div class="relative z-10 text-center px-6 max-w-5xl">
-            <h1 class="font-sync text-3xl md:text-5xl font-bold leading-tight text-slate-900 mb-6" data-aos="fade-up">Private Roatán day</h1>
+        <div class="relative z-10 text-center px-6 mr-4 md:mr-16 lg:mr-24 max-w-lg">
+            <h1 class="font-sync text-xl md:text-3xl font-bold leading-tight text-white mb-4" data-aos="fade-up">Private Roatán day</h1>
             <div class="promise" data-aos="fade-up">
                 <div class="price">$70 <em>all-in</em></div>
                 <div class="back">Back <span>90 minutes</span> before all-aboard</div>
                 <div class="rule"></div>
                 <p class="route">Wildlife Sanctuary · The Roatan Chocolate Factory<br>Roatan Rum Company · West Bay Beach</p>
                 <p class="who">Dunis · 21 years experience</p>
-                <p class="pick">Ship or airport pickup</p>
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up">
-                <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20the%20%2470%20island%20day" class="w-full sm:w-auto px-10 py-5 bg-emerald-600 text-white font-bold rounded-2xl hover:bg-gray-900 transition-all shadow-xl shadow-emerald-200">WHATSAPP TO BOOK</a>
-                <a href="#tours" class="w-full sm:w-auto px-10 py-5 bg-white text-gray-900 border border-gray-200 font-bold rounded-2xl hover:bg-gray-50 transition-all">SEE THE DAY</a>
+                <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20the%20%2470%20island%20day" class="w-full sm:w-auto px-7 py-3.5 bg-emerald-600 text-white font-bold rounded-2xl hover:bg-gray-900 transition-all text-sm">WHATSAPP TO BOOK</a>
+                <a href="#tours" class="w-full sm:w-auto px-7 py-3.5 bg-white text-gray-900 border border-gray-200 font-bold rounded-2xl hover:bg-gray-50 transition-all text-sm">SEE THE DAY</a>
             </div>
         </div>
     </section>
