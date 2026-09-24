@@ -22,17 +22,22 @@
         .font-sync { font-family: 'Syncopate', sans-serif; }
         .font-fr { font-family: Fraunces, Georgia, serif; }
         header { transition: all 0.4s ease; }
+        header .nav-link { color: #fff; }
+        header #menu-btn { color: #fff; }
         .header-scrolled { background: rgba(255,255,255,.95); backdrop-filter: blur(10px); padding: 1rem 0; box-shadow: 0 4px 30px rgba(0,0,0,.03); }
-        .nav-link { position: relative; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; color: var(--text); text-transform: uppercase; }
+        .header-scrolled .nav-link { color: var(--text); }
+        .header-scrolled #menu-btn { color: var(--text); }
+        .nav-link { position: relative; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: var(--orange); transition: width .3s ease; }
         .nav-link:hover::after { width: 100%; }
-        .hero-gradient { background: linear-gradient(to right, rgba(15,23,42,0) 0%, rgba(15,23,42,.2) 55%, rgba(15,23,42,.5) 100%); }
-        .promise { display: inline-flex; flex-direction: column; align-items: center; gap: 10px; background: rgba(15,23,42,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 20px 30px 22px; margin: 0 auto 18px; box-shadow: 0 24px 60px rgba(15,23,42,.35); border: 1px solid rgba(255,255,255,.12); }
+        .hero-gradient { background: linear-gradient(to right, rgba(15,23,42,.15) 0%, rgba(15,23,42,.35) 55%, rgba(15,23,42,.55) 100%); }
+        .promise { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; background: rgba(15,23,42,.86); backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 20px 30px 22px; margin: 0 auto 18px; box-shadow: 0 24px 60px rgba(15,23,42,.35); border: 1px solid rgba(255,255,255,.12); }
         .promise .line { font-family: Fraunces, Georgia, serif; font-size: clamp(1.35rem, 3vw, 1.85rem); line-height: 1.25; color: #fff; }
         .promise .line em { font-style: normal; color: #fb923c; }
-        .promise .back { font-size: 1.05rem; font-weight: 650; color: #f8fafc; }
+        .promise .who { font-size: 1.02rem; font-weight: 650; color: #f8fafc; }
+        .promise .back { font-size: 1.02rem; font-weight: 650; color: #f8fafc; }
         .promise .back span { color: #fb923c; }
-        .promise .who { font-size: .9rem; font-weight: 650; color: #fff; }
+        .promise .opts { margin-top: 4px; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #fb923c; }
         .eyebrow { color: var(--orange); font-weight: 700; letter-spacing: .28em; text-transform: uppercase; font-size: .72rem; }
         .takeaway { font-family: Fraunces, Georgia, serif; font-size: 1.35rem; line-height: 1.4; color: #0f172a; }
         .tour-card { background: #fff; border-radius: 28px; border: 1px solid #e8eef3; transition: box-shadow .35s ease; }
@@ -51,14 +56,14 @@
         <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3">
                 <img src="/assets/logo.png" alt="Roatan Dunis Tours" class="h-10">
-                <span class="font-sync text-lg md:text-xl font-bold tracking-tighter hidden sm:inline"><span class="text-orange-600">ROATAN</span> <span class="text-emerald-700">DUNIS</span></span>
+                <span class="font-sync text-lg md:text-xl font-bold tracking-tighter hidden sm:inline brand-word"><span class="text-orange-400">ROATAN</span> <span class="text-white header-scrolled:text-emerald-700">DUNIS</span></span>
             </a>
             <nav class="hidden lg:flex items-center space-x-10">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">Our Story</a>
                 <a href="#tours" class="nav-link">The day</a>
                 <a href="#isla" class="nav-link">Pickup</a>
-                <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-gray-900 text-white px-7 py-3 rounded-full text-xs font-bold tracking-widest hover:bg-orange-600 transition-all">BOOK NOW</a>
+                <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-white text-gray-900 px-7 py-3 rounded-full text-xs font-bold tracking-widest hover:bg-orange-600 hover:text-white transition-all">BOOK NOW</a>
             </nav>
             <button class="lg:hidden text-2xl" id="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
         </div>
@@ -71,10 +76,10 @@
                 <button id="mobile-menu-close" class="text-2xl" aria-label="Close"><i class="fas fa-times"></i></button>
             </div>
             <div class="mt-8 flex flex-col space-y-6 text-xl">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">Our Story</a>
-                <a href="#tours" class="nav-link">The day</a>
-                <a href="#isla" class="nav-link">Pickup</a>
+                <a href="#home" class="nav-link" style="color:#0f172a">Home</a>
+                <a href="#about" class="nav-link" style="color:#0f172a">Our Story</a>
+                <a href="#tours" class="nav-link" style="color:#0f172a">The day</a>
+                <a href="#isla" class="nav-link" style="color:#0f172a">Pickup</a>
                 <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-gray-900 text-white px-6 py-3 rounded-full w-max">BOOK NOW</a>
             </div>
         </div>
@@ -89,14 +94,14 @@
             <h1 class="font-sync text-xl md:text-3xl font-bold leading-tight text-white mb-4" data-aos="fade-up">Private Roatán day</h1>
             <div class="promise" data-aos="fade-up">
                 <div class="line">Your car. <em>His island.</em></div>
-                <div class="back">Back <span>90 minutes</span> before all-aboard</div>
                 <p class="who">Dunis · 21 years experience</p>
+                <div class="back">Back <span>90 minutes</span> before all-aboard</div>
+                <p class="opts">Sanctuary · Snorkel · Horseback</p>
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up">
                 <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="w-full sm:w-auto px-7 py-3.5 bg-orange-600 text-white font-bold rounded-2xl hover:bg-gray-900 transition-all text-sm">WHATSAPP TO BOOK</a>
                 <a href="#tours" class="w-full sm:w-auto px-7 py-3.5 bg-white text-gray-900 font-bold rounded-2xl hover:bg-gray-50 transition-all text-sm">SEE THE DAY</a>
             </div>
-            <p class="mt-5 text-white/80 text-sm" data-aos="fade-up">Sanctuary · Snorkel · Horseback</p>
         </div>
     </section>
 
@@ -185,7 +190,7 @@
             </div>
 
             <p class="text-center text-slate-600 text-base mt-12">Your group. Your pace. Stop when you want.</p>
-            <p class="text-center text-slate-400 text-sm mt-3">The price is the day. Lunch, extra drinks, and tips are not included.</p>
+            <p class="text-center text-slate-400 text-sm mt-3">Lunch, extra drinks, and tips are not included.</p>
 
             <div class="max-w-6xl mx-auto mt-16">
                 <img src="/assets/88OcA.jpg" class="rounded-3xl h-72 md:h-80 w-full object-cover" alt="West Bay Beach">
@@ -210,7 +215,7 @@
             <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">Where we meet you</h2>
             <p class="font-fr text-2xl md:text-3xl text-slate-900 leading-snug mb-3">Tell us the name of your ship.</p>
             <p class="font-fr text-2xl md:text-3xl text-slate-900 leading-snug mb-10">We meet you at the port or the airport.</p>
-            <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20ship%20name%20is" class="inline-block px-8 py-3.5 bg-orange-600 text-white font-bold rounded-2xl hover:bg-gray-900 transition-all text-sm">WHATSAPP YOUR SHIP</a>
+            <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20ship%20name%20is" class="inline-block px-8 py-3.5 bg-orange-600 text-white font-bold rounded-2xl hover:bg-gray-900 transition-all text-sm">TELL US ON WHATSAPP</a>
             <p class="mt-8 text-slate-400 text-sm">Hotels on request.</p>
         </div>
     </section>
