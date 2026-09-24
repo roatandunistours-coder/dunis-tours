@@ -41,6 +41,9 @@
         .promise .back { font-size: clamp(1.05rem, 2.4vw, 1.35rem); font-weight: 700; color: #f8fafc; letter-spacing: -0.015em; }
         .promise .back span { color: #fb923c; }
         .promise .who { margin-top: 6px; font-size: 0.95rem; font-weight: 700; color: #fff; letter-spacing: 0.02em; }
+        .take { background: rgba(15,23,42,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 18px 26px; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 18px 40px rgba(15,23,42,.18); }
+        .take p { font-family: Fraunces, Georgia, serif; font-size: 1.15rem; line-height: 1.45; color: #f8fafc; }
+        .take span { color: #fb923c; }
     </style>
 </head>
 <body class="bg-mesh">
@@ -112,7 +115,9 @@
             <div data-aos="fade-left">
                 <h2 class="text-orange-600 font-bold tracking-[0.3em] uppercase text-sm mb-4">Our Story</h2>
                 <h3 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">NOT JUST A RIDE</h3>
-                <p class="text-slate-800 text-lg mb-4 leading-relaxed">Roatán through the eyes of a local. Your car. His island.</p>
+                <div class="take mb-6">
+                    <p>Roatán through the eyes of a local.<br><span>Your car. His island.</span></p>
+                </div>
                 <p class="text-slate-600 text-lg mb-8 leading-relaxed">Friendly and patient. He knows this island and its people. Easy company.</p>
                 <ul class="space-y-6">
                     <li class="flex items-start gap-4"><div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 flex-shrink-0"><i class="fas fa-ship"></i></div><div><p class="font-bold text-slate-900">Built for cruise days</p><p class="text-sm text-slate-500">4–6 hours, or as long as the ship allows. We watch all-aboard, not a clock on a brochure.</p></div></li>
@@ -130,12 +135,14 @@
     </section>
     <section id="tours" class="py-24 bg-slate-50">
         <div class="container mx-auto px-6">
-            <div class="max-w-3xl mb-14" data-aos="fade-up">
+            <div class="text-center max-w-4xl mx-auto mb-14" data-aos="fade-up">
                 <h2 class="text-orange-600 font-bold tracking-[0.3em] uppercase text-sm mb-4">How the day works</h2>
                 <h3 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">THE DAY</h3>
-                <p class="text-sm font-bold tracking-[0.18em] uppercase text-slate-400 mb-3">All tours include</p>
-                <p class="text-xl md:text-2xl text-slate-900 leading-snug" style="font-family:Fraunces,Georgia,serif">The Roatan Chocolate Factory · Roatan Rum Company · Photo Stops · West Bay Beach</p>
-                <p class="mt-5 text-slate-500 text-base">Then you choose: Sanctuary, Snorkel, or Horseback.</p>
+                <p class="text-sm font-bold tracking-[0.18em] uppercase text-slate-400 mb-4">All tours include</p>
+                <div class="take text-left md:text-center max-w-3xl mx-auto">
+                    <p>The Roatan Chocolate Factory · Roatan Rum Company · Photo Stops · West Bay Beach</p>
+                    <p class="mt-3 text-base" style="font-family:'Plus Jakarta Sans',sans-serif;color:#e2e8f0">Then you choose: <span>Sanctuary, Snorkel, or Horseback.</span></p>
+                </div>
             </div>
             <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
                 <div class="tour-card group overflow-hidden" data-aos="fade-up">
@@ -193,8 +200,8 @@
         <div class="container mx-auto px-6 lg:px-12 max-w-3xl">
             <h2 class="text-orange-600 font-bold tracking-[0.3em] uppercase text-sm mb-6">Pickup</h2>
             <h3 class="text-4xl font-extrabold text-slate-900 mb-6">WHERE WE MEET YOU</h3>
-            <div class="mb-10 rounded-3xl bg-orange-50 border border-orange-100 px-8 py-6 max-w-xl">
-                <p class="text-xl md:text-2xl leading-snug text-slate-700" style="font-family:Fraunces,Georgia,serif">Tell us <span class="text-orange-600">your ship</span>.<br>We meet you at <span class="text-orange-600">the dock</span>.</p>
+            <div class="take mb-10 max-w-xl">
+                <p>Tell us <span>your ship</span>.<br>We meet you at <span>the dock</span>.</p>
             </div>
             <ul class="space-y-4 text-slate-600">
                 <li><strong class="text-slate-900">Mahogany Bay</strong> — now Isla Tropicale. Carnival and many Princess / HAL ships.</li>
