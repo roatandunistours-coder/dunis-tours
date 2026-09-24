@@ -29,6 +29,8 @@
         .hero-gradient { background: linear-gradient(to right, rgba(15,23,42,0) 0%, rgba(15,23,42,0.15) 55%, rgba(15,23,42,0.45) 100%); }
         .tour-card { background: #ffffff; border-radius: 28px; border: 1px solid #e8eef3; box-shadow: 0 1px 0 rgba(15,23,42,0.03); transition: box-shadow 0.35s ease; }
         .tour-card:hover { box-shadow: 0 18px 40px -20px rgba(15,23,42,0.18); }
+        .tour-card h4 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 1.4rem; letter-spacing: -0.02em; }
+        .tour-card .price { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 1.35rem; letter-spacing: -0.03em; }
         .wa-float { position: fixed; bottom: 28px; right: 24px; background: #25d366; color: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 99999; box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35); animation: pulse-wa 2s infinite; }
         @media (max-width: 640px) { .wa-float { right: 16px; bottom: 18px; width: 56px; height: 56px; font-size: 26px; } }
         @keyframes pulse-wa { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
@@ -137,9 +139,9 @@
                         <img src="/assets/IMG-20260109-WA0182.jpg" class="w-full h-full object-cover" alt="Capuchin monkey at Mayan Eden">
                     </div>
                     <div class="p-8">
-                        <div class="flex items-end justify-between gap-4 mb-5"><h4 class="text-[1.35rem] text-slate-900 leading-tight" style="font-family:Fraunces,Georgia,serif">Private island day</h4><p class="text-slate-900 text-xl font-semibold tracking-tight">$70</p></div>
-                        <p class="text-slate-800 text-sm mb-2 leading-relaxed">Wildlife Sanctuary · West Bay Beach</p>
-                        <p class="text-slate-500 text-sm mb-4">Chair, umbrella, wifi, and shower at West Bay.</p>
+                        <div class="flex items-end justify-between gap-4 mb-5"><h4>Private island day</h4><p class="price">$70</p></div>
+                        <p class="text-slate-700 text-[0.95rem] leading-relaxed mb-2">Wildlife Sanctuary · West Bay Beach</p>
+                        <p class="text-slate-500 text-[0.95rem] leading-relaxed mb-5">Chair, umbrella, wifi, and shower at West Bay.</p>
                         <p class="text-slate-400 text-xs mb-1">Kids 0–5 free · 6–11 $40 · 12+ $70</p>
                         <p class="text-slate-400 text-xs mb-1">Two people: $60 for the car</p>
                         <p class="text-slate-400 text-xs mb-5">Zipline +$20 when there’s time</p>
@@ -151,9 +153,9 @@
                         <img src="/assets/IMG-20260109-WA0185.jpg" class="w-full h-full object-cover" alt="Boat day on Roatán">
                     </div>
                     <div class="p-8">
-                        <div class="flex items-end justify-between gap-4 mb-5"><h4 class="text-[1.35rem] text-slate-900 leading-tight" style="font-family:Fraunces,Georgia,serif">Snorkel day</h4><p class="text-slate-900 text-xl font-semibold tracking-tight">$50</p></div>
-                        <p class="text-slate-800 text-sm mb-2">Boat and snorkel gear included.</p>
-                        <p class="text-slate-500 text-sm mb-4">Captains who know the water — the good spots, not the crowded ones.</p>
+                        <div class="flex items-end justify-between gap-4 mb-5"><h4>Snorkel day</h4><p class="price">$50</p></div>
+                        <p class="text-slate-700 text-[0.95rem] leading-relaxed mb-2">Boat and snorkel gear included.</p>
+                        <p class="text-slate-500 text-[0.95rem] leading-relaxed mb-5">Captains who know the water — the good spots, not the crowded ones.</p>
                         <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20the%20%2450%20snorkel%20day" class="text-slate-900 text-xs font-semibold tracking-wide">WhatsApp</a></div>
                     </div>
                 </div>
@@ -162,16 +164,15 @@
                         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/66/ef/3b/great-horseback-experience.jpg?w=1200&h=-1&s=1" class="w-full h-full object-cover" alt="Guests riding in the water off Roatán">
                     </div>
                     <div class="p-8">
-                        <div class="flex items-end justify-between gap-4 mb-5"><h4 class="text-[1.35rem] text-slate-900 leading-tight" style="font-family:Fraunces,Georgia,serif">Horseback day</h4><p class="text-slate-900 text-xl font-semibold tracking-tight">$65</p></div>
-                        <p class="text-slate-800 text-sm mb-2">Jungle to the beach on horseback.</p>
-                        <p class="text-slate-500 text-sm mb-4">Hill views, photo stops, a short ride in the water. First-time riders are fine.</p>
+                        <div class="flex items-end justify-between gap-4 mb-5"><h4>Horseback day</h4><p class="price">$65</p></div>
+                        <p class="text-slate-700 text-[0.95rem] leading-relaxed mb-2">Jungle to the beach on horseback.</p>
+                        <p class="text-slate-500 text-[0.95rem] leading-relaxed mb-5">Hill views, photo stops, a short ride in the water. First-time riders are fine.</p>
                         <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20the%20%2465%20horseback%20day" class="text-slate-900 text-xs font-semibold tracking-wide">WhatsApp</a></div>
                     </div>
                 </div>
             </div>
             <p class="text-center text-slate-600 text-base mt-12">Your group. Your pace. Stop when you want.</p>
             <p class="text-center text-slate-400 text-sm mt-3">Not included: lunch, extra drinks, tips.</p>
-            <p class="text-center text-slate-400 text-sm mt-4">Port and airport transfers available — ask on WhatsApp.</p>
             <div class="max-w-6xl mx-auto mt-16 grid grid-cols-2 gap-4">
                 <img src="/assets/dunis-hill.jpg" class="rounded-3xl h-64 w-full object-cover" alt="Photo stop overlooking the island">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczO85Qang78OcOBpkUofRYaiOzBnJXJxqDEpp5YNpp02c2tm1lYCge8vSxzA9ySCnBPIO5t3bbxsux6A0dblBNZTGJOxnVF1W_l3nrwd1WJMFNBxV2Y=w1600-h900-no" class="rounded-3xl h-64 w-full object-cover" alt="West Bay Beach chairs and umbrellas">
