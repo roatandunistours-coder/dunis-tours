@@ -29,6 +29,9 @@
         .promise .line em { font-style: normal; color: #e08a4f; }
         .promise .who, .promise .back { font-size: 1.02rem; font-weight: 650; color: #f6efe4; }
         .promise .back span { color: #e08a4f; }
+        .day-list { list-style: none; padding: 0; margin: 0; }
+        .day-list li { font-family: Fraunces, Georgia, serif; font-size: 1.2rem; line-height: 1.55; padding-left: 1.05rem; position: relative; }
+        .day-list li::before { content: ''; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 999px; background: var(--rust); opacity: .85; }
         .eyebrow { color: var(--rust); font-weight: 700; letter-spacing: .28em; text-transform: uppercase; font-size: .72rem; }
         .tour-card { background: #fffdf8; border-radius: 28px; border: 1px solid var(--line); }
         .tour-card h4, .tour-card .price { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 1.4rem; }
@@ -119,15 +122,28 @@
                 <div class="mt-10 grid md:grid-cols-3 gap-10 text-left">
                     <div class="md:pr-8 md:border-r border-[var(--line)]">
                         <p class="text-[11px] font-bold tracking-[0.22em] uppercase text-[var(--rust)] mb-3">Every tour includes</p>
-                        <p class="font-fr text-xl leading-relaxed">The Roatan Chocolate Factory<br>Roatan Rum Company<br>Photo Stops<br>West Bay Beach</p>
+                        <ul class="day-list">
+                            <li>The Roatan Chocolate Factory</li>
+                            <li>Roatan Rum Company</li>
+                            <li>Photo Stops</li>
+                            <li>West Bay Beach</li>
+                        </ul>
                     </div>
                     <div class="md:px-8 md:border-r border-[var(--line)]">
                         <p class="text-[11px] font-bold tracking-[0.22em] uppercase text-[var(--rust)] mb-3">Then you choose</p>
-                        <p class="font-fr text-xl leading-relaxed">Sanctuary<br>Snorkel<br>Horseback</p>
+                        <ul class="day-list">
+                            <li>Sanctuary</li>
+                            <li>Snorkel</li>
+                            <li>Horseback</li>
+                        </ul>
                     </div>
                     <div class="md:pl-8">
                         <p class="text-[11px] font-bold tracking-[0.22em] uppercase text-[var(--rust)] mb-3">How you go</p>
-                        <p class="font-fr text-xl leading-relaxed">Your group<br>Your pace<br>Stop when you want</p>
+                        <ul class="day-list">
+                            <li>Your group</li>
+                            <li>Your pace</li>
+                            <li>Stop when you want</li>
+                        </ul>
                     </div>
                 </div>
             </div>
