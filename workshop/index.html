@@ -11,31 +11,32 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fff; color: #0f172a; overflow-x: hidden; }
+        :root { --ink:#2a211c; --muted:#7a6a58; --paper:#f6efe4; --sand:#efe4d4; --rust:#c45c2a; --line:#e4d5c2; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--paper); color: var(--ink); overflow-x: hidden; }
         img { max-width: 100%; height: auto; display: block; }
         .font-sync { font-family: 'Syncopate', sans-serif; }
         .font-fr { font-family: Fraunces, Georgia, serif; }
         header { transition: all 0.4s ease; }
         header .nav-link, header #menu-btn { color: #fff; }
-        .header-scrolled { background: rgba(255,255,255,.95); backdrop-filter: blur(10px); padding: 1rem 0; box-shadow: 0 4px 30px rgba(0,0,0,.03); }
-        .header-scrolled .nav-link, .header-scrolled #menu-btn { color: #0f172a; }
+        .header-scrolled { background: rgba(246,239,228,.95); backdrop-filter: blur(10px); padding: 1rem 0; box-shadow: 0 4px 30px rgba(42,33,28,.06); }
+        .header-scrolled .nav-link, .header-scrolled #menu-btn { color: var(--ink); }
         .nav-link { position: relative; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: #ea580c; transition: width .3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: var(--rust); transition: width .3s ease; }
         .nav-link:hover::after { width: 100%; }
-        .hero-gradient { background: linear-gradient(to right, rgba(15,23,42,.15) 0%, rgba(15,23,42,.35) 55%, rgba(15,23,42,.55) 100%); }
-        .promise { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; background: rgba(15,23,42,.86); backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 20px 30px 22px; margin: 0 auto 18px; border: 1px solid rgba(255,255,255,.12); }
+        .hero-gradient { background: linear-gradient(to right, rgba(42,33,28,.15) 0%, rgba(42,33,28,.35) 55%, rgba(42,33,28,.55) 100%); }
+        .promise { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; background: rgba(42,33,28,.86); backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 20px 30px 22px; margin: 0 auto 18px; border: 1px solid rgba(255,255,255,.12); }
         .promise .line { font-family: Fraunces, Georgia, serif; font-size: clamp(1.35rem, 3vw, 1.85rem); line-height: 1.25; }
-        .promise .line em { font-style: normal; color: #fb923c; }
-        .promise .who, .promise .back { font-size: 1.02rem; font-weight: 650; color: #f8fafc; }
-        .promise .back span { color: #fb923c; }
-        .eyebrow { color: #ea580c; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; font-size: .72rem; }
-        .tour-card { background: #fff; border-radius: 28px; border: 1px solid #e8eef3; }
+        .promise .line em { font-style: normal; color: #e08a4f; }
+        .promise .who, .promise .back { font-size: 1.02rem; font-weight: 650; color: #f6efe4; }
+        .promise .back span { color: #e08a4f; }
+        .eyebrow { color: var(--rust); font-weight: 700; letter-spacing: .28em; text-transform: uppercase; font-size: .72rem; }
+        .tour-card { background: #fffdf8; border-radius: 28px; border: 1px solid var(--line); }
         .tour-card h4, .tour-card .price { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 1.4rem; }
         .wa-float { position: fixed; bottom: 28px; right: 24px; background: #25d366; color: #fff; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 99999; }
     </style>
 </head>
 <body>
-    <div style="position:fixed;top:0;left:0;right:0;z-index:200;background:#ea580c;color:#fff;text-align:center;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;">Workshop preview — not the live homepage</div>
+    <div style="position:fixed;top:0;left:0;right:0;z-index:200;background:#c45c2a;color:#fff;text-align:center;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;">Workshop preview — not the live homepage</div>
     <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <header id="main-header" class="fixed w-full top-8 z-[100] py-6">
         <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
@@ -52,14 +53,14 @@
             <button class="lg:hidden text-2xl" id="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
-    <nav id="mobile-nav" class="lg:hidden hidden fixed inset-0 bg-white z-50">
+    <nav id="mobile-nav" class="lg:hidden hidden fixed inset-0 z-50" style="background:#f6efe4">
         <div class="container mx-auto px-6 py-8">
             <div class="flex items-center justify-between"><img src="/assets/logo.png" alt="" class="h-12"><button id="mobile-menu-close" class="text-2xl"><i class="fas fa-times"></i></button></div>
             <div class="mt-8 flex flex-col space-y-6 text-xl">
-                <a href="#home" class="nav-link" style="color:#0f172a">Home</a>
-                <a href="#about" class="nav-link" style="color:#0f172a">Our Story</a>
-                <a href="#tours" class="nav-link" style="color:#0f172a">The day</a>
-                <a href="#isla" class="nav-link" style="color:#0f172a">Pickup</a>
+                <a href="#home" class="nav-link" style="color:#2a211c">Home</a>
+                <a href="#about" class="nav-link" style="color:#2a211c">Our Story</a>
+                <a href="#tours" class="nav-link" style="color:#2a211c">The day</a>
+                <a href="#isla" class="nav-link" style="color:#2a211c">Pickup</a>
                 <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-[#25d366] text-white px-6 py-3 rounded-full w-max">WHATSAPP TO BOOK</a>
             </div>
         </div>
@@ -82,50 +83,50 @@
             </div>
         </div>
     </section>
-    <section class="py-12 bg-white border-y border-gray-100">
+    <section class="py-12 border-y" style="border-color:var(--line)">
         <div class="container mx-auto px-6 grid grid-cols-3 gap-8 max-w-4xl">
-            <div class="text-center"><p class="text-3xl font-extrabold">90 min</p><p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Before all-aboard</p></div>
-            <div class="text-center"><p class="text-3xl font-extrabold">21 yrs</p><p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Cruise days</p></div>
-            <div class="text-center"><p class="text-3xl font-extrabold">3</p><p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Ways to spend it</p></div>
+            <div class="text-center"><p class="text-3xl font-extrabold">90 min</p><p class="text-xs font-bold text-[var(--muted)] uppercase tracking-widest mt-1">Before all-aboard</p></div>
+            <div class="text-center"><p class="text-3xl font-extrabold">21 yrs</p><p class="text-xs font-bold text-[var(--muted)] uppercase tracking-widest mt-1">Cruise days</p></div>
+            <div class="text-center"><p class="text-3xl font-extrabold">3</p><p class="text-xs font-bold text-[var(--muted)] uppercase tracking-widest mt-1">Ways to spend it</p></div>
         </div>
     </section>
-    <section id="about" class="py-24 px-6 lg:px-12 bg-white">
+    <section id="about" class="py-24 px-6 lg:px-12">
         <div class="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <img src="/assets/touGL.jpg" class="rounded-[2rem] w-full object-cover" alt="Dunis and guests">
             <div>
                 <p class="eyebrow mb-4">Our Story</p>
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Not just a ride</h2>
-                <p class="text-slate-600 text-lg mb-8 leading-relaxed">Roatán through the eyes of a local. Friendly and patient. He knows this island and its people. Easy company.</p>
+                <p class="text-[var(--muted)] text-lg mb-8 leading-relaxed">Roatán through the eyes of a local. Friendly and patient. He knows this island and its people. Easy company.</p>
                 <div class="space-y-5">
-                    <div><p class="font-bold">Built for cruise days</p><p class="text-sm text-slate-500 mt-1">4–6 hours, or as long as the ship allows. We watch all-aboard, not a clock on a brochure.</p></div>
-                    <div><p class="font-bold">Private vehicle</p><p class="text-sm text-slate-500 mt-1">Car for 1–2 people. Van for families and groups. A/C. Your group only.</p></div>
+                    <div><p class="font-bold">Built for cruise days</p><p class="text-sm text-[var(--muted)] mt-1">4–6 hours, or as long as the ship allows. We watch all-aboard, not a clock on a brochure.</p></div>
+                    <div><p class="font-bold">Private vehicle</p><p class="text-sm text-[var(--muted)] mt-1">Car for 1–2 people. Van for families and groups. A/C. Your group only.</p></div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="py-16 bg-white border-y border-gray-100">
+    <section class="py-16 border-y" style="border-color:var(--line)">
         <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10 max-w-5xl">
-            <blockquote class="text-center"><p class="text-lg font-fr">“Best day we had on the whole cruise.”</p><footer class="mt-3 text-[10px] font-bold tracking-widest uppercase text-slate-400">Karen · Carnival</footer></blockquote>
-            <blockquote class="text-center"><p class="text-lg font-fr">“Private car, no stress, back with time to spare.”</p><footer class="mt-3 text-[10px] font-bold tracking-widest uppercase text-slate-400">Mike · Royal</footer></blockquote>
-            <blockquote class="text-center"><p class="text-lg font-fr">“Dunis made it easy. The kids still talk about the sloths.”</p><footer class="mt-3 text-[10px] font-bold tracking-widest uppercase text-slate-400">Jen</footer></blockquote>
+            <blockquote class="text-center"><p class="text-lg font-fr">“Best day we had on the whole cruise.”</p><footer class="mt-3 text-[10px] font-bold tracking-widest uppercase text-[var(--muted)]">Karen · Carnival</footer></blockquote>
+            <blockquote class="text-center"><p class="text-lg font-fr">“Private car, no stress, back with time to spare.”</p><footer class="mt-3 text-[10px] font-bold tracking-widest uppercase text-[var(--muted)]">Mike · Royal</footer></blockquote>
+            <blockquote class="text-center"><p class="text-lg font-fr">“Dunis made it easy. The kids still talk about the sloths.”</p><footer class="mt-3 text-[10px] font-bold tracking-widest uppercase text-[var(--muted)]">Jen</footer></blockquote>
         </div>
     </section>
-    <section id="tours" class="py-24 bg-slate-50">
+    <section id="tours" class="py-24" style="background:var(--sand)">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-5xl mx-auto mb-14">
                 <p class="eyebrow mb-4">The day</p>
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight">One private day. Three options.</h2>
                 <div class="mt-10 grid md:grid-cols-3 gap-10 text-left">
-                    <div class="md:pr-8 md:border-r border-slate-200">
-                        <p class="text-[11px] font-bold tracking-[0.22em] uppercase text-orange-600 mb-3">Every tour includes</p>
+                    <div class="md:pr-8 md:border-r border-[var(--line)]">
+                        <p class="text-[11px] font-bold tracking-[0.22em] uppercase text-[var(--rust)] mb-3">Every tour includes</p>
                         <p class="font-fr text-xl leading-relaxed">The Roatan Chocolate Factory<br>Roatan Rum Company<br>Photo Stops<br>West Bay Beach</p>
                     </div>
-                    <div class="md:px-8 md:border-r border-slate-200">
-                        <p class="text-[11px] font-bold tracking-[0.22em] uppercase text-orange-600 mb-3">Then you choose</p>
+                    <div class="md:px-8 md:border-r border-[var(--line)]">
+                        <p class="text-[11px] font-bold tracking-[0.22em] uppercase text-[var(--rust)] mb-3">Then you choose</p>
                         <p class="font-fr text-xl leading-relaxed">Sanctuary<br>Snorkel<br>Horseback</p>
                     </div>
                     <div class="md:pl-8">
-                        <p class="text-[11px] font-bold tracking-[0.22em] uppercase text-orange-600 mb-3">How you go</p>
+                        <p class="text-[11px] font-bold tracking-[0.22em] uppercase text-[var(--rust)] mb-3">How you go</p>
                         <p class="font-fr text-xl leading-relaxed">Your group<br>Your pace<br>Stop when you want</p>
                     </div>
                 </div>
@@ -135,71 +136,71 @@
                     <div class="h-60 overflow-hidden"><img src="/assets/IMG-20260109-WA0182.jpg" class="w-full h-full object-cover" alt="Monkey"></div>
                     <div class="p-8">
                         <div class="flex items-end justify-between mb-5"><h4>Wildlife Sanctuary</h4><p class="price">$70</p></div>
-                        <p class="text-slate-700 text-[0.95rem] mb-5">Sloths and monkeys. Tropical birds and a butterfly house.</p>
-                        <p class="text-slate-400 text-xs mb-1">Kids 0–5 free · 6–11 $40</p>
-                        <p class="text-slate-400 text-xs mb-5">Zipline +$20</p>
-                        <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Wildlife%20Sanctuary%20%2470" class="text-slate-900 text-xs font-semibold">WhatsApp to book</a></div>
+                        <p class="text-[0.95rem] mb-5">Sloths and monkeys. Tropical birds and a butterfly house.</p>
+                        <p class="text-[var(--muted)] text-xs mb-1">Kids 0–5 free · 6–11 $40</p>
+                        <p class="text-[var(--muted)] text-xs mb-5">Zipline +$20</p>
+                        <div class="flex items-center justify-between pt-5 border-t border-[var(--line)]"><span class="text-[var(--muted)] text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Wildlife%20Sanctuary%20%2470" class="text-xs font-semibold">WhatsApp to book</a></div>
                     </div>
                 </div>
                 <div class="tour-card overflow-hidden">
                     <div class="h-60 overflow-hidden"><img src="/assets/fabio-V3clpIjMTJg-unsplash.jpg" class="w-full h-full object-cover" alt="Snorkel"></div>
                     <div class="p-8">
                         <div class="flex items-end justify-between mb-5"><h4>Snorkel</h4><p class="price">$50</p></div>
-                        <p class="text-slate-700 text-[0.95rem] mb-5">Boat and gear. Captains who know this reef.</p>
-                        <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Snorkel%20%2450" class="text-slate-900 text-xs font-semibold">WhatsApp to book</a></div>
+                        <p class="text-[0.95rem] mb-5">Boat and gear. Captains who know this reef.</p>
+                        <div class="flex items-center justify-between pt-5 border-t border-[var(--line)]"><span class="text-[var(--muted)] text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Snorkel%20%2450" class="text-xs font-semibold">WhatsApp to book</a></div>
                     </div>
                 </div>
                 <div class="tour-card overflow-hidden">
                     <div class="h-60 overflow-hidden"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/66/ef/3b/great-horseback-experience.jpg?w=1200&h=-1&s=1" class="w-full h-full object-cover" alt="Horseback"></div>
                     <div class="p-8">
                         <div class="flex items-end justify-between mb-5"><h4>Horseback</h4><p class="price">$65</p></div>
-                        <p class="text-slate-700 text-[0.95rem] mb-5">Jungle to the beach. First-time riders are fine.</p>
-                        <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Horseback%20%2465" class="text-slate-900 text-xs font-semibold">WhatsApp to book</a></div>
+                        <p class="text-[0.95rem] mb-5">Jungle to the beach. First-time riders are fine.</p>
+                        <div class="flex items-center justify-between pt-5 border-t border-[var(--line)]"><span class="text-[var(--muted)] text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Horseback%20%2465" class="text-xs font-semibold">WhatsApp to book</a></div>
                     </div>
                 </div>
             </div>
-            <p class="text-center text-slate-400 text-sm mt-12">Lunch, extra drinks, and tips are not included.</p>
+            <p class="text-center text-[var(--muted)] text-sm mt-12">Lunch, extra drinks, and tips are not included.</p>
             <div class="max-w-6xl mx-auto mt-16">
                 <img src="/assets/88OcA.jpg" class="rounded-3xl h-72 md:h-80 w-full object-cover" alt="West Bay">
-                <p class="text-center text-slate-400 text-xs font-bold tracking-wide mt-4">West Bay Beach — Chair, Umbrella, Wifi, Shower</p>
+                <p class="text-center text-[var(--muted)] text-xs font-bold tracking-wide mt-4">West Bay Beach — Chair, Umbrella, Wifi, Shower</p>
             </div>
             <div class="max-w-6xl mx-auto mt-8 grid md:grid-cols-2 gap-6">
-                <div><img src="/assets/IMG-20260109-WA0180.jpg" class="rounded-3xl h-64 w-full object-cover" alt="Photo stop"><p class="text-center text-slate-400 text-xs font-bold tracking-wide mt-3">Photo Stop</p></div>
-                <div><img src="/assets/IMG-20260109-WA0181.jpg" class="rounded-3xl h-64 w-full object-cover" alt="Toucans"><p class="text-center text-slate-400 text-xs font-bold tracking-wide mt-3">Tropical Birds</p></div>
+                <div><img src="/assets/IMG-20260109-WA0180.jpg" class="rounded-3xl h-64 w-full object-cover" alt="Photo stop"><p class="text-center text-[var(--muted)] text-xs font-bold tracking-wide mt-3">Photo Stop</p></div>
+                <div><img src="/assets/IMG-20260109-WA0181.jpg" class="rounded-3xl h-64 w-full object-cover" alt="Toucans"><p class="text-center text-[var(--muted)] text-xs font-bold tracking-wide mt-3">Tropical Birds</p></div>
             </div>
         </div>
     </section>
-    <section id="isla" class="py-24 bg-slate-50">
+    <section id="isla" class="py-24" style="background:var(--sand)">
         <div class="container mx-auto px-6 text-center max-w-2xl">
             <p class="eyebrow mb-4">Pickup</p>
             <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Where we meet you</h2>
             <p class="font-fr text-2xl md:text-3xl leading-snug mb-3">Tell us the name of your ship.</p>
             <p class="font-fr text-2xl md:text-3xl leading-snug mb-10">We meet you at the port or the airport.</p>
             <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20ship%20name%20is" class="inline-block px-8 py-3.5 bg-[#25d366] text-white font-bold rounded-2xl hover:bg-[#1ebe5d] text-sm">WHATSAPP TO BOOK</a>
-            <p class="mt-8 text-slate-400 text-sm">Hotels on request.</p>
+            <p class="mt-8 text-[var(--muted)] text-sm">Hotels on request.</p>
         </div>
     </section>
-    <footer class="py-20 bg-slate-900 text-white px-6">
+    <footer class="py-20 bg-[#2a211c] text-white px-6">
         <div class="container mx-auto grid lg:grid-cols-4 gap-16">
             <div class="lg:col-span-2">
-                <a href="#" class="font-sync text-2xl font-bold block mb-8"><span class="text-orange-500">ROATAN</span> <span class="text-emerald-400">DUNIS</span></a>
-                <p class="text-slate-400 max-w-sm">Private Roatán day. Your car. His island. Back 90 minutes before all-aboard.</p>
+                <a href="#" class="font-sync text-2xl font-bold block mb-8"><span class="text-[#e08a4f]">ROATAN</span> <span class="text-[#e8d7c0]">DUNIS</span></a>
+                <p class="text-[#c4b39a] max-w-sm">Private Roatán day. Your car. His island. Back 90 minutes before all-aboard.</p>
             </div>
             <div>
-                <h5 class="font-bold text-xs tracking-widest uppercase text-orange-400 mb-8">The day</h5>
-                <ul class="space-y-4 text-slate-400 text-sm">
+                <h5 class="font-bold text-xs tracking-widest uppercase text-[#e08a4f] mb-8">The day</h5>
+                <ul class="space-y-4 text-[#c4b39a] text-sm">
                     <li><a href="#tours">Wildlife Sanctuary $70</a></li>
                     <li><a href="#tours">Snorkel $50</a></li>
                     <li><a href="#tours">Horseback $65</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold text-xs tracking-widest uppercase text-orange-400 mb-8">Contact</h5>
+                <h5 class="font-bold text-xs tracking-widest uppercase text-[#e08a4f] mb-8">Contact</h5>
                 <p class="text-white font-bold mb-2">WhatsApp +504 9688 0728</p>
-                <p class="text-slate-400 text-sm">info@roatandunistours.com</p>
+                <p class="text-[#c4b39a] text-sm">info@roatandunistours.com</p>
             </div>
         </div>
-        <div class="container mx-auto pt-12 mt-12 border-t border-white/5 text-center text-slate-500 text-[10px] font-bold tracking-[0.3em] uppercase">
+        <div class="container mx-auto pt-12 mt-12 border-t border-white/10 text-center text-[#c4b39a] text-[10px] font-bold tracking-[0.3em] uppercase">
             <p>&copy; 2026 Roatan Dunis Tours — workshop only</p>
         </div>
     </footer>
