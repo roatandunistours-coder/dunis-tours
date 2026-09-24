@@ -37,7 +37,6 @@
         .promise .who { font-size: 1.02rem; font-weight: 650; color: #f8fafc; }
         .promise .back { font-size: 1.02rem; font-weight: 650; color: #f8fafc; }
         .promise .back span { color: #fb923c; }
-        .promise .opts { margin-top: 4px; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #fb923c; }
         .eyebrow { color: var(--orange); font-weight: 700; letter-spacing: .28em; text-transform: uppercase; font-size: .72rem; }
         .takeaway { font-family: Fraunces, Georgia, serif; font-size: 1.35rem; line-height: 1.4; color: #0f172a; }
         .tour-card { background: #fff; border-radius: 28px; border: 1px solid #e8eef3; transition: box-shadow .35s ease; }
@@ -51,24 +50,22 @@
 <body>
     <div style="position:fixed;top:0;left:0;right:0;z-index:200;background:#ea580c;color:#fff;text-align:center;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;">Workshop preview — not the live homepage</div>
     <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-
     <header id="main-header" class="fixed w-full top-8 z-[100] py-6">
         <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3">
                 <img src="/assets/logo.png" alt="Roatan Dunis Tours" class="h-10">
-                <span class="font-sync text-lg md:text-xl font-bold tracking-tighter hidden sm:inline brand-word"><span class="text-orange-400">ROATAN</span> <span class="text-white header-scrolled:text-emerald-700">DUNIS</span></span>
+                <span class="font-sync text-lg md:text-xl font-bold tracking-tighter hidden sm:inline"><span class="text-orange-400">ROATAN</span> <span class="text-white">DUNIS</span></span>
             </a>
             <nav class="hidden lg:flex items-center space-x-10">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">Our Story</a>
                 <a href="#tours" class="nav-link">The day</a>
                 <a href="#isla" class="nav-link">Pickup</a>
-                <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-white text-gray-900 px-7 py-3 rounded-full text-xs font-bold tracking-widest hover:bg-orange-600 hover:text-white transition-all">BOOK NOW</a>
+                <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-white text-gray-900 px-7 py-3 rounded-full text-xs font-bold tracking-widest hover:bg-orange-600 hover:text-white transition-all">WHATSAPP TO BOOK</a>
             </nav>
             <button class="lg:hidden text-2xl" id="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
-
     <nav id="mobile-nav" class="lg:hidden hidden fixed inset-0 bg-white z-50">
         <div class="container mx-auto px-6 py-8">
             <div class="flex items-center justify-between">
@@ -80,11 +77,10 @@
                 <a href="#about" class="nav-link" style="color:#0f172a">Our Story</a>
                 <a href="#tours" class="nav-link" style="color:#0f172a">The day</a>
                 <a href="#isla" class="nav-link" style="color:#0f172a">Pickup</a>
-                <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-gray-900 text-white px-6 py-3 rounded-full w-max">BOOK NOW</a>
+                <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-gray-900 text-white px-6 py-3 rounded-full w-max">WHATSAPP TO BOOK</a>
             </div>
         </div>
     </nav>
-
     <section id="home" class="relative h-screen flex items-center justify-end pt-20">
         <div class="absolute inset-0 z-0">
             <img src="/assets/hero.jpg" class="w-full h-full object-cover" style="object-position:18% center" alt="Dunis and a cruise ship in Roatán">
@@ -96,7 +92,6 @@
                 <div class="line">Your car. <em>His island.</em></div>
                 <p class="who">Dunis · 21 years experience</p>
                 <div class="back">Back <span>90 minutes</span> before all-aboard</div>
-                <p class="opts">Sanctuary · Snorkel · Horseback</p>
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up">
                 <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="w-full sm:w-auto px-7 py-3.5 bg-orange-600 text-white font-bold rounded-2xl hover:bg-gray-900 transition-all text-sm">WHATSAPP TO BOOK</a>
@@ -104,7 +99,6 @@
             </div>
         </div>
     </section>
-
     <section class="py-12 bg-white border-y border-gray-100">
         <div class="container mx-auto px-6 grid grid-cols-3 gap-8 max-w-4xl">
             <div class="text-center"><p class="text-3xl font-extrabold text-slate-900">90 min</p><p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Before all-aboard</p></div>
@@ -112,30 +106,20 @@
             <div class="text-center"><p class="text-3xl font-extrabold text-slate-900">3</p><p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Ways to spend it</p></div>
         </div>
     </section>
-
     <section id="about" class="py-24 px-6 lg:px-12 bg-white">
         <div class="container mx-auto grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <div data-aos="fade-right">
-                <img src="/assets/touGL.jpg" class="rounded-[2rem] w-full h-auto object-cover" alt="Dunis and guests at the van">
-            </div>
+            <div data-aos="fade-right"><img src="/assets/touGL.jpg" class="rounded-[2rem] w-full h-auto object-cover" alt="Dunis and guests at the van"></div>
             <div data-aos="fade-left">
                 <p class="eyebrow mb-4">Our Story</p>
                 <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">Not just a ride</h2>
                 <p class="text-slate-600 text-lg mb-8 leading-relaxed">Roatán through the eyes of a local. Friendly and patient. He knows this island and its people. Easy company.</p>
                 <div class="space-y-5">
-                    <div>
-                        <p class="font-bold text-slate-900">Built for cruise days</p>
-                        <p class="text-sm text-slate-500 mt-1">4–6 hours, or as long as the ship allows. We watch all-aboard, not a clock on a brochure.</p>
-                    </div>
-                    <div>
-                        <p class="font-bold text-slate-900">Private vehicle</p>
-                        <p class="text-sm text-slate-500 mt-1">Car for 1–2 people. Van for families and groups. A/C. Your group only.</p>
-                    </div>
+                    <div><p class="font-bold text-slate-900">Built for cruise days</p><p class="text-sm text-slate-500 mt-1">4–6 hours, or as long as the ship allows. We watch all-aboard, not a clock on a brochure.</p></div>
+                    <div><p class="font-bold text-slate-900">Private vehicle</p><p class="text-sm text-slate-500 mt-1">Car for 1–2 people. Van for families and groups. A/C. Your group only.</p></div>
                 </div>
             </div>
         </div>
     </section>
-
     <section class="py-16 bg-white border-y border-gray-100">
         <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10 max-w-5xl">
             <blockquote class="text-center"><p class="text-lg text-slate-800 leading-snug font-fr">“Best day we had on the whole cruise.”</p><footer class="mt-3 text-[10px] font-bold tracking-widest uppercase text-slate-400">Karen · Carnival</footer></blockquote>
@@ -143,7 +127,6 @@
             <blockquote class="text-center"><p class="text-lg text-slate-800 leading-snug font-fr">“Dunis made it easy. The kids still talk about the sloths.”</p><footer class="mt-3 text-[10px] font-bold tracking-widest uppercase text-slate-400">Jen</footer></blockquote>
         </div>
     </section>
-
     <section id="tours" class="py-24 bg-slate-50">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
@@ -153,73 +136,56 @@
                 <p class="text-xl text-slate-900 leading-snug font-fr">The Roatan Chocolate Factory · Roatan Rum Company · Photo Stops · West Bay Beach</p>
                 <p class="takeaway mt-6">Then you choose: Sanctuary, Snorkel, or Horseback.</p>
             </div>
-
             <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
                 <div class="tour-card overflow-hidden" data-aos="fade-up">
-                    <div class="h-60 overflow-hidden">
-                        <img src="/assets/IMG-20260109-WA0182.jpg" class="w-full h-full object-cover" alt="Capuchin monkey at the sanctuary">
-                    </div>
+                    <div class="h-60 overflow-hidden"><img src="/assets/IMG-20260109-WA0182.jpg" class="w-full h-full object-cover" alt="Capuchin monkey at the sanctuary"></div>
                     <div class="p-8">
                         <div class="flex items-end justify-between gap-4 mb-5"><h4>Wildlife Sanctuary</h4><p class="price">$70</p></div>
                         <p class="text-slate-700 text-[0.95rem] leading-relaxed mb-5">Sloths and monkeys. Tropical birds and a butterfly house.</p>
                         <p class="text-slate-400 text-xs mb-1">Kids 0–5 free · 6–11 $40</p>
                         <p class="text-slate-400 text-xs mb-5">Zipline +$20</p>
-                        <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Wildlife%20Sanctuary%20%2470" class="text-slate-900 text-xs font-semibold">WhatsApp</a></div>
+                        <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Wildlife%20Sanctuary%20%2470" class="text-slate-900 text-xs font-semibold">WhatsApp to book</a></div>
                     </div>
                 </div>
                 <div class="tour-card overflow-hidden" data-aos="fade-up">
-                    <div class="h-60 overflow-hidden">
-                        <img src="/assets/fabio-V3clpIjMTJg-unsplash.jpg" class="w-full h-full object-cover" alt="Snorkeler">
-                    </div>
+                    <div class="h-60 overflow-hidden"><img src="/assets/fabio-V3clpIjMTJg-unsplash.jpg" class="w-full h-full object-cover" alt="Snorkeler"></div>
                     <div class="p-8">
                         <div class="flex items-end justify-between gap-4 mb-5"><h4>Snorkel</h4><p class="price">$50</p></div>
                         <p class="text-slate-700 text-[0.95rem] leading-relaxed mb-5">Boat and gear. Captains who know this reef.</p>
-                        <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Snorkel%20%2450" class="text-slate-900 text-xs font-semibold">WhatsApp</a></div>
+                        <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Snorkel%20%2450" class="text-slate-900 text-xs font-semibold">WhatsApp to book</a></div>
                     </div>
                 </div>
                 <div class="tour-card overflow-hidden" data-aos="fade-up">
-                    <div class="h-60 overflow-hidden">
-                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/66/ef/3b/great-horseback-experience.jpg?w=1200&h=-1&s=1" class="w-full h-full object-cover" alt="Horseback in the water">
-                    </div>
+                    <div class="h-60 overflow-hidden"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/66/ef/3b/great-horseback-experience.jpg?w=1200&h=-1&s=1" class="w-full h-full object-cover" alt="Horseback in the water"></div>
                     <div class="p-8">
                         <div class="flex items-end justify-between gap-4 mb-5"><h4>Horseback</h4><p class="price">$65</p></div>
                         <p class="text-slate-700 text-[0.95rem] leading-relaxed mb-5">Jungle to the beach. First-time riders are fine.</p>
-                        <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Horseback%20%2465" class="text-slate-900 text-xs font-semibold">WhatsApp</a></div>
+                        <div class="flex items-center justify-between pt-5 border-t border-slate-100"><span class="text-slate-400 text-xs">4–6 hrs · 90 min back</span><a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20Horseback%20%2465" class="text-slate-900 text-xs font-semibold">WhatsApp to book</a></div>
                     </div>
                 </div>
             </div>
-
             <p class="text-center text-slate-600 text-base mt-12">Your group. Your pace. Stop when you want.</p>
             <p class="text-center text-slate-400 text-sm mt-3">Lunch, extra drinks, and tips are not included.</p>
-
             <div class="max-w-6xl mx-auto mt-16">
                 <img src="/assets/88OcA.jpg" class="rounded-3xl h-72 md:h-80 w-full object-cover" alt="West Bay Beach">
                 <p class="text-center text-slate-400 text-xs font-bold tracking-wide mt-4">West Bay Beach — Chair, Umbrella, Wifi, Shower</p>
             </div>
             <div class="max-w-6xl mx-auto mt-8 grid md:grid-cols-2 gap-6">
-                <div>
-                    <img src="/assets/IMG-20260109-WA0180.jpg" class="rounded-3xl h-64 w-full object-cover" alt="Photo stop">
-                    <p class="text-center text-slate-400 text-xs font-bold tracking-wide mt-3">Photo Stop</p>
-                </div>
-                <div>
-                    <img src="/assets/IMG-20260109-WA0181.jpg" class="rounded-3xl h-64 w-full object-cover" alt="Toucans">
-                    <p class="text-center text-slate-400 text-xs font-bold tracking-wide mt-3">Tropical Birds</p>
-                </div>
+                <div><img src="/assets/IMG-20260109-WA0180.jpg" class="rounded-3xl h-64 w-full object-cover" alt="Photo stop"><p class="text-center text-slate-400 text-xs font-bold tracking-wide mt-3">Photo Stop</p></div>
+                <div><img src="/assets/IMG-20260109-WA0181.jpg" class="rounded-3xl h-64 w-full object-cover" alt="Toucans"><p class="text-center text-slate-400 text-xs font-bold tracking-wide mt-3">Tropical Birds</p></div>
             </div>
         </div>
     </section>
-
     <section id="isla" class="py-24 bg-slate-50">
         <div class="container mx-auto px-6 text-center max-w-2xl">
             <p class="eyebrow mb-4">Pickup</p>
             <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">Where we meet you</h2>
             <p class="font-fr text-2xl md:text-3xl text-slate-900 leading-snug mb-3">Tell us the name of your ship.</p>
             <p class="font-fr text-2xl md:text-3xl text-slate-900 leading-snug mb-10">We meet you at the port or the airport.</p>
-            <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20ship%20name%20is" class="inline-block px-8 py-3.5 bg-orange-600 text-white font-bold rounded-2xl hover:bg-gray-900 transition-all text-sm">TELL US ON WHATSAPP</a>
+            <a href="https://wa.me/50496880728?text=Hi%20Dunis%20Tours%20%E2%80%94%20ship%20name%20is" class="inline-block px-8 py-3.5 bg-orange-600 text-white font-bold rounded-2xl hover:bg-gray-900 transition-all text-sm">WHATSAPP TO BOOK</a>
             <p class="mt-8 text-slate-400 text-sm">Hotels on request.</p>
         </div>
     </section>
-
     <footer class="py-20 bg-slate-900 text-white px-6 lg:px-12">
         <div class="container mx-auto grid lg:grid-cols-4 gap-16">
             <div class="lg:col-span-2">
@@ -244,7 +210,6 @@
             <p>&copy; 2026 Roatan Dunis Tours — workshop only</p>
         </div>
     </footer>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, easing: 'ease-out' });
