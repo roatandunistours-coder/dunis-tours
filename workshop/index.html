@@ -1,6 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18537296284"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18537296284');
+    </script>
+    <script>
+      (function () {
+        var SEND_TO = 'AW-18537296284/SX1UCMbuxaodEJzjoodF';
+        var lastHref = '';
+        var lastAt = 0;
+
+        function whatsappHref(anchor) {
+          var url;
+          try {
+            url = new URL(anchor.href, window.location.href);
+          } catch (err) {
+            return '';
+          }
+          if (url.protocol === 'whatsapp:') return url.href;
+          var host = url.hostname.toLowerCase().replace(/^www\./, '');
+          if (host === 'wa.me' || host === 'api.whatsapp.com') return url.href;
+          return '';
+        }
+
+        function opensNewTab(anchor, event) {
+          var target = (anchor.getAttribute('target') || '').toLowerCase();
+          return target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button === 1;
+        }
+
+        function onClick(event) {
+          var node = event.target;
+          if (!node) return;
+          if (node.nodeType === 3) node = node.parentElement;
+          var anchor = node && node.closest ? node.closest('a[href]') : null;
+          if (!anchor) return;
+
+          var href = whatsappHref(anchor);
+          if (!href) return;
+
+          var newTab = event.type === 'auxclick' || opensNewTab(anchor, event);
+          var now = Date.now();
+          if (href === lastHref && now - lastAt < 1000) {
+            if (!newTab) event.preventDefault();
+            return;
+          }
+          if (typeof window.gtag !== 'function') return;
+
+          lastHref = href;
+          lastAt = now;
+
+          var done = false;
+          function go() {
+            if (done) return;
+            done = true;
+            window.location.href = href;
+          }
+
+          if (newTab) {
+            try {
+              window.gtag('event', 'conversion', {
+                send_to: SEND_TO,
+                transport_type: 'beacon'
+              });
+            } catch (err) {}
+            return;
+          }
+
+          event.preventDefault();
+          try {
+            window.gtag('event', 'conversion', {
+              send_to: SEND_TO,
+              transport_type: 'beacon',
+              event_callback: go
+            });
+          } catch (err) {
+            go();
+            return;
+          }
+          window.setTimeout(go, 1000);
+        }
+
+        document.addEventListener('click', onClick, true);
+        document.addEventListener('auxclick', onClick, true);
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roatan Dunis Tours | Private Roatán Day</title>
