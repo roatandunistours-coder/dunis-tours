@@ -125,6 +125,22 @@
         .tour-card { background: #fffdf8; border-radius: 28px; border: 1px solid var(--line); }
         .tour-card h4, .tour-card .price { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 1.4rem; }
         .wa-float { position: fixed; bottom: 28px; right: 24px; background: #25d366; color: #fff; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 99999; }
+        section#home.hero-home { height: auto; min-height: 100vh; min-height: 100dvh; align-items: safe center; padding-bottom: 1.25rem; }
+        .guest-say { margin-top: 14px; background: rgba(42,33,28,.86); backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 12px 14px 8px; border: 1px solid rgba(255,255,255,.12); text-align: center; }
+        .guest-say-kicker { font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #f6efe4; }
+        .guest-say-score { font-family: Fraunces, Georgia, serif; color: #e08a4f; font-size: 1.05rem; line-height: 1.3; margin-top: 2px; }
+        .guest-say-list { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-top: 10px; text-align: left; -webkit-overflow-scrolling: touch; }
+        .guest-say-list::-webkit-scrollbar { display: none; }
+        .guest-say-list blockquote { flex: 0 0 86%; scroll-snap-align: start; margin: 0; background: rgba(255,255,255,.06); border-radius: 14px; padding: 10px 12px; }
+        .guest-say-list p { font-family: Fraunces, Georgia, serif; font-size: .92rem; line-height: 1.35; color: #f6efe4; }
+        .guest-say-list footer { margin-top: 6px; font-size: .68rem; font-weight: 700; letter-spacing: .04em; color: #e08a4f; }
+        .guest-say-more { display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 2px; font-size: .8rem; font-weight: 700; color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+        .guest-say-more:hover { color: #e08a4f; }
+        @media (min-width: 640px) {
+            .guest-say-list { display: block; overflow: visible; }
+            .guest-say-list blockquote { background: none; border-radius: 0; padding: 8px 4px 0; margin-top: 8px; border-top: 1px solid rgba(255,255,255,.12); }
+            .guest-say-list blockquote:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+        }
     </style>
 </head>
 <body>
@@ -156,7 +172,7 @@
             </div>
         </div>
     </nav>
-    <section id="home" class="relative h-screen flex items-center justify-end pt-20">
+    <section id="home" class="hero-home relative flex items-center justify-end pt-20">
         <div class="absolute inset-0 z-0">
             <img src="/assets/hero.jpg" class="w-full h-full object-cover" style="object-position:18% center" alt="Dunis and a cruise ship">
             <div class="absolute inset-0 hero-gradient"></div>
@@ -170,6 +186,25 @@
                 <a href="https://wa.me/50497754724?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="px-7 py-3.5 bg-[#25d366] text-white font-bold rounded-2xl hover:bg-[#1ebe5d] text-sm">Message us on WhatsApp</a>
                 <a href="#tours" class="px-7 py-3.5 bg-white text-gray-900 font-bold rounded-2xl text-sm">SEE THE DAY</a>                 <a href="https://www.tripadvisor.com/Attraction_Review-g292019-d34741853-Reviews-Roatan_Dunis_Tours-Roatan_Bay_Islands.html" target="_blank" rel="noopener" class="px-7 py-3.5 bg-white text-gray-900 font-bold rounded-2xl text-sm">Read our reviews on TripAdvisor</a>
             </div>
+            <aside class="guest-say" aria-label="What guests say">
+                <p class="guest-say-kicker">What guests say</p>
+                <p class="guest-say-score">★★★★★ 5.0 on TripAdvisor</p>
+                <div class="guest-say-list">
+                    <blockquote>
+                        <p>“Dunis is very knowledgeable about the island and gave a wonderful tour! 10/10 would recommend him!”</p>
+                        <footer>Tanya R, Miami</footer>
+                    </blockquote>
+                    <blockquote>
+                        <p>“From the airport to West End he is always available and reliable.”</p>
+                        <footer>Andrew S</footer>
+                    </blockquote>
+                    <blockquote>
+                        <p>“He knows all the best local spots and will take you to the best taco stand on the island!”</p>
+                        <footer>Randy D, Minnesota</footer>
+                    </blockquote>
+                </div>
+                <a class="guest-say-more" href="https://www.tripadvisor.com/Attraction_Review-g292019-d34741853-Reviews-Roatan_Dunis_Tours-Roatan_Bay_Islands.html" target="_blank" rel="noopener">Read all reviews</a>
+            </aside>
         </div>
     </section>
     <section class="py-12 border-y" style="border-color:var(--line)">
