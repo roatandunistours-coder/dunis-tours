@@ -126,12 +126,12 @@
         .tour-card h4, .tour-card .price { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 1.4rem; }
         .wa-float { position: fixed; bottom: 28px; right: 24px; background: #25d366; color: #fff; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 99999; }
         section#home.hero-home { height: auto; min-height: 100vh; min-height: 100dvh; align-items: safe center; padding-bottom: 1.25rem; }
-        .guest-say { margin-top: 14px; background: rgba(42,33,28,.86); backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 12px 14px 8px; border: 1px solid rgba(255,255,255,.12); text-align: center; }
+        .guest-say { margin-top: 14px; max-width: 100%; min-width: 0; background: rgba(42,33,28,.86); backdrop-filter: blur(14px); color: #fff; border-radius: 22px; padding: 12px 14px 8px; border: 1px solid rgba(255,255,255,.12); text-align: center; }
         .guest-say-kicker { font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #f6efe4; }
         .guest-say-score { font-family: Fraunces, Georgia, serif; color: #e08a4f; font-size: 1.05rem; line-height: 1.3; margin-top: 2px; }
-        .guest-say-list { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-top: 10px; text-align: left; -webkit-overflow-scrolling: touch; }
+        .guest-say-list { display: flex; gap: 10px; min-width: 0; max-width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-top: 10px; text-align: left; -webkit-overflow-scrolling: touch; }
         .guest-say-list::-webkit-scrollbar { display: none; }
-        .guest-say-list blockquote { flex: 0 0 86%; scroll-snap-align: start; margin: 0; background: rgba(255,255,255,.06); border-radius: 14px; padding: 10px 12px; }
+        .guest-say-list blockquote { flex: 0 0 86%; min-width: 0; scroll-snap-align: start; margin: 0; background: rgba(255,255,255,.06); border-radius: 14px; padding: 10px 12px; }
         .guest-say-list p { font-family: Fraunces, Georgia, serif; font-size: .92rem; line-height: 1.35; color: #f6efe4; }
         .guest-say-list footer { margin-top: 6px; font-size: .68rem; font-weight: 700; letter-spacing: .04em; color: #e08a4f; }
         .guest-say-more { display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 2px; font-size: .8rem; font-weight: 700; color: #fff; text-decoration: underline; text-underline-offset: 4px; }
@@ -177,7 +177,7 @@
             <img src="/assets/hero.jpg" class="w-full h-full object-cover" style="object-position:18% center" alt="Dunis and a cruise ship">
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
-        <div class="relative z-10 text-center px-6 mr-4 md:mr-16 lg:mr-24 max-w-lg">
+        <div class="relative z-10 text-center px-6 w-full min-w-0 max-w-lg md:mr-16 lg:mr-24">
             <h1 class="font-sync text-xl md:text-3xl font-bold leading-tight text-white mb-4">Private driver on Roatán, from the cruise port or airport.</h1>
             <div class="promise">
                 <div class="line">Tours from <em>$50</em> per person.</div>
