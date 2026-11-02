@@ -106,6 +106,27 @@
         document.addEventListener('auxclick', onClick, true);
       })();
     </script>
+    <script>
+      (function () {
+        var lastAt = 0;
+        document.addEventListener('click', function (event) {
+          var node = event.target;
+          if (!node) return;
+          if (node.nodeType === 3) node = node.parentElement;
+          var anchor = node && node.closest ? node.closest('a[href]') : null;
+          if (!anchor) return;
+          var href = anchor.getAttribute('href') || '';
+          if (href.toLowerCase().indexOf('mailto:') !== 0) return;
+          var now = Date.now();
+          if (now - lastAt < 1000) return;
+          lastAt = now;
+          if (typeof window.gtag !== 'function') return;
+          try {
+            window.gtag('event', 'email_click', { transport_type: 'beacon' });
+          } catch (err) {}
+        }, true);
+      })();
+    </script>
     <title>Thanks for touring with Dunis | Roatan Dunis Tours</title>
     <meta name="description" content="Leave a quick review for Roatan Dunis Tours on Google, TripAdvisor, or Facebook.">
     <meta name="robots" content="noindex, nofollow">
@@ -212,6 +233,27 @@
             text-decoration: underline;
             text-underline-offset: 3px;
         }
+        .email-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 3rem;
+            margin: 0.85rem 0 0;
+            padding: 0.7rem 1rem;
+            border-radius: 1rem;
+            border: 1.5px solid var(--ink);
+            background: #fffdf8;
+            color: var(--ink);
+            font-weight: 700;
+            font-size: 0.98rem;
+            text-decoration: none;
+        }
+        .email-line:hover { background: #fff; }
+        .email-line:focus-visible {
+            outline: 3px solid var(--ink);
+            outline-offset: 3px;
+        }
         .sr {
             position: absolute;
             width: 1px;
@@ -232,6 +274,7 @@
         <p class="lead">A quick review helps us a lot. Pick one:</p>
         <div id="review-choices"></div>
         <p class="contact">WhatsApp <a href="https://wa.me/50497754724">+504 9775-4724</a></p>
+        <a class="email-line" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">Prefer email? Email us</a>
     </main>
     <script>
       (function () {
