@@ -127,15 +127,18 @@
         }, true);
       })();
     </script>
-    <title>Thanks for touring with Dunis Tours | Roatán Dunis Tours</title>
-    <meta name="description" content="Leave a quick review for Roatán Dunis Tours on Google, TripAdvisor, or Facebook.">
+    <title>Thanks from Dunis Tours | Roatán Dunis Tours</title>
+    <meta name="description" content="Leave a review for Dunis Tours on Google, TripAdvisor, or Facebook.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#0b4f5c">
-    <meta property="og:title" content="Thanks for touring with Dunis Tours | Roatán Dunis Tours">
-    <meta property="og:description" content="Leave a quick review for Roatán Dunis Tours on Google, TripAdvisor, or Facebook.">
+    <meta property="og:title" content="Thanks from Dunis Tours | Roatán Dunis Tours">
+    <meta property="og:description" content="Leave a review for Dunis Tours on Google, TripAdvisor, or Facebook.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roatandunistours.com/review">
     <meta property="og:site_name" content="Roatán Dunis Tours">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Thanks from Dunis Tours | Roatán Dunis Tours">
+    <meta name="twitter:description" content="Leave a review for Dunis Tours on Google, TripAdvisor, or Facebook.">
     <link rel="canonical" href="https://roatandunistours.com/review">
     <link rel="icon" href="/assets/logo.png" sizes="any">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,24 +153,60 @@
             --coral-ink: #b8442a;
             --coral-on-teal: #ffa48c;
             --on-teal-soft: #f3eadf;
+            --paper: #fbf8f2;
+            --muted: #3e5560;
+            --line: #e5dcd0;
         }
         * { box-sizing: border-box; }
         html, body { margin: 0; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--teal);
-            color: #fff;
+            background: var(--paper);
+            color: var(--teal);
             min-height: 100vh;
             min-height: 100dvh;
         }
         img { max-width: 100%; height: auto; display: block; }
-        .wrap {
-            width: 100%;
-            max-width: 26rem;
-            margin: 0 auto;
-            padding: 2rem 1.25rem 2.75rem;
+        a { color: inherit; }
+        :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.85rem 1.25rem;
+            background: var(--paper);
         }
-        .logo {
+        .site-header .logo {
+            display: flex;
+            width: auto;
+            margin: 0;
+            background: #fff;
+            border-radius: 14px;
+            padding: 0.3rem 0.45rem;
+        }
+        .site-header .logo img { height: 48px; width: auto; }
+        .nav { display: flex; gap: 1.1rem; }
+        .nav a {
+            color: var(--teal);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .nav a:hover { color: var(--coral-ink); }
+        .wrap {
+            width: min(26rem, calc(100% - 2rem));
+            max-width: 26rem;
+            margin: 1.25rem auto 2rem;
+            padding: 2rem 1.25rem 2.25rem;
+            background: var(--teal);
+            color: #fff;
+            border-radius: 28px;
+        }
+        .wrap .logo {
             display: block;
             width: max-content;
             margin: 0 auto 1.35rem;
@@ -175,7 +214,37 @@
             border-radius: 1.25rem;
             padding: 0.4rem 0.6rem;
         }
-        .logo img { width: 7.5rem; height: auto; }
+        .wrap .logo img { width: 7.5rem; height: auto; }
+        .site-footer {
+            background: var(--teal);
+            color: #fff;
+            padding: 3rem 1.25rem 2.25rem;
+            text-align: center;
+        }
+        .site-footer p { margin: 0; }
+        .site-footer a {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+        }
+        .site-footer a:hover { color: var(--on-teal-soft); }
+        .site-footer a:focus-visible { outline-color: #fff; }
+        .foot-label { color: var(--on-teal-soft); font-weight: 700; margin-bottom: 0.15rem; }
+        .copyright {
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255,255,255,.18);
+            color: var(--on-teal-soft);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
         h1 {
             font-family: Fraunces, Georgia, serif;
             font-weight: 500;
@@ -281,18 +350,34 @@
     </style>
 </head>
 <body>
+    <header class="site-header">
+        <a class="logo" href="/"><img src="/assets/logo.png" alt="Roatán Dunis Tours"></a>
+        <nav class="nav" aria-label="Page">
+            <a href="/#tours">Tours</a>
+            <a href="/#reviews">Reviews</a>
+            <a href="/#pickup">Pickup</a>
+        </nav>
+    </header>
     <main class="wrap">
         <a class="logo" href="/"><img src="/assets/logo.png" alt="Roatán Dunis Tours" width="1024" height="1024"></a>
-        <h1>Thanks for touring with Dunis Tours!</h1>
+        <h1>Thanks from Dunis Tours</h1>
         <p class="lead">Your review means so much to us. Thank you! Pick one:</p>
         <div id="review-choices"></div>
         <div class="contact">
             <p>WhatsApp</p>
-            <p><a href="https://wa.me/50497754724">English · +504 9775-4724</a></p>
-            <p><a href="https://wa.me/50496880728">En Español · +504 9688-0728</a></p>
+            <p><a href="https://wa.me/50497754724?text=Hi%2C%20I%20want%20a%20private%20Roat%C3%A1n%20day">English · +504 9775-4724</a></p>
+            <p><a href="https://wa.me/50496880728?text=Hola%2C%20quiero%20un%20d%C3%ADa%20privado%20en%20Roat%C3%A1n">En Español · +504 9688-0728</a></p>
         </div>
-        <a class="email-line" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">Prefer email? Email us</a>
+        <a class="email-line" href="mailto:roatandunistours@gmail.com">Email us</a>
     </main>
+    <footer class="site-footer">
+        <p class="foot-label">WhatsApp</p>
+        <p><a href="https://wa.me/50497754724?text=Hi%2C%20I%20want%20a%20private%20Roat%C3%A1n%20day">English · +504 9775-4724</a></p>
+        <p><a href="https://wa.me/50496880728?text=Hola%2C%20quiero%20un%20d%C3%ADa%20privado%20en%20Roat%C3%A1n">En Español · +504 9688-0728</a></p>
+        <p><a href="mailto:roatandunistours@gmail.com">roatandunistours@gmail.com</a></p>
+        <p><a href="/review">Leave a Review</a></p>
+        <p class="copyright">&copy; 2026 Roatán Dunis Tours</p>
+    </footer>
 
 <script>
       (function () {
