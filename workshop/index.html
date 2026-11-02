@@ -91,6 +91,27 @@
         document.addEventListener('auxclick', onClick, true);
       })();
     </script>
+    <script>
+      (function () {
+        var lastAt = 0;
+        document.addEventListener('click', function (event) {
+          var node = event.target;
+          if (!node) return;
+          if (node.nodeType === 3) node = node.parentElement;
+          var anchor = node && node.closest ? node.closest('a[href]') : null;
+          if (!anchor) return;
+          var href = anchor.getAttribute('href') || '';
+          if (href.toLowerCase().indexOf('mailto:') !== 0) return;
+          var now = Date.now();
+          if (now - lastAt < 1000) return;
+          lastAt = now;
+          if (typeof window.gtag !== 'function') return;
+          try {
+            window.gtag('event', 'email_click', { transport_type: 'beacon' });
+          } catch (err) {}
+        }, true);
+      })();
+    </script>
     <title>Roatan Dunis Tours | Private Roatán Day</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="/assets/logo.png" sizes="any">
@@ -124,27 +145,40 @@
         .tour-card { background: #fffdf8; border-radius: 28px; border: 1px solid var(--line); }
         .tour-card h4, .tour-card .price { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 1.4rem; }
         .wa-float { position: fixed; bottom: 28px; right: 24px; background: #25d366; color: #fff; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 99999; }
+        footer.py-20 { padding-bottom: 8.5rem; }
+        .email-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.7rem 1.1rem; border-radius: 1rem; font-weight: 700; font-size: 0.95rem; line-height: 1.25; text-align: center; text-decoration: none; }
+        .email-cta-light { color: #fff; background: rgba(42,33,28,.4); border: 1.5px solid rgba(255,255,255,.92); }
+        .email-cta-light:hover { background: rgba(42,33,28,.58); }
+        .email-cta-ink { color: var(--ink); background: #fffdf8; border: 1.5px solid var(--ink); }
+        .email-cta-ink:hover { background: #fff; }
+        .email-float { position: fixed; right: 100px; bottom: 36px; z-index: 99999; max-width: calc(100vw - 116px); min-height: 48px; padding: 0.5rem 0.85rem; font-size: 0.82rem; white-space: nowrap; box-shadow: 0 8px 24px rgba(42,33,28,.16); }
+        .email-address { color: #e8d7c0; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; display: inline-flex; align-items: center; min-height: 44px; }
+        .email-address:hover { color: #fff; }
+        header .email-nav { color: #fff; background: rgba(42,33,28,.4); border: 1.5px solid rgba(255,255,255,.92); font-size: 0.75rem; min-height: 44px; padding: 0.45rem 0.75rem; white-space: nowrap; }
+        .header-scrolled .email-nav { color: var(--ink); background: #fffdf8; border-color: var(--ink); }
     </style>
 </head>
 <body>
     <div style="position:fixed;top:0;left:0;right:0;z-index:200;background:#c45c2a;color:#fff;text-align:center;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;">Workshop preview — not the live homepage</div>
+    <a class="email-cta email-cta-ink email-float" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">Prefer email? Email us</a>
     <a href="https://wa.me/50497754724?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <header id="main-header" class="fixed w-full top-8 z-[100] py-6">
         <div class="container mx-auto px-6 lg:px-12 flex items-center justify-between">
             <a href="#" class="flex items-center bg-white rounded-2xl px-2.5 py-1.5 shadow-sm">
                 <img src="/assets/logo.png" alt="Roatan Dunis Tours" class="h-12 md:h-14">
             </a>
-            <nav class="hidden lg:flex items-center space-x-10">
+            <nav class="hidden lg:flex items-center gap-x-6 xl:gap-x-10">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">Our Story</a>
                 <a href="#tours" class="nav-link">The day</a>
                 <a href="#isla" class="nav-link">Pickup</a>
-                <a href="https://wa.me/50497754724?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-[#25d366] text-white px-7 py-3 rounded-full text-xs font-bold tracking-widest hover:bg-[#1ebe5d] transition-all">WHATSAPP TO BOOK</a>
+                <a class="email-cta email-nav" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">Prefer email? Email us</a>
+                <a href="https://wa.me/50497754724?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-[#25d366] text-white px-7 py-3 rounded-full text-xs font-bold tracking-widest hover:bg-[#1ebe5d] transition-all whitespace-nowrap">WHATSAPP TO BOOK</a>
             </nav>
             <button class="lg:hidden text-2xl" id="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
-    <nav id="mobile-nav" class="lg:hidden hidden fixed inset-0 z-50" style="background:#f6efe4">
+    <nav id="mobile-nav" class="lg:hidden hidden fixed inset-0 z-[100000]" style="background:#f6efe4">
         <div class="container mx-auto px-6 py-8">
             <div class="flex items-center justify-between"><img src="/assets/logo.png" alt="" class="h-12"><button id="mobile-menu-close" class="text-2xl"><i class="fas fa-times"></i></button></div>
             <div class="mt-8 flex flex-col space-y-6 text-xl">
@@ -153,6 +187,7 @@
                 <a href="#tours" class="nav-link" style="color:#2a211c">The day</a>
                 <a href="#isla" class="nav-link" style="color:#2a211c">Pickup</a>
                 <a href="https://wa.me/50497754724?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="bg-[#25d366] text-white px-6 py-3 rounded-full w-max">WHATSAPP TO BOOK</a>
+                <a class="email-cta email-cta-ink w-full" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">Prefer email? Email us</a>
             </div>
         </div>
     </nav>
@@ -168,9 +203,10 @@
                 <p class="who">Dunis · 21 years experience</p>
                 <div class="back">Back <span>90 minutes</span> before all-aboard</div>
             </div>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://wa.me/50497754724?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="px-7 py-3.5 bg-[#25d366] text-white font-bold rounded-2xl hover:bg-[#1ebe5d] text-sm">WHATSAPP TO BOOK</a>
-                <a href="#tours" class="px-7 py-3.5 bg-white text-gray-900 font-bold rounded-2xl text-sm">SEE THE DAY</a>
+            <div class="flex flex-col items-center gap-3">
+                <a href="https://wa.me/50497754724?text=Hi%20Dunis%20Tours%20%E2%80%94%20I%20want%20a%20private%20Roatan%20day" class="px-7 py-3.5 bg-[#25d366] text-white font-bold rounded-2xl hover:bg-[#1ebe5d] text-sm w-full whitespace-nowrap">WHATSAPP TO BOOK</a>
+                <a class="email-cta email-cta-light w-full whitespace-nowrap" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">Prefer email? Email us</a>
+                <a href="#tours" class="px-7 py-3.5 bg-white text-gray-900 font-bold rounded-2xl text-sm whitespace-nowrap">SEE THE DAY</a>
             </div>
         </div>
     </section>
@@ -280,7 +316,10 @@
             <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Where we meet you</h2>
             <p class="font-fr text-2xl md:text-3xl leading-snug mb-3">Tell us the name of your ship.</p>
             <p class="font-fr text-2xl md:text-3xl leading-snug mb-10">We meet you at the port or the airport.</p>
-            <a href="https://wa.me/50497754724?text=Hi%20Dunis%20Tours%20%E2%80%94%20ship%20name%20is" class="inline-block px-8 py-3.5 bg-[#25d366] text-white font-bold rounded-2xl hover:bg-[#1ebe5d] text-sm">WHATSAPP TO BOOK</a>
+            <div class="flex flex-col items-center gap-3">
+                <a href="https://wa.me/50497754724?text=Hi%20Dunis%20Tours%20%E2%80%94%20ship%20name%20is" class="inline-block px-8 py-3.5 bg-[#25d366] text-white font-bold rounded-2xl hover:bg-[#1ebe5d] text-sm w-full sm:w-auto">WHATSAPP TO BOOK</a>
+                <a class="email-cta email-cta-ink w-full sm:w-auto" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">Prefer email? Email us</a>
+            </div>
             <p class="mt-8 text-[var(--muted)] text-sm">30% holds it — PayPal, Zelle or Venmo. Balance in cash on the day.</p>
             <p class="mt-2 text-[var(--muted)] text-sm">Ship doesn’t dock: deposit back.</p>
             <p class="mt-6 text-[var(--muted)] text-sm">Hotels on request.</p>
@@ -303,8 +342,9 @@
             </div>
             <div>
                 <h5 class="font-bold text-xs tracking-widest uppercase text-[#e08a4f] mb-8">Contact</h5>
-                <p class="text-white font-bold mb-2">WhatsApp +504 9775 4724</p>
-                <p class="text-[#c4b39a] text-sm">roatandunistours@gmail.com</p>
+                <p class="text-white font-bold mb-3">WhatsApp +504 9775 4724</p>
+                <p class="mb-3"><a class="email-cta email-cta-light" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">Prefer email? Email us</a></p>
+                <p class="text-sm"><a class="email-address" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">roatandunistours@gmail.com</a></p>
                 <p class="text-[#c4b39a] text-sm mt-3">30% holds it · PayPal, Zelle or Venmo</p>
                 <p class="text-[#c4b39a] text-sm mt-3"><a href="https://wa.me/50496880728?text=Hola%20Dunis%20Tours" class="underline underline-offset-4">En español</a></p>
             </div>
