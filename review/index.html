@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+      Review priority lives in REVIEW_PAGE below.
+      Change the featured value to switch which button is large and first.
+      Allowed values: "google", "tripadvisor", "facebook".
+    -->
+    <script>
+      window.REVIEW_PAGE = {
+        featured: "google",
+        platforms: [
+          { id: "google", name: "Google", href: "https://g.page/r/CbrxuVRENvF4EBM/review" },
+          { id: "tripadvisor", name: "TripAdvisor", href: "https://www.tripadvisor.com/UserReviewEdit-g292019-d34741853-Roatan_Dunis_Tours-Roatan_Bay_Islands.html" },
+          { id: "facebook", name: "Facebook", href: "https://www.facebook.com/DunisTours/reviews" }
+        ]
+      };
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18537296284"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18537296284');
+    </script>
+    <script>
+      (function () {
+        var SEND_TO = 'AW-18537296284/SX1UCMbuxaodEJzjoodF';
+        var lastHref = '';
+        var lastAt = 0;
+
+        function whatsappHref(anchor) {
+          var url;
+          try {
+            url = new URL(anchor.href, window.location.href);
+          } catch (err) {
+            return '';
+          }
+          if (url.protocol === 'whatsapp:') return url.href;
+          var host = url.hostname.toLowerCase().replace(/^www\./, '');
+          if (host === 'wa.me' || host === 'api.whatsapp.com') return url.href;
+          return '';
+        }
+
+        function opensNewTab(anchor, event) {
+          var target = (anchor.getAttribute('target') || '').toLowerCase();
+          return target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button === 1;
+        }
+
+        function onClick(event) {
+          var node = event.target;
+          if (!node) return;
+          if (node.nodeType === 3) node = node.parentElement;
+          var anchor = node && node.closest ? node.closest('a[href]') : null;
+          if (!anchor) return;
+
+          var href = whatsappHref(anchor);
+          if (!href) return;
+
+          var newTab = event.type === 'auxclick' || opensNewTab(anchor, event);
+          var now = Date.now();
+          if (href === lastHref && now - lastAt < 1000) {
+            if (!newTab) event.preventDefault();
+            return;
+          }
+          if (typeof window.gtag !== 'function') return;
+
+          lastHref = href;
+          lastAt = now;
+
+          var done = false;
+          function go() {
+            if (done) return;
+            done = true;
+            window.location.href = href;
+          }
+
+          if (newTab) {
+            try {
+              window.gtag('event', 'conversion', {
+                send_to: SEND_TO,
+                transport_type: 'beacon'
+              });
+            } catch (err) {}
+            return;
+          }
+
+          event.preventDefault();
+          try {
+            window.gtag('event', 'conversion', {
+              send_to: SEND_TO,
+              transport_type: 'beacon',
+              event_callback: go
+            });
+          } catch (err) {
+            go();
+            return;
+          }
+          window.setTimeout(go, 1000);
+        }
+
+        document.addEventListener('click', onClick, true);
+        document.addEventListener('auxclick', onClick, true);
+      })();
+    </script>
+    <title>Thanks for touring with Dunis | Roatan Dunis Tours</title>
+    <meta name="description" content="Leave a quick review for Roatan Dunis Tours on Google, TripAdvisor, or Facebook.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://roatandunistours.com/review">
+    <link rel="icon" href="/assets/logo.png" sizes="any">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink:#2a211c; --muted:#7a6a58; --paper:#f6efe4; --rust:#c45c2a; --line:#e4d5c2; }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        .wrap {
+            width: 100%;
+            max-width: 26rem;
+            margin: 0 auto;
+            padding: 1.75rem 1.25rem 2.5rem;
+        }
+        .logo {
+            display: block;
+            width: max-content;
+            margin: 0 auto 1.25rem;
+            background: #fff;
+            border-radius: 1.25rem;
+            padding: 0.35rem 0.55rem;
+        }
+        .logo img { width: 7.5rem; height: auto; }
+        h1 {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 500;
+            font-size: 1.85rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            text-align: center;
+            margin: 0 0 0.65rem;
+        }
+        .lead {
+            text-align: center;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.45;
+            margin: 0 0 1.5rem;
+        }
+        .note {
+            margin: 0 0 0.45rem;
+            text-align: center;
+            color: var(--rust);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            text-decoration: none;
+            border-radius: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .btn-primary {
+            min-height: 4.5rem;
+            padding: 1rem 1.25rem;
+            background: var(--rust);
+            color: #fff;
+            font-size: 1.35rem;
+            box-shadow: 0 10px 24px rgba(196, 92, 42, 0.22);
+        }
+        .btn-primary:hover { background: #b04f22; }
+        .btn-secondary {
+            min-height: 3.75rem;
+            margin-top: 0.75rem;
+            padding: 0.85rem 1.1rem;
+            background: #fffdf8;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            font-size: 1.1rem;
+        }
+        .btn-secondary:hover { background: #fff; }
+        .btn:focus-visible {
+            outline: 3px solid var(--ink);
+            outline-offset: 3px;
+        }
+        .contact {
+            margin: 2rem 0 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+        .contact a {
+            color: var(--ink);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .sr {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <a class="logo" href="/"><img src="/assets/logo.png" alt="Roatan Dunis Tours" width="1024" height="1024"></a>
+        <h1>Thanks for touring with Dunis!</h1>
+        <p class="lead">A quick review helps us a lot. Pick one:</p>
+        <div id="review-choices"></div>
+        <p class="contact">WhatsApp <a href="https://wa.me/50497754724">+504 9775-4724</a></p>
+    </main>
+    <script>
+      (function () {
+        var cfg = window.REVIEW_PAGE || {};
+        var platforms = Array.isArray(cfg.platforms) ? cfg.platforms : [];
+        var featured = null;
+        var rest = [];
+        for (var i = 0; i < platforms.length; i++) {
+          var item = platforms[i];
+          if (!featured && item && item.id === cfg.featured) featured = item;
+          else if (item) rest.push(item);
+        }
+        if (!featured && rest.length) featured = rest.shift();
+        var root = document.getElementById('review-choices');
+        if (!root || !featured) return;
+
+        function button(item, primary) {
+          var link = document.createElement('a');
+          link.className = primary ? 'btn btn-primary' : 'btn btn-secondary';
+          link.href = item.href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.setAttribute('data-platform', item.name);
+          link.textContent = item.name;
+          var sr = document.createElement('span');
+          sr.className = 'sr';
+          sr.textContent = ' (opens in a new tab)';
+          link.appendChild(sr);
+          return link;
+        }
+
+        var note = document.createElement('p');
+        note.className = 'note';
+        note.id = 'featured-note';
+        note.textContent = 'Most helpful right now';
+        var primary = button(featured, true);
+        primary.setAttribute('aria-describedby', 'featured-note');
+        root.appendChild(note);
+        root.appendChild(primary);
+        for (var j = 0; j < rest.length; j++) root.appendChild(button(rest[j], false));
+
+        root.addEventListener('click', function (event) {
+          var node = event.target;
+          if (!node) return;
+          if (node.nodeType === 3) node = node.parentElement;
+          var anchor = node && node.closest ? node.closest('a[data-platform]') : null;
+          if (!anchor || typeof window.gtag !== 'function') return;
+          try {
+            window.gtag('event', 'review_click', {
+              platform: anchor.getAttribute('data-platform'),
+              transport_type: 'beacon'
+            });
+          } catch (err) {}
+        });
+      })();
+    </script>
+</body>
+</html>
