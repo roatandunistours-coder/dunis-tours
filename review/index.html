@@ -127,22 +127,36 @@
         }, true);
       })();
     </script>
-    <title>Thanks for touring with Dunis Tours | Roatan Dunis Tours</title>
-    <meta name="description" content="Leave a quick review for Roatan Dunis Tours on Google, TripAdvisor, or Facebook.">
+    <title>Thanks for touring with Dunis Tours | Roatán Dunis Tours</title>
+    <meta name="description" content="Leave a quick review for Roatán Dunis Tours on Google, TripAdvisor, or Facebook.">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0b4f5c">
+    <meta property="og:title" content="Thanks for touring with Dunis Tours | Roatán Dunis Tours">
+    <meta property="og:description" content="Leave a quick review for Roatán Dunis Tours on Google, TripAdvisor, or Facebook.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://roatandunistours.com/review">
+    <meta property="og:site_name" content="Roatán Dunis Tours">
     <link rel="canonical" href="https://roatandunistours.com/review">
     <link rel="icon" href="/assets/logo.png" sizes="any">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --ink:#2a211c; --muted:#7a6a58; --paper:#f6efe4; --rust:#c45c2a; --line:#e4d5c2; }
+        :root {
+            --teal: #0b4f5c;
+            --on-coral: #10282e;
+            --coral: #ff6f4f;
+            --coral-hover: #ee5c39;
+            --coral-ink: #b8442a;
+            --coral-on-teal: #ffa48c;
+            --on-teal-soft: #f3eadf;
+        }
         * { box-sizing: border-box; }
         html, body { margin: 0; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--paper);
-            color: var(--ink);
+            background: var(--teal);
+            color: #fff;
             min-height: 100vh;
             min-height: 100dvh;
         }
@@ -151,40 +165,41 @@
             width: 100%;
             max-width: 26rem;
             margin: 0 auto;
-            padding: 1.75rem 1.25rem 2.5rem;
+            padding: 2rem 1.25rem 2.75rem;
         }
         .logo {
             display: block;
             width: max-content;
-            margin: 0 auto 1.25rem;
+            margin: 0 auto 1.35rem;
             background: #fff;
             border-radius: 1.25rem;
-            padding: 0.35rem 0.55rem;
+            padding: 0.4rem 0.6rem;
         }
         .logo img { width: 7.5rem; height: auto; }
         h1 {
             font-family: Fraunces, Georgia, serif;
             font-weight: 500;
-            font-size: 1.85rem;
+            font-size: 1.9rem;
             line-height: 1.2;
             letter-spacing: -0.02em;
             text-align: center;
-            margin: 0 0 0.65rem;
+            margin: 0 0 0.75rem;
+            color: #fff;
         }
         .lead {
             text-align: center;
-            color: var(--muted);
+            color: var(--on-teal-soft);
             font-size: 1.05rem;
-            line-height: 1.45;
-            margin: 0 0 1.5rem;
+            line-height: 1.5;
+            margin: 0 0 1.35rem;
         }
         .note {
-            margin: 0 0 0.45rem;
+            margin: 0 0 0.5rem;
             text-align: center;
-            color: var(--rust);
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.16em;
+            color: var(--coral-on-teal);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
         }
         .btn {
@@ -193,7 +208,7 @@
             justify-content: center;
             width: 100%;
             text-decoration: none;
-            border-radius: 1.15rem;
+            border-radius: 999px;
             font-weight: 800;
             letter-spacing: 0.01em;
             -webkit-tap-highlight-color: transparent;
@@ -201,35 +216,37 @@
         .btn-primary {
             min-height: 4.5rem;
             padding: 1rem 1.25rem;
-            background: var(--rust);
-            color: #fff;
+            background: var(--coral);
+            color: var(--on-coral);
             font-size: 1.35rem;
-            box-shadow: 0 10px 24px rgba(196, 92, 42, 0.22);
+            box-shadow: 0 10px 24px rgba(255, 111, 79, 0.28);
         }
-        .btn-primary:hover { background: #b04f22; }
+        .btn-primary:hover { background: var(--coral-hover); color: var(--on-coral); }
         .btn-secondary {
             min-height: 3.75rem;
             margin-top: 0.75rem;
             padding: 0.85rem 1.1rem;
-            background: #fffdf8;
-            color: var(--ink);
-            border: 1px solid var(--line);
-            font-size: 1.1rem;
+            background: #fff;
+            color: var(--teal);
+            border: 0;
+            font-size: 1.15rem;
         }
-        .btn-secondary:hover { background: #fff; }
-        .btn:focus-visible {
-            outline: 3px solid var(--ink);
+        .btn-secondary:hover { background: #fff7f4; }
+        .btn:focus-visible, .email-line:focus-visible, .contact a:focus-visible, .logo:focus-visible {
+            outline: 3px solid #fff;
             outline-offset: 3px;
         }
         .contact {
-            margin: 2rem 0 0;
+            margin: 1.75rem 0 0;
             text-align: center;
-            font-size: 0.9rem;
-            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.45;
+            color: var(--on-teal-soft);
         }
+        .contact p { margin: 0.15rem 0; }
         .contact a {
-            color: var(--ink);
-            font-weight: 700;
+            color: var(--coral-on-teal);
+            font-weight: 800;
             text-decoration: underline;
             text-underline-offset: 3px;
         }
@@ -238,22 +255,18 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            min-height: 3rem;
-            margin: 0.85rem 0 0;
-            padding: 0.7rem 1rem;
-            border-radius: 1rem;
-            border: 1.5px solid var(--ink);
-            background: #fffdf8;
-            color: var(--ink);
-            font-weight: 700;
-            font-size: 0.98rem;
+            min-height: 3.25rem;
+            margin: 1rem 0 0;
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            border: 0;
+            background: #fff;
+            color: var(--coral-ink);
+            font-weight: 800;
+            font-size: 1rem;
             text-decoration: none;
         }
-        .email-line:hover { background: #fff; }
-        .email-line:focus-visible {
-            outline: 3px solid var(--ink);
-            outline-offset: 3px;
-        }
+        .email-line:hover { background: #fff7f4; }
         .sr {
             position: absolute;
             width: 1px;
@@ -269,14 +282,19 @@
 </head>
 <body>
     <main class="wrap">
-        <a class="logo" href="/"><img src="/assets/logo.png" alt="Roatan Dunis Tours" width="1024" height="1024"></a>
+        <a class="logo" href="/"><img src="/assets/logo.png" alt="Roatán Dunis Tours" width="1024" height="1024"></a>
         <h1>Thanks for touring with Dunis Tours!</h1>
         <p class="lead">Your review means so much to us. Thank you! Pick one:</p>
         <div id="review-choices"></div>
-        <p class="contact">WhatsApp <a href="https://wa.me/50497754724">+504 9775-4724</a></p>
+        <div class="contact">
+            <p>WhatsApp</p>
+            <p><a href="https://wa.me/50497754724">English · +504 9775-4724</a></p>
+            <p><a href="https://wa.me/50496880728">En Español · +504 9688-0728</a></p>
+        </div>
         <a class="email-line" href="mailto:roatandunistours@gmail.com?subject=Tour%20inquiry&amp;body=Date%20on%20Roat%C3%A1n%3A%20%20%2F%20Number%20of%20people%3A%20%20%2F%20Tour%20you%27re%20interested%20in%3A%20">Prefer email? Email us</a>
     </main>
-    <script>
+
+<script>
       (function () {
         var cfg = window.REVIEW_PAGE || {};
         var platforms = Array.isArray(cfg.platforms) ? cfg.platforms : [];
