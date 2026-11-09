@@ -11,11 +11,26 @@
       gtag('js', new Date());
       gtag('config', 'AW-18537296284');
     </script>
+    <script src="/assets/lead-source.js"></script>
     <script>
       (function () {
         var SEND_TO = 'AW-18537296284/SX1UCMbuxaodEJzjoodF';
         var lastHref = '';
         var lastAt = 0;
+
+        function conversionPayload(extra) {
+          var payload = {
+            send_to: SEND_TO,
+            transport_type: 'beacon',
+            lead_source: window.DUNIS_LEAD_SOURCE || 'W'
+          };
+          if (extra) {
+            for (var key in extra) {
+              if (Object.prototype.hasOwnProperty.call(extra, key)) payload[key] = extra[key];
+            }
+          }
+          return payload;
+        }
 
         function whatsappHref(anchor) {
           var url;
@@ -65,21 +80,14 @@
 
           if (newTab) {
             try {
-              window.gtag('event', 'conversion', {
-                send_to: SEND_TO,
-                transport_type: 'beacon'
-              });
+              window.gtag('event', 'conversion', conversionPayload());
             } catch (err) {}
             return;
           }
 
           event.preventDefault();
           try {
-            window.gtag('event', 'conversion', {
-              send_to: SEND_TO,
-              transport_type: 'beacon',
-              event_callback: go
-            });
+            window.gtag('event', 'conversion', conversionPayload({ event_callback: go }));
           } catch (err) {
             go();
             return;
