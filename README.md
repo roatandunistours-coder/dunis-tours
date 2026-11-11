@@ -4,7 +4,7 @@ Static site for [roatandunistours.com](https://roatandunistours.com/).
 
 ## WhatsApp lead codes
 
-Every chat to the booking number **+504 9775-4724** that starts from this website gets a short code at the end of the prefilled message, for example `Hi Dunis Tours — Horseback $65 (ref G)`. The Spanish line **+504 9688-0728** is not tagged.
+Every chat to the booking number **+504 9775-4724** that starts from this website gets a short code at the end of the prefilled message, for example `We would like to book Horseback Riding on Roatán.` ending with `(ref G)`. The Spanish line **+504 9688-0728** is not tagged.
 
 The code is the first channel in that browser tab. It is stored in `sessionStorage`, so it stays put while someone moves around the site. A plain visit stays `(ref W)` unless a named channel shows up later in the same tab. A named channel is not replaced by a later one. With JavaScript off, the message stays exactly as it is written in the HTML.
 
