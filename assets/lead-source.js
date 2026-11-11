@@ -5,7 +5,10 @@
 (function () {
   var BOOKING_PHONE = '50497754724';
   var STORAGE_KEY = 'dunis_lead_ref';
-  var REF_RE = /\s*\(ref [GFTBW]\)\s*$/;
+  /* A ref already on its own line (the booking form) stays on that line.
+     Single-line prefills keep a single space before the code. */
+  var REF_LINE_RE = /\n[ \t]*\(ref [GFTBW]\)[ \t]*$/;
+  var REF_RE = /[ \t]*\(ref [GFTBW]\)[ \t]*$/;
 
   var ADS_SOURCES = { google: 1, googleads: 1, google_ads: 1, adwords: 1 };
   var ADS_MEDIUMS = { cpc: 1, ppc: 1, paid: 1, paidsearch: 1, paid_search: 1 };
@@ -137,8 +140,16 @@
   }
 
   function withRef(text, leadCode) {
-    var base = String(text || '').replace(REF_RE, '').replace(/\s+$/g, '');
     var suffix = '(ref ' + leadCode + ')';
+    var raw = String(text || '');
+    var ownLine = REF_LINE_RE.test(raw);
+    var base = raw.replace(REF_RE, '');
+    if (ownLine) {
+      base = base.replace(/[ \t]+$/, '');
+      if (!/\n$/.test(base)) base += '\n';
+      return base + suffix;
+    }
+    base = base.replace(/\s+$/g, '');
     return base ? base + ' ' + suffix : suffix;
   }
 
