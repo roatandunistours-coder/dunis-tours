@@ -273,6 +273,36 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
 }
 .included { margin: 0 0 18px; font-size: 16px; font-weight: 450; max-width: 52rem; }
 
+/* Every tour includes strip (above tour cards) */
+.inc-strip {
+  display: flex; align-items: center; gap: 14px 16px;
+  background: var(--yellow); color: var(--plum);
+  border-radius: 16px; padding: 12px 18px;
+  box-shadow: 0 0 0 3px var(--orange) inset;
+  margin: 0 0 18px;
+}
+.inc-strip-title {
+  margin: 0; flex-shrink: 0;
+  font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--plum);
+}
+.inc-strip ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; flex: 1;
+  justify-content: space-between;
+}
+.inc-strip li { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 650; line-height: 1.2; white-space: nowrap; }
+@media (min-width: 901px) { .inc-strip ul { flex-wrap: nowrap; gap: 12px; } }
+.inc-strip .ico { width: 26px; height: 26px; border-radius: 7px; }
+.inc-strip .ico.blue, .inc-strip .ico.orange { color: #fff; }
+.inc-strip .ico svg { width: 15px; height: 15px; }
+@media (max-width: 900px) {
+  .inc-strip { flex-direction: column; align-items: flex-start; padding: 12px 14px; gap: 10px; }
+  .inc-strip ul { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; width: 100%; }
+  .inc-strip li { font-size: 13.5px; white-space: normal; }
+  .inc-strip li.wide { grid-column: 1 / -1; }
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -504,6 +534,15 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
   color: #4a243f;
   flex: 0 0 auto;
 }
+.card-bonus {
+  display: flex; align-items: flex-start; gap: 8px;
+  margin: 9px 0 0; padding: 7px 0 0;
+  border-top: 1px dashed rgba(44, 18, 41, 0.28);
+  font-size: 12.5px; font-weight: 800; line-height: 1.25;
+}
+.bonus-ico { width: 15px; height: 15px; flex-shrink: 0; margin-top: 0; }
+.bonus-ico svg { width: 15px; height: 15px; display: block; }
+.card.green .card-bonus { border-top-color: rgba(255, 255, 255, 0.4); }
 .card.green .check { color: #fff; }
 .card.green .hl-sub { color: rgba(255, 255, 255, 0.85); }
 .card.green .highlights { border-top-color: rgba(255, 255, 255, 0.28); }
@@ -966,10 +1005,20 @@ body > footer {
         </div>
       </div>
       <p class="step-lede">Every tour is private and timed to your ship’s schedule.</p>
+      <div class="inc-strip" aria-label="Every tour includes">
+        <p class="inc-strip-title">Every tour includes</p>
+        <ul>
+          <li><span class="ico blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 9.5h3.1l1.2-2.2h7.4l1.2 2.2H20A1.5 1.5 0 0 1 21.5 11v7.5A1.5 1.5 0 0 1 20 20H4A1.5 1.5 0 0 1 2.5 18.5V11A1.5 1.5 0 0 1 4 9.5Z"/><circle cx="12" cy="14" r="3.2"/></svg></span> Island Sightseeing &amp; Photo Stops</li>
+          <li><span class="ico plum" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 13a8 8 0 0 1 16 0H4Z"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M12 13v6"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M12 19c1.6 0 2.6-.8 2.6-2"/></svg></span> West Bay Beach</li>
+          <li><span class="ico orange" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="6" width="15" height="12" rx="1.6"/><path d="M12 6v12M4.5 12h15"/></svg></span> Chocolate Factory</li>
+          <li><span class="ico plum" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M10 2.8h4V6l1.2 2.2V19a2 2 0 0 1-2 2h-2.4a2 2 0 0 1-2-2V8.2L10 6V2.8Z"/><path d="M9.2 11h5.6"/></svg></span> Rum Company</li>
+          <li class="wide"><span class="ico blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3.5 15.5 5 19h14l1.5-3.5H3.5Z"/><path d="M5.5 15.5V11h13l-2 4.5"/><path d="M12 11V5l6.2 3"/></svg></span> Pickup at the Cruise Port or Airport</li>
+        </ul>
+      </div>
       <div class="cards" id="tour-cards">
         <article class="card blue featured selected" data-id="sloths" data-tour="Sloths, Monkeys &amp; Zipline" data-price="70">
           <div class="photo-wrap">
-            <img src="/assets/img/sanctuary.jpg" alt="A hanging bridge at the Wildlife Sanctuary">
+            <img src="/assets/img/sanctuary.jpg" alt="A hanging bridge on the Sloths, Monkeys and Zipline tour in Roatan">
             <span class="popular">Most Popular</span>
           </div>
           <div class="card-main">
@@ -991,6 +1040,7 @@ body > footer {
                 <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Wi-Fi, Showers &amp; Food and Drink Service</li>
               </ul>
               <p class="card-note">Food, Drinks &amp; Tips Paid Directly to the Restaurant</p>
+              <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, the Chocolate Factory &amp; the Rum Company</p>
             </div>
             <button class="card-addon" type="button" id="combo" data-id="combo" data-tour="Sloths, Monkeys &amp; Zipline plus ATVs" data-price="120" aria-pressed="false">
               <span class="addon-check" aria-hidden="true"></span>
@@ -1025,6 +1075,7 @@ body > footer {
                 <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> 1.5-Hour Guided Reef Snorkel</li>
             </ul>
             <p class="card-note">Food, Drinks &amp; Tips Paid Directly to the Restaurant</p>
+            <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, the Chocolate Factory &amp; the Rum Company</p>
           </div>
           <div class="price-bar">
             <div class="price-stack">
@@ -1052,6 +1103,7 @@ body > footer {
                 <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> First-Time Riders Welcome</li>
                 <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Jungle Trails, Then Into the Caribbean</li>
             </ul>
+            <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, West Bay Beach, the Chocolate Factory &amp; the Rum Company</p>
           </div>
           <div class="price-bar">
             <div class="price-stack">
@@ -1079,6 +1131,7 @@ body > footer {
                 <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Automatic &amp; Easy to Drive</li>
                 <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Helmets &amp; Safety Briefing</li>
             </ul>
+            <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, West Bay Beach, the Chocolate Factory &amp; the Rum Company</p>
           </div>
           <div class="price-bar">
             <div class="price-stack">
