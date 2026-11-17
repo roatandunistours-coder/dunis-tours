@@ -121,11 +121,11 @@
       })();
     </script>
     <title>Roatan Dunis Tours — Private Roatan Shore Excursions in the Caribbean</title>
-<meta name="description" content="Private Roatan shore excursions in the Caribbean with Dunis Tours. Pick a $70 tour day: sloths and zipline, beach and snorkel, horseback, or ATVs, timed to your ship.">
+<meta name="description" content="Private Roatan shore excursions in the Caribbean with Dunis Tours. Tours from $50: sloths and monkeys, sloths and zipline, beach and snorkel, horseback, or ATVs, timed to your ship.">
 <meta property="og:title" content="Roatan Dunis Tours — Private Roatan Shore Excursions in the Caribbean">
-<meta property="og:description" content="Private Roatan shore excursions in the Caribbean with Dunis Tours. Pick a $70 tour day: sloths and zipline, beach and snorkel, horseback, or ATVs, timed to your ship.">
+<meta property="og:description" content="Private Roatan shore excursions in the Caribbean with Dunis Tours. Tours from $50: sloths and monkeys, sloths and zipline, beach and snorkel, horseback, or ATVs, timed to your ship.">
 <meta name="twitter:title" content="Roatan Dunis Tours — Private Roatan Shore Excursions in the Caribbean">
-<meta name="twitter:description" content="Private Roatan shore excursions in the Caribbean with Dunis Tours. Pick a $70 tour day: sloths and zipline, beach and snorkel, horseback, or ATVs, timed to your ship.">
+<meta name="twitter:description" content="Private Roatan shore excursions in the Caribbean with Dunis Tours. Tours from $50: sloths and monkeys, sloths and zipline, beach and snorkel, horseback, or ATVs, timed to your ship.">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="/assets/logo.png" sizes="any">
 <style>
@@ -151,6 +151,7 @@
   --orange: #d57303;
   --green: #8dda0a;
   --jungle: #1E6B45;
+  --teal: #0b4f5c;
   --wa: #16803C;
   --ms: #0070D8;
 }
@@ -305,7 +306,7 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 .card {
@@ -328,6 +329,7 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
 .card.yellow { background: var(--yellow); }
 .card.orange { background: var(--orange); }
 .card.green { background: var(--jungle); color: #fff; }
+.card.teal { background: var(--teal); color: #fff; }
 .card .photo-wrap { position: relative; margin: 0 0 14px; }
 .card img {
   width: 100%;
@@ -339,6 +341,7 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
 .card.yellow img { object-position: 55% 12%; }
 .card.orange img { object-position: 50% 46%; }
 .card.green img { object-position: 50% 38%; }
+.card.teal img { object-position: 50% 42%; }
 .card.featured {
   grid-column: 1 / -1;
   flex-direction: row;
@@ -441,8 +444,10 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
   border-radius: 50%;
   background: currentColor;
 }
-.card.green.selected .radio::after { background: var(--plum); }
-.card.green:focus-visible { outline-color: #fff; }
+.card.green.selected .radio::after,
+.card.teal.selected .radio::after { background: var(--plum); }
+.card.green:focus-visible,
+.card.teal:focus-visible { outline-color: #fff; }
 .card-body {
   flex: 1;
   display: flex;
@@ -542,10 +547,14 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
 }
 .bonus-ico { width: 15px; height: 15px; flex-shrink: 0; margin-top: 0; }
 .bonus-ico svg { width: 15px; height: 15px; display: block; }
-.card.green .card-bonus { border-top-color: rgba(255, 255, 255, 0.4); }
-.card.green .check { color: #fff; }
-.card.green .hl-sub { color: rgba(255, 255, 255, 0.85); }
-.card.green .highlights { border-top-color: rgba(255, 255, 255, 0.28); }
+.card.green .card-bonus,
+.card.teal .card-bonus { border-top-color: rgba(255, 255, 255, 0.4); }
+.card.green .check,
+.card.teal .check { color: #fff; }
+.card.green .hl-sub,
+.card.teal .hl-sub { color: rgba(255, 255, 255, 0.85); }
+.card.green .highlights,
+.card.teal .highlights { border-top-color: rgba(255, 255, 255, 0.28); }
 .price-bar {
   display: flex;
   align-items: center;
@@ -557,7 +566,8 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
   background: rgba(44, 18, 41, 0.10);
   flex: 0 0 auto;
 }
-.card.green .price-bar { background: rgba(255, 255, 255, 0.16); }
+.card.green .price-bar,
+.card.teal .price-bar { background: rgba(255, 255, 255, 0.16); }
 .price-stack { min-width: 0; }
 .price-amt {
   display: block;
@@ -576,7 +586,8 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
   opacity: 0.88;
   font-synthesis: none;
 }
-.card.green .price-each { opacity: 1; }
+.card.green .price-each,
+.card.teal .price-each { opacity: 1; }
 .choose-tour {
   flex-shrink: 0;
   border: 0;
@@ -593,7 +604,9 @@ nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size
   color: #fff;
 }
 .choose-tour:focus-visible { outline: 3px solid var(--plum); outline-offset: 2px; }
-.card.green .choose-tour:focus-visible { outline-color: #fff; }
+.card.green .choose-tour:focus-visible,
+.card.teal .choose-tour:focus-visible { outline-color: #fff; }
+.card.teal .card-note { color: rgba(255, 255, 255, 0.92); }
 
 .featured-pair {
   display: grid;
@@ -1004,7 +1017,7 @@ body > footer {
           <h2 class="step-title">Pick your tour</h2>
         </div>
       </div>
-      <p class="step-lede">Every tour is private and timed to your ship’s schedule.</p>
+      <p class="step-lede">Private tours on Roatán from $50. Every tour is private and timed to your ship’s schedule.</p>
       <div class="inc-strip" aria-label="Every tour includes">
         <p class="inc-strip-title">Every tour includes</p>
         <ul>
@@ -1071,6 +1084,35 @@ body > footer {
               </div>
               <button class="choose-tour" type="button">Choose This Tour</button>
             </div>
+          </div>
+        </article>
+
+        <article class="card teal" data-id="sloths-monkeys" data-tour="Sloths &amp; Monkeys" data-price="50">
+          <div class="photo-wrap">
+            <img src="/assets/img/sanctuary.jpg" alt="Sloths and monkeys on a tour in Roatan">
+          </div>
+          <div class="card-body">
+            <div class="card-intro">
+              <div class="card-title">
+                <span class="radio" aria-hidden="true"></span>
+                <h3>Sloths &amp; Monkeys</h3>
+              </div>
+              <p class="tagline">See sloths and monkeys up close, with no zipline, then time at West Bay Beach.</p>
+            </div>
+            <ul class="highlights">
+                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Sloths &amp; Monkeys, Seen Up Close</li>
+                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> No Zipline</li>
+                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> A Relaxed Pace</li>
+            </ul>
+            <p class="card-note">Or $60 per person with a VIP Day at West Bay Beach (beach chair and umbrella, Wi-Fi, showers).</p>
+            <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, West Bay Beach, the Chocolate Factory &amp; the Rum Company</p>
+          </div>
+          <div class="price-bar">
+            <div class="price-stack">
+              <span class="price-amt">$50</span>
+              <span class="price-each">per person</span>
+            </div>
+            <button class="choose-tour" type="button">Choose This Tour</button>
           </div>
         </article>
 
@@ -1205,6 +1247,8 @@ body > footer {
           <label for="tour">Tour</label>
           <select id="tour" name="tour">
             <option value="sloths" selected>Sloths, Monkeys &amp; Zipline — $70</option>
+            <option value="sloths-monkeys">Sloths &amp; Monkeys — $50</option>
+            <option value="sloths-monkeys-vip">Sloths &amp; Monkeys + VIP Day at West Bay Beach ($60)</option>
             <option value="beach">Beach &amp; Snorkel — $70</option>
             <option value="horseback">Horseback Riding — $70</option>
             <option value="atv">ATV Adventure — $70</option>
@@ -1299,7 +1343,7 @@ body > footer {
         </div>
         <div class="faq-item">
           <h3>Are there kids’ prices?</h3>
-          <p>Kids 5 and under are free. Ages 6 and up are the regular $70.</p>
+          <p>Kids 5 and under are free. Ages 6 and up pay the adult price.</p>
         </div>
         <div class="faq-item">
           <h3>Can kids do the ATV tour?</h3>
@@ -1337,6 +1381,8 @@ body > footer {
 (function () {
   const tours = {
     sloths: { name: "Sloths, Monkeys & Zipline", price: 70 },
+    "sloths-monkeys": { name: "Sloths & Monkeys", price: 50 },
+    "sloths-monkeys-vip": { name: "Sloths & Monkeys + VIP Day at West Bay Beach", price: 60 },
     beach: { name: "Beach & Snorkel", price: 70 },
     horseback: { name: "Horseback Riding", price: 70 },
     atv: { name: "ATV Adventure", price: 70 },
@@ -1382,7 +1428,7 @@ body > footer {
   function setSelection(id, fromSelect) {
     cards.forEach((c) => {
       const cardId = c.getAttribute("data-id");
-      const on = cardId === id || (id === "combo" && cardId === "sloths");
+      const on = cardId === id || (id === "combo" && cardId === "sloths") || (id === "sloths-monkeys-vip" && cardId === "sloths-monkeys");
       c.classList.toggle("selected", on);
     });
     combo.setAttribute("aria-pressed", id === "combo" ? "true" : "false");
