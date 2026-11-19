@@ -3,1538 +3,680 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18537296284"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-18537296284');
-    </script>
-    <script src="/assets/lead-source.js"></script>
-    <script>
-      (function () {
-        var SEND_TO = 'AW-18537296284/SX1UCMbuxaodEJzjoodF';
-        var lastHref = '';
-        var lastAt = 0;
-
-        function conversionPayload(extra) {
-          var payload = {
-            send_to: SEND_TO,
-            transport_type: 'beacon',
-            lead_source: window.DUNIS_LEAD_SOURCE || 'W'
-          };
-          if (extra) {
-            for (var key in extra) {
-              if (Object.prototype.hasOwnProperty.call(extra, key)) payload[key] = extra[key];
-            }
-          }
-          return payload;
-        }
-
-        function whatsappHref(anchor) {
-          var url;
-          try {
-            url = new URL(anchor.href, window.location.href);
-          } catch (err) {
-            return '';
-          }
-          if (url.protocol === 'whatsapp:') return url.href;
-          var host = url.hostname.toLowerCase().replace(/^www\./, '');
-          if (host === 'wa.me' || host === 'api.whatsapp.com') return url.href;
-          return '';
-        }
-
-        function opensNewTab(anchor, event) {
-          var target = (anchor.getAttribute('target') || '').toLowerCase();
-          return target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button === 1;
-        }
-
-        function onClick(event) {
-          var node = event.target;
-          if (!node) return;
-          if (node.nodeType === 3) node = node.parentElement;
-          var anchor = node && node.closest ? node.closest('a[href]') : null;
-          if (!anchor) return;
-
-          var href = whatsappHref(anchor);
-          if (!href) return;
-
-          var newTab = event.type === 'auxclick' || opensNewTab(anchor, event);
-          var now = Date.now();
-          if (href === lastHref && now - lastAt < 1000) {
-            if (!newTab) event.preventDefault();
-            return;
-          }
-          if (typeof window.gtag !== 'function') return;
-
-          lastHref = href;
-          lastAt = now;
-
-          var done = false;
-          function go() {
-            if (done) return;
-            done = true;
-            window.location.href = href;
-          }
-
-          if (newTab) {
-            try {
-              window.gtag('event', 'conversion', conversionPayload());
-            } catch (err) {}
-            return;
-          }
-
-          event.preventDefault();
-          try {
-            window.gtag('event', 'conversion', conversionPayload({ event_callback: go }));
-          } catch (err) {
-            go();
-            return;
-          }
-          window.setTimeout(go, 1000);
-        }
-
-        document.addEventListener('click', onClick, true);
-        document.addEventListener('auxclick', onClick, true);
-      })();
-    </script>
-    <script>
-      (function () {
-        var lastAt = 0;
-        document.addEventListener('click', function (event) {
-          var node = event.target;
-          if (!node) return;
-          if (node.nodeType === 3) node = node.parentElement;
-          var anchor = node && node.closest ? node.closest('a[href]') : null;
-          if (!anchor) return;
-          var href = anchor.getAttribute('href') || '';
-          if (href.toLowerCase().indexOf('mailto:') !== 0) return;
-          var now = Date.now();
-          if (now - lastAt < 1000) return;
-          lastAt = now;
-          if (typeof window.gtag !== 'function') return;
-          try {
-            window.gtag('event', 'email_click', { transport_type: 'beacon' });
-          } catch (err) {}
-        }, true);
-      })();
-    </script>
-    <title>Roatan Dunis Tours — Private Roatan Shore Excursions in the Caribbean</title>
-<meta name="description" content="Private Roatan shore excursions in the Caribbean with Dunis Tours. Tours from $50: sloths and monkeys, sloths and zipline, beach and snorkel, horseback, or ATVs, timed to your ship.">
-<meta property="og:title" content="Roatan Dunis Tours — Private Roatan Shore Excursions in the Caribbean">
-<meta property="og:description" content="Private Roatan shore excursions in the Caribbean with Dunis Tours. Tours from $50: sloths and monkeys, sloths and zipline, beach and snorkel, horseback, or ATVs, timed to your ship.">
-<meta name="twitter:title" content="Roatan Dunis Tours — Private Roatan Shore Excursions in the Caribbean">
-<meta name="twitter:description" content="Private Roatan shore excursions in the Caribbean with Dunis Tours. Tours from $50: sloths and monkeys, sloths and zipline, beach and snorkel, horseback, or ATVs, timed to your ship.">
+<title>Roatan Dunis Tours | Private Roatan Shore Excursions in the Caribbean</title>
+<meta name="description" content="Private Roatan shore excursions in the Caribbean with Dunis, a local driver and guide for 21 years. Private tours on Roatán for families and groups, timed to your ship, from $40.">
 <meta name="robots" content="index, follow">
-<link rel="icon" href="/assets/logo.png" sizes="any">
+<link rel="canonical" href="https://roatandunistours.com/">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<meta property="og:title" content="Roatan Dunis Tours | Private Roatan Shore Excursions in the Caribbean">
+<meta property="og:description" content="Private tours on Roatán for families and groups, timed to your ship, from $40.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://roatandunistours.com/">
+<meta property="og:image" content="https://roatandunistours.com/img/groups/og-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://roatandunistours.com/img/groups/og-1200x630.jpg">
+<link rel="preload" href="fonts/cw/nunito.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/cw/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/groups/hero-800.webp" as="image" media="(max-width: 767px)">
+<link rel="preload" href="img/groups/hero-1400.webp" as="image" media="(min-width: 768px)">
 <style>
-@font-face {
-  font-family: Outfit;
-  src: url("/assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: block;
+@font-face{font-family:Nunito;src:url("fonts/cw/nunito.woff2") format("woff2");font-weight:200 1000;font-style:normal;font-display:swap}
+@font-face{font-family:Outfit;src:url("fonts/cw/outfit.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{
+  --white:#FFFFFF; --aqua:#E7F6F7; --ink:#1A2225; --deep:#046C8C;
+  --lagoon:#2EC4D4; --gold:#E88900; --muted:#3D4A4E; --line:#CDE3E6;
+  --wa:#0B5F4A; --shadow:0 16px 40px rgba(26,34,37,.08); --radius:24px;
+  --wrap:min(1100px, calc(100% - 32px)); --header-h:64px;
 }
-@font-face {
-  font-family: Fraunces;
-  src: url("/assets/fonts/Fraunces-Italic-VariableFont.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: block;
-}
-:root {
-  --white: #ffffff;
-  --plum: #2c1229;
-  --blue: #16aae5;
-  --yellow: #f6bc04;
-  --orange: #d57303;
-  --green: #8dda0a;
-  --jungle: #1E6B45;
-  --teal: #0b4f5c;
-  --wa: #16803C;
-  --ms: #0070D8;
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
-  background: var(--white);
-  color: var(--plum);
-  line-height: 1.4;
-  -webkit-font-smoothing: antialiased;
-}
-img { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
-button, input, select { font: inherit; color: inherit; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{font-family:Outfit,ui-sans-serif,system-ui,sans-serif;background:var(--white);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;color:inherit;background:none;border:0}
+h1,h2,h3,.logo-name{font-family:Nunito,Outfit,sans-serif;letter-spacing:-0.04em;line-height:1.1;margin:0;font-weight:800;color:var(--deep)}
+.wrap{width:var(--wrap);margin:0 auto}
+.skip{position:absolute;left:-999px;top:0;z-index:200;background:var(--gold);color:var(--ink);padding:8px 14px;font-weight:700}
+.skip:focus{left:8px;top:8px}
+header{position:sticky;top:0;z-index:80;background:var(--deep);color:#fff;box-shadow:0 6px 20px rgba(4,108,140,.2)}
+.header-inner{width:var(--wrap);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:var(--header-h)}
+.logo{display:flex;align-items:center;gap:10px;min-width:0;color:#fff}
+.logo-mark{width:48px;height:48px;flex:0 0 auto;border-radius:50%;overflow:hidden;background:#fff}
+.logo-mark img{width:100%;height:100%;object-fit:cover}
+.logo-name{font-size:15px;color:#fff;white-space:nowrap;letter-spacing:-0.03em}
+nav.desktop{display:none;align-items:center;gap:22px;font-weight:650;font-size:15px}
+nav.desktop a{color:#fff;opacity:.92}
+nav.desktop a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.menu-btn{width:44px;height:44px;display:grid;place-items:center;border-radius:12px}
+.menu-btn:focus-visible{outline:3px solid #FFE3B0}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:18px;height:2px;background:#fff;position:relative;border-radius:2px}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-6px}
+.menu-btn span::after{top:6px}
+.mobile-nav{display:none;background:var(--deep);padding:8px 0 20px}
+.mobile-nav.open{display:block}
+.mobile-nav a{display:block;padding:12px 0;font-weight:650;font-size:17px;color:#fff;border-bottom:1px solid rgba(255,255,255,.16)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;font-weight:750;padding:13px 22px;line-height:1.2;text-align:center;transition:filter .15s ease,transform .15s ease}
+.btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--deep);outline-offset:3px}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-deep{background:var(--deep);color:#fff}
+.btn svg{width:18px;height:18px;flex:0 0 auto}
+.header-wa{display:none}
+.kicker{margin:0 0 10px;font-size:12px;font-weight:750;letter-spacing:.14em;text-transform:uppercase;color:var(--deep)}
 
-.stripe {
-  display: grid;
-  grid-template-columns: 34% 30% 28% 8%;
-  height: 10px;
-}
-.stripe span:nth-child(1) { background: var(--blue); }
-.stripe span:nth-child(2) { background: var(--yellow); }
-.stripe span:nth-child(3) { background: var(--orange); }
-.stripe span:nth-child(4) { background: var(--green); }
+.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;background:#1a4a58}
+.hero-photo{position:absolute;inset:0}
+.hero-photo img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:62% 40%}
+.hero-wash{position:absolute;inset:0;pointer-events:none;background:
+  linear-gradient(90deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.82) 26%, rgba(255,255,255,.28) 48%, rgba(255,255,255,0) 66%),
+  linear-gradient(0deg, rgba(255,255,255,.58) 0%, rgba(255,255,255,.14) 26%, rgba(255,255,255,0) 46%)}
+.hero-copy{position:relative;z-index:2;width:var(--wrap);padding:48px 0 40px;max-width:36rem}
+.hero h1{font-size:clamp(2.2rem, 8vw, 4.1rem);margin-bottom:12px}
+.hero .lead{margin:0 0 10px;font-size:1.08rem;color:var(--ink);max-width:32rem}
+.hero .from{margin:0 0 8px;font-size:clamp(1.5rem, 3vw, 1.9rem);font-weight:800;color:var(--ink)}
+.trust{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.group-line{margin:0 0 18px;font-size:15px;font-weight:650;color:var(--deep)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.chip{display:inline-flex;align-items:center;background:var(--white);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:8px 13px;font-weight:750;font-size:14px;box-shadow:var(--shadow)}
+.chip .stars{color:var(--deep);margin-right:6px}
+.chip-group{background:var(--aqua);border-color:#9FD6DC;color:var(--deep)}
 
-.wrap { width: min(1240px, calc(100% - 56px)); margin: 0 auto; }
+.includes{padding:48px 0 16px}
+.includes h2{font-size:clamp(2rem, 6vw, 3.4rem);margin-bottom:18px}
+.include-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px}
+.include-grid li{background:var(--aqua);border-radius:20px;padding:16px 16px 16px 18px;border-left:4px solid var(--lagoon)}
+.include-grid strong{display:block;color:var(--deep);font-size:15px}
+.include-grid span{display:block;margin-top:3px;font-size:13.5px;color:var(--muted)}
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 36px 10px;
-  background: #fff;
-}
-.logo img { height: 86px; width: auto; }
-nav { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size: 16px; }
-.btn-yellow {
-  background: var(--yellow);
-  color: var(--plum);
-  font-weight: 700;
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
+.featured{padding:36px 0 28px}
+.featured h2{font-size:clamp(2rem, 6vw, 3.4rem);margin-bottom:8px;text-align:center}
+.featured .intro{text-align:center;margin:0 auto 28px;max-width:38rem;color:var(--muted)}
+.feature-block{display:grid;gap:18px;width:min(1100px,100%);margin-inline:auto;align-items:stretch}
+.card{background:var(--aqua);border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;text-align:left}
+.card-photo{margin:0;aspect-ratio:16/10;overflow:hidden;background:var(--deep);position:relative}
+.card-photo img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:1.55rem}
+.card p{margin:0;color:var(--ink)}
+.badge{position:absolute;left:12px;bottom:12px;margin:0;background:var(--deep);color:#fff;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.rates{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.rate{background:#fff;border-radius:14px;padding:8px 10px;min-width:5.4rem}
+.rate strong{display:block;font-family:Nunito,Outfit,sans-serif;font-size:1.4rem;color:var(--ink);letter-spacing:-0.03em;font-weight:800}
+.rate span{display:block;font-size:12px;font-weight:650;color:var(--muted)}
+.rate.main{background:var(--gold)}
+.card .btn{margin-top:auto;width:100%}
+.feature-quote{background:var(--white);border-radius:28px;padding:24px 22px;border-left:4px solid var(--lagoon);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;align-self:stretch}
+.feature-quote p{margin:0;font-style:italic;font-size:1.15rem}
+.feature-quote footer{margin-top:12px;font-size:13px;font-weight:700;color:var(--muted);font-style:normal}
 
-.hero { padding: 18px 0 8px; }
-.hero-row {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  max-width: 920px;
-}
-.avatar {
-  width: 112px;
-  height: 112px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  border: 5px solid var(--yellow);
-  flex-shrink: 0;
-  background: #eee;
-}
-.hero h1 {
-  margin: 0 0 6px;
-  font-size: 44px;
-  font-weight: 750;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-}
-.hero .sub {
-  margin: 0 0 16px;
-  font-size: 20px;
-  font-weight: 450;
-}
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 999px;
-  padding: 7px 12px;
-  font-size: 13px;
-  font-weight: 650;
-  line-height: 1.2;
-}
-.chip.y { background: var(--yellow); color: var(--plum); }
-.chip.b { background: var(--blue); color: var(--plum); }
-.chip.o { background: var(--orange); color: var(--plum); }
-.chip.g { background: var(--green); color: var(--plum); }
-.chip.p { background: var(--plum); color: #fff; }
-.pickup-line {
-  margin: 14px 0 0;
-  font-size: 15px;
-  font-weight: 450;
-  max-width: 46rem;
-}
+.groups-band{background:var(--aqua);padding:40px 0}
+.groups-band h2{font-size:clamp(2rem, 6vw, 3.2rem);margin-bottom:10px}
+.groups-split{display:grid;gap:22px;align-items:center}
+.groups-band ul{margin:0 0 16px;padding:0;list-style:none}
+.groups-band li{padding:8px 0 8px 18px;position:relative}
+.groups-band li::before{content:"";position:absolute;left:0;top:16px;width:8px;height:8px;border-radius:50%;background:var(--lagoon)}
+.example{display:inline-block;background:#fff;border-radius:16px;padding:12px 16px;margin:4px 0 18px;font-weight:750;box-shadow:var(--shadow)}
+.example strong{color:var(--deep);font-size:1.2rem}
 
-.step-head { display: flex; align-items: center; gap: 12px; margin: 28px 0 8px; }
-.badge {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  display: inline-flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 18px;
-  flex-shrink: 0;
-}
-.badge.y { background: var(--yellow); color: var(--plum); }
-.badge.o { background: var(--orange); color: var(--plum); }
-.badge.p { background: var(--plum); color: #fff; }
-.step-kicker { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin: 0; opacity: .9; }
-.step-title { margin: 0; font-size: 32px; font-weight: 750; letter-spacing: -0.03em; line-height: 1.1; }
-.step-lede {
-  margin: -2px 0 18px 48px;
-  font-size: 17px;
-  font-weight: 450;
-  line-height: 1.35;
-  max-width: 40rem;
-}
-.included { margin: 0 0 18px; font-size: 16px; font-weight: 450; max-width: 52rem; }
+.groups-photo{margin:0;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:var(--deep)}
+.groups-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;object-position:50% 28%}
 
-/* Every tour includes strip (above tour cards) */
-.inc-strip {
-  display: flex; align-items: center; gap: 14px 16px;
-  background: var(--yellow); color: var(--plum);
-  border-radius: 16px; padding: 12px 18px;
-  box-shadow: 0 0 0 3px var(--orange) inset;
-  margin: 0 0 18px;
-}
-.inc-strip-title {
-  margin: 0; flex-shrink: 0;
-  font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--plum);
-}
-.inc-strip ul {
-  list-style: none; margin: 0; padding: 0;
-  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; flex: 1;
-  justify-content: space-between;
-}
-.inc-strip li { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 650; line-height: 1.2; white-space: nowrap; }
-@media (min-width: 901px) { .inc-strip ul { flex-wrap: nowrap; gap: 12px; } }
-.inc-strip .ico { width: 26px; height: 26px; border-radius: 7px; }
-.inc-strip .ico.blue, .inc-strip .ico.orange { color: #fff; }
-.inc-strip .ico svg { width: 15px; height: 15px; }
-@media (max-width: 900px) {
-  .inc-strip { flex-direction: column; align-items: flex-start; padding: 12px 14px; gap: 10px; }
-  .inc-strip ul { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; width: 100%; }
-  .inc-strip li { font-size: 13.5px; white-space: normal; }
-  .inc-strip li.wide { grid-column: 1 / -1; }
-}
+.gallery{padding:48px 0 8px}
+.gallery h2{font-size:clamp(2rem, 6vw, 3.4rem);margin-bottom:8px}
+.gallery .intro{margin:0 0 18px;color:var(--muted)}
+.gallery-band{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.gallery-band::-webkit-scrollbar{display:none}
+.gallery-band figure{margin:0;flex:0 0 min(78vw, 320px);scroll-snap-align:start;border-radius:20px;overflow:hidden;background:var(--deep);box-shadow:var(--shadow)}
+.gallery-band img{width:100%;height:240px;object-fit:cover}
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-.card {
-  border: 0;
-  border-radius: 18px;
-  padding: 10px 10px 0;
-  text-align: left;
-  cursor: pointer;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--plum);
-  appearance: none;
-  -webkit-appearance: none;
-  box-shadow: none;
-  position: relative;
-}
-.card:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; }
-.card.blue { background: var(--blue); }
-.card.yellow { background: var(--yellow); }
-.card.orange { background: var(--orange); }
-.card.green { background: var(--jungle); color: #fff; }
-.card.teal { background: var(--teal); color: #fff; }
-.card .photo-wrap { position: relative; margin: 0 0 14px; }
-.card img {
-  width: 100%;
-  height: 168px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-.card.blue img { object-position: 50% 42%; }
-.card.yellow img { object-position: 55% 12%; }
-.card.orange img { object-position: 50% 46%; }
-.card.green img { object-position: 50% 38%; }
-.card.teal img { object-position: 50% 42%; }
-.card.featured {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  align-items: stretch;
-  padding: 10px;
-  gap: 18px;
-  min-height: 280px;
-}
-.card.featured .photo-wrap {
-  flex: 0 0 47%;
-  width: 47%;
-  margin: 0;
-  min-height: 0;
-  align-self: stretch;
-  position: relative;
-}
-.card.featured img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  object-fit: cover;
-  object-position: 50% 36%;
-}
-.card.featured .card-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 4px 4px 0 0;
-}
-.card.featured h3 {
-  font-size: 24px;
-  letter-spacing: -0.035em;
-  line-height: 1.15;
-}
-.card.featured .card-title-text {
-  min-width: 0;
-}
-.card.featured .card-subtitle {
-  margin: 2px 0 0;
-  font-size: 19px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  color: var(--plum);
-}
-.card.featured .card-title .radio {
-  width: 20px;
-  height: 20px;
-  margin-top: 5px;
-}
-.card.featured .tagline {
-  font-size: 17px;
-  min-height: 0;
-  max-width: 34em;
-}
-.card.featured .highlights {
-  margin-top: 16px;
-  padding-top: 16px;
-  gap: 10px;
-  flex: 0 0 auto;
-}
-.card.featured .highlights li {
-  font-size: 12.5px;
-}
-.card.featured .check,
-.card.featured .check svg {
-  width: 15px;
-  height: 15px;
-}
-.card.featured .price-bar {
-  margin: 8px -14px -10px 0;
-  border-radius: 0 0 18px 0;
-}
-.popular {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: var(--yellow);
-  color: var(--plum);
-  font-size: 11px;
-  font-weight: 750;
-  letter-spacing: .04em;
-  padding: 5px 9px;
-  border-radius: 999px;
-}
-.radio {
-  width: 18px; height: 18px; border-radius: 50%;
-  border: 2px solid currentColor;
-  flex-shrink: 0;
-  background: #fff;
-  position: relative;
-}
-.card.selected .radio::after {
-  content: "";
-  position: absolute;
-  inset: 3px;
-  border-radius: 50%;
-  background: currentColor;
-}
-.card.green.selected .radio::after,
-.card.teal.selected .radio::after { background: var(--plum); }
-.card.green:focus-visible,
-.card.teal:focus-visible { outline-color: #fff; }
-.card-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 0 2px;
-}
-.card-intro { flex: 0 0 auto; }
-.card-title {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-.card-title .radio { margin-top: 2px; }
-.card h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 750;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-}
-.tagline {
-  margin: 8px 0 0;
-  font-family: Fraunces, Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-weight: 550;
-  font-size: 15px;
-  line-height: 1.3;
-  letter-spacing: -0.015em;
-  min-height: calc(1.3em * 2);
-}
-.highlights {
-  list-style: none;
-  margin: 12px 0 0;
-  padding: 14px 0 0;
-  border-top: 1px solid rgba(44, 18, 41, 0.16);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 0 0 auto;
-}
-.highlights li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 12.5px;
-  font-weight: 650;
-  line-height: 1.25;
-}
-.check {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
-  margin-top: 1px;
-  background: none;
-  border: 0;
-  border-radius: 0;
-  color: var(--plum);
-}
-.check svg {
-  width: 15px;
-  height: 15px;
-  display: block;
-}
-.hl-text {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  gap: 2px;
-}
-.hl-main {
-  white-space: nowrap;
-}
-.hl-sub {
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 1.25;
-  color: #4a243f;
-}
-.card-note {
-  margin: 7px 0 0;
-  padding: 0 0 0 23px;
-  font-family: Fraunces, Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-weight: 550;
-  font-size: 11px;
-  line-height: 1.3;
-  letter-spacing: -0.015em;
-  color: #4a243f;
-  flex: 0 0 auto;
-}
-.card-bonus {
-  display: flex; align-items: flex-start; gap: 8px;
-  margin: 9px 0 0; padding: 7px 0 0;
-  border-top: 1px dashed rgba(44, 18, 41, 0.28);
-  font-size: 12.5px; font-weight: 800; line-height: 1.25;
-}
-.bonus-ico { width: 15px; height: 15px; flex-shrink: 0; margin-top: 0; }
-.bonus-ico svg { width: 15px; height: 15px; display: block; }
-.card.green .card-bonus,
-.card.teal .card-bonus { border-top-color: rgba(255, 255, 255, 0.4); }
-.card.green .check,
-.card.teal .check { color: #fff; }
-.card.green .hl-sub,
-.card.teal .hl-sub { color: rgba(255, 255, 255, 0.85); }
-.card.green .highlights,
-.card.teal .highlights { border-top-color: rgba(255, 255, 255, 0.28); }
-.price-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin: 16px -10px 0;
-  padding: 10px 14px 12px;
-  border-radius: 0 0 18px 18px;
-  background: rgba(44, 18, 41, 0.10);
-  flex: 0 0 auto;
-}
-.card.green .price-bar,
-.card.teal .price-bar { background: rgba(255, 255, 255, 0.16); }
-.price-stack { min-width: 0; }
-.price-amt {
-  display: block;
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
-}
-.price-each {
-  display: block;
-  margin-top: 2px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.25;
-  opacity: 0.88;
-  font-synthesis: none;
-}
-.card.green .price-each,
-.card.teal .price-each { opacity: 1; }
-.choose-tour {
-  flex-shrink: 0;
-  border: 0;
-  border-radius: 999px;
-  padding: 9px 12px;
-  font-size: 12px;
-  font-weight: 750;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  cursor: pointer;
-  white-space: nowrap;
-  font-family: inherit;
-  background: var(--plum);
-  color: #fff;
-}
-.choose-tour:focus-visible { outline: 3px solid var(--plum); outline-offset: 2px; }
-.card.green .choose-tour:focus-visible,
-.card.teal .choose-tour:focus-visible { outline-color: #fff; }
-.card.teal .card-note { color: rgba(255, 255, 255, 0.92); }
+.menu{padding:24px 0 56px}
+.menu h2{font-size:clamp(2rem, 6vw, 3.4rem);margin-bottom:8px}
+.menu .intro{margin:0 0 22px;color:var(--muted)}
+.tour-list{display:grid;gap:12px}
+.tour-row{display:grid;grid-template-columns:96px 1fr;gap:10px 12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:20px;background:var(--white);color:inherit}
+.tour-row:hover,.tour-row:focus-visible{border-color:var(--deep);box-shadow:var(--shadow)}
+.tour-row .thumb{margin:0;width:96px;height:96px;border-radius:14px;overflow:hidden;background:var(--aqua)}
+.tour-row .thumb img{width:100%;height:100%;object-fit:cover}
+.tour-row h3{font-size:1.12rem}
+.tour-row .blurb{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.tour-row .rates{margin:0;grid-column:1 / -1}
+.tour-row .rate{flex:1;min-width:4.8rem}
+.ask{margin:18px 0 0;font-weight:650;color:var(--deep)}
 
-.featured-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 24px;
-}
+.beach{padding:0 0 56px}
+.beach-photo{margin:0 0 28px;background:var(--deep)}
+.beach-photo img{width:100%;height:min(48vh,420px);max-width:none;object-fit:cover;object-position:50% 58%}
+.beach h2{font-size:clamp(2rem, 6vw, 3.4rem);margin-bottom:8px}
+.beach .intro{margin:0 0 18px;color:var(--muted);max-width:40rem}
+.beach-list{list-style:none;margin:0;padding:0}
+.beach-list li{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.beach-list li:first-child{border-top:1px solid var(--line)}
+.beach-list strong{display:block;color:var(--deep)}
+.beach-list .desc{display:block;font-size:14px;color:var(--muted);font-weight:400;margin-top:2px}
+.tag{flex:0 0 auto;font-weight:800;font-size:14px;background:var(--aqua);color:var(--deep);border-radius:999px;padding:6px 12px;white-space:nowrap;margin-top:4px}
+.tag.paid{background:var(--gold);color:var(--ink)}
+.venue-note{margin:14px 0 0;font-size:14.5px;color:var(--muted)}
 
-.card.featured .card-addon {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 10px 0 0;
-  padding: 8px 2px 2px;
-  width: 100%;
-  border: 0;
-  border-top: 1px solid rgba(44, 18, 41, 0.16);
-  background: transparent;
-  color: var(--plum);
-  font-family: inherit;
-  font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.3;
-  text-align: left;
-  cursor: pointer;
-  border-radius: 0;
-}
-.card.featured .card-addon:focus-visible {
-  outline: 3px solid var(--plum);
-  outline-offset: 2px;
-}
-.addon-check {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  border: 2px solid var(--plum);
-  border-radius: 4px;
-  background: #fff;
-  position: relative;
-}
-.card-addon[aria-pressed="true"] .addon-check {
-  background: var(--plum);
-  border-color: var(--plum);
-}
-.card-addon[aria-pressed="true"] .addon-check::after {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 1px;
-  width: 5px;
-  height: 8px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-.custom-line {
-  margin: 14px 0 0;
-  font-size: 16px;
-  font-weight: 500;
-}
+.meet{padding:56px 0;background:var(--aqua)}
+.meet-grid{display:grid;gap:24px;align-items:center}
+.meet-photo{margin:0;width:min(280px,70%);border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow);justify-self:center}
+.meet-photo img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:50% 20%}
+.meet h2{font-size:clamp(2rem, 6vw, 3.4rem);margin-bottom:12px}
+.meet .bio{margin:0;font-size:1.12rem;max-width:36rem}
 
-.band { background: var(--blue); margin-top: 36px; padding: 28px 0 36px; }
-.band-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.panel {
-  background: #fff;
-  border-radius: 22px;
-  padding: 22px 24px 24px;
-}
-.panel .step-head { margin-top: 0; }
-.field { margin: 0 0 12px; }
-.field label {
-  display: block;
-  font-size: 13px;
-  font-weight: 650;
-  margin: 0 0 5px;
-}
-.field input, .field select {
-  width: 100%;
-  height: 46px;
-  border: 1.5px solid #e4d9de;
-  border-radius: 10px;
-  padding: 0 12px;
-  background: #fff;
-  color: var(--plum);
-}
-.field input::placeholder { color: #7a5d72; opacity: .7; }
-.hint { margin: 8px 0 0; font-size: 13px; font-weight: 450; }
-.pay-note { margin: 4px 0 12px; font-size: 15px; font-weight: 450; }
-.pay-logos {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-  margin: 0 0 14px;
-}
-.pay-logo {
-  display: block;
-  width: auto;
-}
-.pay-logo.paypal { height: 24px; }
-.pay-logo.zelle { height: 26px; border-radius: 4px; }
-.pay-logo.venmo { height: 18px; }
-.field-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-@media (max-width: 900px) {
-  .field-row { grid-template-columns: 1fr; }
-}
-.total-box {
-  background: var(--yellow);
-  border-radius: 12px;
-  padding: 12px 14px;
-  margin: 0 0 12px;
-}
-.total-box .who { margin: 0; font-size: 13px; font-weight: 600; }
-.total-box .sum { margin: 2px 0 0; font-size: 28px; font-weight: 750; letter-spacing: -0.03em; }
-.total-box .dep { margin: 2px 0 0; font-size: 14px; font-weight: 600; }
-.book-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.btn-book, .btn-messenger {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 52px;
-  padding: 10px 14px;
-  border: 0;
-  border-radius: 999px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  text-align: center;
-  line-height: 1.2;
-  box-sizing: border-box;
-}
-.btn-book {
-  background: var(--wa);
-  color: #fff;
-}
-.btn-messenger {
-  background: var(--ms);
-  color: #fff;
-}
-.btn-book:focus-visible,
-.btn-messenger:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; }
-footer .btn-book:focus-visible,
-footer .btn-messenger:focus-visible { outline-color: #fff; }
-.btn-book svg, .btn-messenger svg {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-.wa-note { margin: 10px 0 0; font-size: 13px; font-weight: 450; }
+.reviews{padding:56px 0;background:var(--white)}
+.reviews h2{font-size:clamp(2rem, 6vw, 3.4rem);margin-bottom:8px}
+.stars-line{margin:0 0 22px;font-weight:800;color:var(--deep)}
+.quotes{display:grid;gap:14px}
+.quote{background:var(--aqua);border-radius:var(--radius);padding:22px 20px}
+.quote p{margin:0;font-style:italic;font-size:1.05rem}
+.quote footer{margin-top:12px;font-size:13px;font-weight:700;font-style:normal;color:var(--muted)}
 
-.faq { padding: 36px 0 36px; }
-.faq h2 {
-  margin: 0 0 16px;
-  font-size: 32px;
-  font-weight: 750;
-  letter-spacing: -0.03em;
-}
-.faq-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
-.faq-item {
-  background: #fff;
-  border: 1.5px solid #f0e6eb;
-  border-radius: 14px;
-  padding: 16px 16px 14px;
-}
-.faq-item h3 { margin: 0 0 6px; font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
-.faq-item p { margin: 0; font-size: 14.5px; font-weight: 450; line-height: 1.45; }
+.faq{padding:56px 0;background:var(--aqua)}
+.faq h2{font-size:clamp(2rem, 6vw, 3.4rem);margin-bottom:18px}
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:2px 18px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:750;padding:14px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--deep);flex:0 0 auto}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:0 0 14px;color:var(--muted);max-width:40rem}
+.faq summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
-.faq-card {
-  display: flex;
-  flex-direction: column;
-  padding: 22px 20px 20px;
-  border: 0;
-  min-height: 100%;
-}
-.faq-card.included { background: #e6f6fc; }
-.faq-card.private { background: #fff4cc; }
-.faq-card h3 {
-  margin: 0 0 8px;
-  font-size: 22px;
-  font-weight: 750;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-}
-.faq-card .lead {
-  margin: 0 0 16px;
-  font-size: 15px;
-  font-weight: 450;
-  line-height: 1.35;
-}
-.icon-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-.icon-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14.5px;
-  font-weight: 650;
-  line-height: 1.25;
-  color: var(--plum);
-}
-.ico {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--plum);
-}
-.ico.blue { background: var(--blue); }
-.ico.yellow { background: var(--yellow); }
-.ico.orange { background: var(--orange); }
-.ico.green { background: var(--green); }
-.ico.plum { background: var(--plum); color: #fff; }
-.ico svg { width: 16px; height: 16px; display: block; }
-.faq-card.private .icon-list { margin-bottom: 18px; }
-.faq-card .book-row { margin-top: auto; }
-.foot-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: min(420px, 100%);
-}
-.foot-actions .book-row { min-width: 0; }
-.placeholder { font-style: italic; font-weight: 600; padding-right: 0.4em; }
+.cta{background:var(--white);padding:56px 0;text-align:center}
+.cta h2{font-size:clamp(2rem, 6vw, 3.2rem);margin-bottom:10px}
+.cta p{margin:0 auto 20px;max-width:32rem}
+.cta-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+body>footer{background:var(--white);color:var(--ink);padding:40px 0 24px;border-top:1px solid var(--line)}
+body>footer a{text-decoration:underline;text-underline-offset:3px;color:var(--deep)}
+body>footer ul{list-style:none;margin:0;padding:0}
+body>footer li{margin:6px 0}
+.foot-grid{display:grid;gap:22px}
+.foot-brand{font-size:1.15rem;color:var(--deep);margin:0 0 8px}
+.copyright{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.wa-float{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(11,95,74,.35);z-index:70}
+.wa-float svg{width:28px;height:28px}
+.wa-float:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
-.quotes-sec { padding: 4px 0 18px; }
-.quotes-sec h2 {
-  margin: 0 0 6px;
-  font-size: 32px;
-  font-weight: 750;
-  letter-spacing: -0.03em;
+@media (min-width:600px){
+  .include-grid{grid-template-columns:1fr 1fr}
+  .tour-row{grid-template-columns:120px 1fr auto;align-items:center}
+  .tour-row .thumb{width:120px;height:100px}
+  .tour-row .rates{grid-column:auto;justify-content:flex-end;flex:0 0 auto}
+  .tour-row .rate{flex:0 0 auto;min-width:5.2rem}
 }
-.ta-line { margin: 0 0 16px; font-size: 15px; font-weight: 600; }
-.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-blockquote {
-  margin: 0;
-  background: #fff;
-  border-radius: 16px;
-  padding: 18px 16px 16px;
-  box-shadow: 0 0 0 1px #f0e6eb;
-  border-left: 4px solid var(--blue);
+@media (min-width:768px){
+  :root{--header-h:72px}
+  .logo-mark{width:56px;height:56px}
+  .logo-name{font-size:17px}
+  .menu-btn{display:none}
+  nav.desktop{display:flex}
+  .header-wa{display:inline-flex}
+  .hero{min-height:86vh}
+  .hero-copy{padding:80px 0 64px}
+  .hero-photo img{object-position:58% 42%}
+  .include-grid{grid-template-columns:1fr 1fr 1fr}
+  .feature-block{grid-template-columns:1fr 1fr;max-width:920px}
+  .feature-quote{grid-column:1 / -1}
+  .groups-split{grid-template-columns:1.3fr .8fr;gap:36px}
+  .groups-photo img{aspect-ratio:4/5;min-height:360px}
+  .gallery-band{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;gap:14px}
+  .gallery-band figure{flex:none}
+  .gallery-band img{height:260px}
+  .quotes{grid-template-columns:1fr 1fr 1fr}
+  .meet-grid{grid-template-columns:auto 1fr;gap:40px}
+  .meet-photo{width:220px;justify-self:start}
+  .foot-grid{grid-template-columns:1.3fr 1fr 1fr}
 }
-blockquote:nth-child(2) { border-left-color: var(--yellow); }
-blockquote:nth-child(3) { border-left-color: var(--orange); }
-blockquote p { margin: 0 0 12px; font-size: 15px; font-weight: 450; line-height: 1.4; }
-blockquote .attr { margin: 0; font-size: 13px; font-weight: 700; color: var(--plum); }
-
-body > footer {
-  background: var(--plum);
-  color: #fff;
-  padding: 28px 36px;
-}
-.foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  width: min(1240px, calc(100% - 0px));
-  margin: 0 auto;
-}
-.foot-brand { display: flex; align-items: center; gap: 20px; }
-.foot-logo {
-  background: #fff;
-  border-radius: 12px;
-  padding: 6px;
-}
-.foot-logo img { height: 72px; width: auto; }
-.foot p { margin: 0 0 4px; font-size: 15px; font-weight: 500; }
-.foot a { color: #fff; }
-.foot-brand a { text-decoration: underline; text-underline-offset: 2px; }
-.foot a.btn-book { color: #fff; background: var(--wa); }
-.foot a.btn-messenger { color: #fff; background: var(--ms); }
-.foot a.btn-yellow { color: var(--plum); }
-
-@media (max-width: 900px) {
-  .stripe { height: 8px; }
-  .wrap { width: min(1240px, calc(100% - 32px)); }
-  header { padding: 10px 16px; }
-  .logo img { height: 64px; }
-  nav a:not(.btn-yellow) { display: none; }
-  .hero { padding: 8px 0 4px; }
-  .hero-row { gap: 14px; }
-  .avatar { width: 84px; height: 84px; border-width: 4px; }
-  .hero h1 { font-size: 30px; }
-  .hero .sub { font-size: 16px; margin-bottom: 12px; }
-  .chip { font-size: 12.5px; padding: 6px 10px; }
-  .pickup-line { font-size: 14px; }
-  .step-title { font-size: 26px; }
-  .step-lede { font-size: 16px; margin-left: 48px; }
-  .cards, .band-grid, .faq-list, .quotes, .featured-pair { grid-template-columns: 1fr; }
-  .book-row { grid-template-columns: 1fr; }
-  .card img { height: 190px; }
-  .card.featured {
-    flex-direction: column;
-    padding: 10px 10px 0;
-    gap: 0;
-    min-height: 0;
-  }
-  .card.featured .photo-wrap {
-    flex: none;
-    width: auto;
-    min-height: 0;
-    margin: 0 0 14px;
-  }
-  .card.featured img {
-    position: static;
-    height: 190px;
-    min-height: 0;
-    width: 100%;
-  }
-  .card.featured .card-main { padding: 0; }
-  .card.featured h3 { font-size: 20px; }
-  .card.featured .card-subtitle { font-size: 16px; }
-  .card.featured .card-title .radio {
-    width: 18px;
-    height: 18px;
-    margin-top: 3px;
-  }
-  .card.featured .tagline {
-    font-size: 15px;
-    min-height: calc(1.3em * 2);
-  }
-  .card.featured .highlights {
-    margin-top: 12px;
-    padding-top: 14px;
-    gap: 8px;
-  }
-  .card.featured .highlights li { font-size: 12.5px; }
-  .card.featured .check,
-  .card.featured .check svg {
-    width: 15px;
-    height: 15px;
-  }
-  .card.featured .price-bar {
-    margin: 8px -10px 0;
-    border-radius: 0 0 18px 18px;
-  }
-  .card.featured .card-addon {
-    font-size: 13px;
-    margin-top: 10px;
-    padding: 8px 2px 0;
-  }
-  .band { margin-top: 28px; padding: 22px 0 26px; }
-  .panel { padding: 18px 16px 20px; }
-  footer { padding: 22px 16px; }
-  .foot, .foot-brand { flex-direction: column; align-items: flex-start; }
-  .btn-yellow.foot-cta { align-self: stretch; }
+@media (min-width:1100px){
+  .logo-mark{width:60px;height:60px}
+  .include-grid{grid-template-columns:repeat(5,1fr)}
+  .feature-block{grid-template-columns:1fr 1fr .9fr;max-width:1100px}
+  .feature-quote{grid-column:auto}
+  .gallery-band{grid-template-columns:repeat(6,1fr)}
+  .gallery-band img{height:220px}
 }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Roatan Dunis Tours","description":"Private Roatan shore excursions in the Caribbean with Dunis, a local driver and guide.","url":"https://roatandunistours.com","telephone":"+50497754724","email":"roatandunistours@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Roatán","addressRegion":"Bay Islands","addressCountry":"HN"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"7","bestRating":"5"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Can you take a family or a group of six or more?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your group rides together privately. Dunis arranges the right van for your headcount. Groups of 8 or more save $5 each. Kids 0–5 ride free and do not count toward the group size."}},
+{"@type":"Question","name":"What to bring","acceptedAnswer":{"@type":"Answer","text":"A swimsuit, a towel, sunscreen, and cash for food and drinks at the beach. Water shoes help if you snorkel."}},
+{"@type":"Question","name":"How do I hold the tour?","acceptedAnswer":{"@type":"Answer","text":"A $25 deposit per paying guest holds the tour. The deposit is refunded in full if the ship does not dock. Resort guests get a full refund if they cancel 48 hours ahead."}},
+{"@type":"Question","name":"Where do you pick us up?","acceptedAnswer":{"@type":"Answer","text":"Pickup is at Isla Tropicale (formerly Mahogany Bay), the Port of Roatán in Coxen Hole, the airport, or your hotel."}},
+{"@type":"Question","name":"How does pricing work?","acceptedAnswer":{"@type":"Answer","text":"Kids 0–5 are free and do not count toward group size. One paying guest pays the 2-guest total. Two or three paying guests pay $20 more each. Four to seven guests pay the menu price. Groups of 8 or more save $5 each."}}
+]}
+</script>
 </head>
 <body>
-  <div class="stripe" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-
-  <header>
-    <a class="logo" href="#tours"><img src="/assets/logo.png" alt="Roatan Dunis Tours"></a>
-    <nav>
+<a class="skip" href="#tours">Skip to tours</a>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#top" aria-label="Roatan Dunis Tours home">
+      <span class="logo-mark"><img src="img/cw/logo-160.webp" width="160" height="160" alt=""></span>
+      <span class="logo-name">Roatan Dunis Tours</span>
+    </a>
+    <nav class="desktop" aria-label="Primary">
       <a href="#tours">Tours</a>
+      <a href="#beaches">Beaches</a>
+      <a href="#dunis">Meet Dunis</a>
       <a href="#reviews">Reviews</a>
-      <a class="btn-yellow" href="#book">Book a Tour</a>
+      <a href="#faq">FAQ</a>
     </nav>
-  </header>
+    <a class="btn btn-gold header-wa" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20a%20private%20tour%20for%20my%20group.">WhatsApp Dunis</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span></button>
+  </div>
+  <div class="wrap">
+    <nav id="mobile-nav" class="mobile-nav" hidden>
+      <a href="#tours">Tours</a>
+      <a href="#beaches">Beaches</a>
+      <a href="#dunis">Meet Dunis</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20a%20private%20tour%20for%20my%20group.">WhatsApp Dunis</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-row">
-        <img class="avatar" src="/assets/img/dunis-portrait.jpg" alt="Dunis, your private driver and guide on Roatan">
+<section class="hero" id="top">
+  <div class="hero-photo">
+    <img
+      src="img/groups/hero-1400.webp"
+      srcset="img/groups/hero-800.webp 800w, img/groups/hero-1400.webp 1400w"
+      sizes="100vw"
+      width="1400" height="1050"
+      alt="Dunis and a group of guests at a lunch deck overlooking the trees and sea on Roatán">
+  </div>
+  <div class="hero-wash" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <p class="kicker">Private tours on Roatán</p>
+    <h1>Private tours for families and groups, timed to your ship.</h1>
+    <p class="lead">Ride together with Dunis, a local driver and guide for 21 years. Your group only. Pickup at the cruise port, the airport, or your hotel.</p>
+    <p class="from">From $40</p>
+    <div class="trust">
+      <a class="chip" href="https://www.tripadvisor.com/Attraction_Review-g292019-d34741853-Reviews-Roatan_Dunis_Tours-Roatan_Bay_Islands.html" target="_blank" rel="noopener">
+        <span class="stars" aria-hidden="true">★★★★★</span> 5.0 on TripAdvisor
+      </a>
+      <span class="chip chip-group">Great for groups of 6+</span>
+    </div>
+    <p class="group-line">Your group only. Car for 1–2 people, van for families and groups.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#tours">See the tours</a>
+      <a class="btn btn-deep" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20a%20private%20tour%20for%20my%20group.">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.4 2.15 11.84c0 1.74.46 3.44 1.34 4.94L2 22l5.37-1.4a10 10 0 0 0 4.67 1.18h.01c5.46 0 9.89-4.4 9.89-9.84C21.94 6.4 17.5 2 12.04 2zm5.76 14.15c-.24.68-1.4 1.25-1.93 1.33-.49.07-1.11.1-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.7-4.1-4.84-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.35.26-.28.57-.35.76-.35h.54c.17 0 .41-.07.64.49.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.16-.3.37-.42.5-.14.14-.28.29-.12.56.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+        WhatsApp Dunis
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="includes" aria-labelledby="includes-title">
+  <div class="wrap">
+    <h2 id="includes-title">Every tour includes</h2>
+    <ul class="include-grid">
+      <li><strong>Pickup and drop-off</strong><span>Isla Tropicale (formerly Mahogany Bay), the Port of Roatán in Coxen Hole, the airport, or your hotel.</span></li>
+      <li><strong>Island sightseeing</strong><span>A private drive around the island with Dunis as your guide.</span></li>
+      <li><strong>Chocolate Factory</strong><span>A stop at the chocolate factory, included on every tour.</span></li>
+      <li><strong>Rum Company</strong><span>A stop at the rum company, included on every tour.</span></li>
+      <li><strong>A free beach</strong><span>You pick one included beach: West Bay Beach or Quiet Beach in West End.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="featured" aria-labelledby="featured-title">
+  <div class="wrap">
+    <h2 id="featured-title">Two tours guests book most</h2>
+    <p class="intro">Both are private, full-day tours with the same island stops. The price is per person.</p>
+    <div class="feature-block">
+      <article class="card">
+        <figure class="card-photo">
+          <img src="img/groups/tour-sloth.webp" width="700" height="933" alt="A sloth in the trees on a Roatán tour">
+          <p class="badge">Most popular</p>
+        </figure>
+        <div class="card-body">
+          <h3>Sloths &amp; Monkeys</h3>
+          <p>Meet sloths and monkeys, then island sightseeing, the Chocolate Factory, the Rum Company, and a free beach you pick.</p>
+          <div class="rates">
+            <div class="rate main"><strong>$50</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$45</strong><span>8 or more</span></div>
+            <div class="rate"><strong>$70</strong><span>2–3 people</span></div>
+          </div>
+          <a class="btn btn-gold" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20Monkeys%20Tour.">Hold with a $25 deposit</a>
+        </div>
+      </article>
+      <article class="card">
+        <figure class="card-photo">
+          <img src="img/groups/gallery-flags-boat.webp" width="900" height="1200" alt="Guests on a decorated tour boat in Roatán">
+        </figure>
+        <div class="card-body">
+          <h3>Snorkel &amp; Beach</h3>
+          <p>A boat snorkel on the Caribbean reef with gear included, plus island sightseeing, the Chocolate Factory, the Rum Company, and a free beach you pick.</p>
+          <div class="rates">
+            <div class="rate main"><strong>$65</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$60</strong><span>8 or more</span></div>
+            <div class="rate"><strong>$85</strong><span>2–3 people</span></div>
+          </div>
+          <a class="btn btn-gold" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Snorkel%20%26%20Beach%20Tour.">Hold with a $25 deposit</a>
+        </div>
+      </article>
+      <aside class="feature-quote">
+        <p>“Dunis is very knowledgeable about the island and gave a wonderful tour of the island! 10/10 would recommend him!”</p>
+        <footer>Tanya R, Miami</footer>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="groups-band" aria-labelledby="groups-title">
+  <div class="wrap groups-split">
+    <div>
+      <h2 id="groups-title">Coming with 6 or more?</h2>
+      <p>Your group rides together privately. Message Dunis with your headcount and he will arrange the right van.</p>
+      <ul>
+        <li>Groups of 8 or more save $5 each.</li>
+        <li>Kids 0–5 ride free and do not count toward the group size.</li>
+        <li>Dunis arranges the right van for your headcount.</li>
+      </ul>
+      <p class="example">8 people on Sloths &amp; Monkeys: <strong>$360</strong></p>
+      <a class="btn btn-gold" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20a%20tour%20for%20a%20group.%20Our%20headcount%20is%20">WhatsApp your headcount</a>
+    </div>
+    <figure class="groups-photo">
+      <img src="img/groups/band-van.webp" width="900" height="1049" loading="lazy" alt="Dunis and guests standing together in front of the tour van">
+    </figure>
+  </div>
+</section>
+
+<section class="gallery" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <h2 id="gallery-title">Groups on tour with Dunis</h2>
+    <p class="intro">Real guests, real tours on Roatán. Your group stays together.</p>
+  </div>
+  <div class="wrap">
+    <div class="gallery-band">
+      <figure><img src="img/groups/gallery-hilltop.webp" width="1000" height="1333" loading="lazy" alt="A group of six guests at a hilltop lookout on Roatán"></figure>
+      <figure><img src="img/groups/gallery-dolphin.webp" width="1000" height="750" loading="lazy" alt="Dunis and guests smiling together on a tour in Roatán"></figure>
+      <figure><img src="img/groups/gallery-boat.webp" width="1000" height="660" loading="lazy" alt="Dunis and six guests on a mangrove boat tour in Roatán"></figure>
+      <figure><img src="img/groups/gallery-lookout.webp" width="1000" height="675" loading="lazy" alt="Dunis and guests at a scenic lookout on Roatán"></figure>
+      <figure><img src="img/groups/gallery-flags-boat.webp" width="900" height="1200" loading="lazy" alt="Guests on a decorated tour boat in Roatán"></figure>
+      <figure><img src="img/groups/tour-horseback.webp" width="960" height="720" loading="lazy" alt="Five riders on horseback in the Caribbean shallows"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="tours" aria-labelledby="menu-title">
+  <div class="wrap">
+    <h2 id="menu-title">All nine tours</h2>
+    <p class="intro">Every tour is private. Prices are per person. 4–7 people pay the main price, 8 or more save $5 each, and 2–3 people pay $20 more each.</p>
+    <div class="tour-list">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20Zipline%20Tour.">
+        <figure class="thumb"><img src="img/groups/tour-bridge.webp" width="900" height="1200" loading="lazy" alt="A hanging bridge on the zipline course in Roatán"></figure>
         <div>
-          <h1>Hi, I’m Dunis.</h1>
-          <p class="sub">I’ve been showing guests the Caribbean island of Roatán for 21 years.</p>
+          <h3>Sloths &amp; Zipline</h3>
+          <p class="blurb">Meet sloths and monkeys, then zip through the jungle canopy.</p>
         </div>
-      </div>
-      <div class="chips" style="margin-top:16px">
-        <span class="chip y">Private, just your group</span>
-        <span class="chip b">Pickup at both ports, the airport, or your hotel</span>
-        <span class="chip o">Back with time to spare</span>
-        <span class="chip g">Deposit refundable if the ship doesn’t dock</span>
-        <a class="chip p" href="https://www.tripadvisor.com/Attraction_Review-g292019-d34741853-Reviews-Roatan_Dunis_Tours-Roatan_Bay_Islands.html" target="_blank" rel="noopener">5.0 on TripAdvisor (7 reviews)</a>
-      </div>
-      <p class="pickup-line">We pick you up at Isla Tropicale (formerly Mahogany Bay), the Port of Roatán in Coxen Hole, the airport, or your hotel.</p>
-    </div>
-  </section>
-
-  <section id="tours">
-    <div class="wrap">
-      <div class="step-head">
-        <span class="badge y">1</span>
+        <div class="rates">
+          <div class="rate main"><strong>$70</strong><span>4–7 people</span></div>
+          <div class="rate"><strong>$65</strong><span>8 or more</span></div>
+          <div class="rate"><strong>$90</strong><span>2–3 people</span></div>
+        </div>
+      </a>
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20Snorkel%20Tour.">
+        <figure class="thumb"><img src="img/groups/gallery-boat.webp" width="1000" height="660" loading="lazy" alt="A group on a mangrove boat, part of a snorkel tour in Roatán"></figure>
         <div>
-          <p class="step-kicker">Step 1</p>
-          <h2 class="step-title">Pick your tour</h2>
+          <h3>Sloths &amp; Snorkel</h3>
+          <p class="blurb">Sloths and monkeys in the morning, then a boat snorkel on the reef.</p>
         </div>
-      </div>
-      <p class="step-lede">Private tours on Roatán from $50. Every tour is private and timed to your ship’s schedule.</p>
-      <div class="inc-strip" aria-label="Every tour includes">
-        <p class="inc-strip-title">Every tour includes</p>
-        <ul>
-          <li><span class="ico blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 9.5h3.1l1.2-2.2h7.4l1.2 2.2H20A1.5 1.5 0 0 1 21.5 11v7.5A1.5 1.5 0 0 1 20 20H4A1.5 1.5 0 0 1 2.5 18.5V11A1.5 1.5 0 0 1 4 9.5Z"/><circle cx="12" cy="14" r="3.2"/></svg></span> Island Sightseeing &amp; Photo Stops</li>
-          <li><span class="ico plum" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 13a8 8 0 0 1 16 0H4Z"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M12 13v6"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M12 19c1.6 0 2.6-.8 2.6-2"/></svg></span> West Bay Beach</li>
-          <li><span class="ico orange" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="6" width="15" height="12" rx="1.6"/><path d="M12 6v12M4.5 12h15"/></svg></span> Chocolate Factory</li>
-          <li><span class="ico plum" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M10 2.8h4V6l1.2 2.2V19a2 2 0 0 1-2 2h-2.4a2 2 0 0 1-2-2V8.2L10 6V2.8Z"/><path d="M9.2 11h5.6"/></svg></span> Rum Company</li>
-          <li class="wide"><span class="ico blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3.5 15.5 5 19h14l1.5-3.5H3.5Z"/><path d="M5.5 15.5V11h13l-2 4.5"/><path d="M12 11V5l6.2 3"/></svg></span> Pickup at the Cruise Port or Airport</li>
-        </ul>
-      </div>
-      <section class="quotes-sec" id="reviews">
-        <h2>What guests say</h2>
-        <p class="ta-line"><a href="https://www.tripadvisor.com/Attraction_Review-g292019-d34741853-Reviews-Roatan_Dunis_Tours-Roatan_Bay_Islands.html" target="_blank" rel="noopener">5.0 on TripAdvisor · 7 reviews</a></p>
-        <div class="quotes">
-          <blockquote>
-            <p>“Dunis is very knowledgeable about the island and gave a wonderful tour of the island! 10/10 would recommend him!”</p>
-            <p class="attr">Tanya R, Miami</p>
-          </blockquote>
-          <blockquote>
-            <p>“Dunis is one-of-a-kind! Is an excellent driver. Is trustworthy, friendly, has a good sense of humour and more. Highly recommend!”</p>
-            <p class="attr">Beth C</p>
-          </blockquote>
-          <blockquote>
-            <p>“Dunis is the man! He knows all the best local spots and will take you to the best taco stand on the island!”</p>
-            <p class="attr">Randy, Minnesota</p>
-          </blockquote>
+        <div class="rates">
+          <div class="rate main"><strong>$75</strong><span>4–7 people</span></div>
+          <div class="rate"><strong>$70</strong><span>8 or more</span></div>
+          <div class="rate"><strong>$95</strong><span>2–3 people</span></div>
         </div>
-      </section>
-      <div class="cards" id="tour-cards">
-        <article class="card blue featured selected" data-id="sloths" data-tour="Sloths, Monkeys &amp; Zipline" data-price="70">
-          <div class="photo-wrap">
-            <img src="/assets/img/sanctuary.jpg" alt="A hanging bridge on the Sloths, Monkeys and Zipline tour in Roatan">
-            <span class="popular">Most Popular</span>
-          </div>
-          <div class="card-main">
-            <div class="card-body">
-              <div class="card-intro">
-                <div class="card-title">
-                  <span class="radio" aria-hidden="true"></span>
-                  <div class="card-title-text">
-                    <h3>Sloths, Monkeys &amp; Zipline</h3>
-                    <p class="card-subtitle">+ VIP Day at West Bay Beach</p>
-                  </div>
-                </div>
-                <p class="tagline">Wildlife, ziplines, then a VIP afternoon on the Caribbean sand.</p>
-              </div>
-              <ul class="highlights">
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Sloths &amp; Monkeys, Seen Up Close</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Zipline Canopy Course, Multiple Lines</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Reserved Beach Spot with Chair &amp; Umbrella</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Wi-Fi, Showers &amp; Food and Drink Service</li>
-              </ul>
-              <p class="card-note">Food, Drinks &amp; Tips Paid Directly to the Restaurant</p>
-              <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, the Chocolate Factory &amp; the Rum Company</p>
-            </div>
-            <button class="card-addon" type="button" id="combo" data-id="combo" data-tour="Sloths, Monkeys &amp; Zipline plus ATVs" data-price="120" aria-pressed="false">
-              <span class="addon-check" aria-hidden="true"></span>
-              <span>Add ATVs for $120 total (save $20)</span>
-            </button>
-            <div class="price-bar">
-              <div class="price-stack">
-                <span class="price-amt">$70</span>
-                <span class="price-each">per person</span>
-              </div>
-              <button class="choose-tour" type="button">Choose This Tour</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="card teal" data-id="sloths-monkeys" data-tour="Sloths &amp; Monkeys" data-price="50">
-          <div class="photo-wrap">
-            <img src="/assets/img/sanctuary.jpg" alt="Sloths and monkeys on a tour in Roatan">
-          </div>
-          <div class="card-body">
-            <div class="card-intro">
-              <div class="card-title">
-                <span class="radio" aria-hidden="true"></span>
-                <h3>Sloths &amp; Monkeys</h3>
-              </div>
-              <p class="tagline">See sloths and monkeys up close, with no zipline, then time at West Bay Beach.</p>
-            </div>
-            <ul class="highlights">
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Sloths &amp; Monkeys, Seen Up Close</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> No Zipline</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> A Relaxed Pace</li>
-            </ul>
-            <p class="card-note">Or $60 per person with a VIP Day at West Bay Beach (beach chair and umbrella, Wi-Fi, showers).</p>
-            <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, West Bay Beach, the Chocolate Factory &amp; the Rum Company</p>
-          </div>
-          <div class="price-bar">
-            <div class="price-stack">
-              <span class="price-amt">$50</span>
-              <span class="price-each">per person</span>
-            </div>
-            <button class="choose-tour" type="button">Choose This Tour</button>
-          </div>
-        </article>
-
-        <article class="card yellow" data-id="beach" data-tour="Beach &amp; Snorkel" data-price="70">
-          <div class="photo-wrap">
-            <img src="/assets/img/westbay.jpg" alt="West Bay Beach">
-          </div>
-          <div class="card-body">
-            <div class="card-intro">
-              <div class="card-title">
-                <span class="radio" aria-hidden="true"></span>
-                <h3>Beach &amp; Snorkel</h3>
-              </div>
-              <p class="tagline">Settle in at West Bay Beach, then snorkel the Caribbean reef.</p>
-            </div>
-            <ul class="highlights">
-                <li class="hl-vip"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> VIP Day at West Bay Beach</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Reserved Beach Spot with Chair &amp; Umbrella</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Wi-Fi, Showers &amp; Food and Drink Service</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> 1.5-Hour Guided Reef Snorkel</li>
-            </ul>
-            <p class="card-note">Food, Drinks &amp; Tips Paid Directly to the Restaurant</p>
-            <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, the Chocolate Factory &amp; the Rum Company</p>
-          </div>
-          <div class="price-bar">
-            <div class="price-stack">
-              <span class="price-amt">$70</span>
-              <span class="price-each">per person</span>
-            </div>
-            <button class="choose-tour" type="button">Choose This Tour</button>
-          </div>
-        </article>
-
-        <article class="card orange" data-id="horseback" data-tour="Horseback Riding" data-price="70">
-          <div class="photo-wrap">
-            <img src="/assets/img/horseback.jpg" alt="Guests on a guided horseback ride">
-          </div>
-          <div class="card-body">
-            <div class="card-intro">
-              <div class="card-title">
-                <span class="radio" aria-hidden="true"></span>
-                <h3>Horseback Riding</h3>
-              </div>
-              <p class="tagline">Saddle up for a guided ride through the jungle.</p>
-            </div>
-            <ul class="highlights">
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Guided Trail Ride, Calm Horses</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> First-Time Riders Welcome</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Jungle Trails, Then Into the Caribbean</li>
-            </ul>
-            <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, West Bay Beach, the Chocolate Factory &amp; the Rum Company</p>
-          </div>
-          <div class="price-bar">
-            <div class="price-stack">
-              <span class="price-amt">$70</span>
-              <span class="price-each">per person</span>
-            </div>
-            <button class="choose-tour" type="button">Choose This Tour</button>
-          </div>
-        </article>
-
-        <article class="card green" data-id="atv" data-tour="ATV Adventure" data-price="70">
-          <div class="photo-wrap">
-            <img src="/assets/img/atv.jpg" alt="Guests on a guided ATV ride on Roatan">
-          </div>
-          <div class="card-body">
-            <div class="card-intro">
-              <div class="card-title">
-                <span class="radio" aria-hidden="true"></span>
-                <h3>ATV Adventure</h3>
-              </div>
-              <p class="tagline">Wind through the jungle to a hilltop ocean view.</p>
-            </div>
-            <ul class="highlights">
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Guided Ride on Jungle Trails</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Automatic &amp; Easy to Drive</li>
-                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7"/></svg></span> Helmets &amp; Safety Briefing</li>
-            </ul>
-            <p class="card-bonus"><span class="bonus-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.7 6 6.5.6-4.9 4.3 1.5 6.4L12 16.5l-5.8 3.3 1.5-6.4-4.9-4.3 6.5-.6z"/></svg></span> Plus Sightseeing, Photo Stops, West Bay Beach, the Chocolate Factory &amp; the Rum Company</p>
-          </div>
-          <div class="price-bar">
-            <div class="price-stack">
-              <span class="price-amt">$70</span>
-              <span class="price-each">per person</span>
-            </div>
-            <button class="choose-tour" type="button">Choose This Tour</button>
-          </div>
-        </article>
-      </div>
-
-
-      <div class="featured-pair">
-        <div class="faq-item faq-card included">
-          <h3>What’s included in every tour</h3>
-          <ul class="icon-list">
-            <li><span class="ico blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 9.5h3.1l1.2-2.2h7.4l1.2 2.2H20A1.5 1.5 0 0 1 21.5 11v7.5A1.5 1.5 0 0 1 20 20H4A1.5 1.5 0 0 1 2.5 18.5V11A1.5 1.5 0 0 1 4 9.5Z"/><circle cx="12" cy="14" r="3.2"/></svg></span> Island Sightseeing &amp; Photo Stops</li>
-            <li><span class="ico yellow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 13a8 8 0 0 1 16 0H4Z"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M12 13v6"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M12 19c1.6 0 2.6-.8 2.6-2"/></svg></span> West Bay Beach</li>
-            <li><span class="ico orange" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="6" width="15" height="12" rx="1.6"/><path d="M12 6v12M4.5 12h15"/></svg></span> Chocolate Factory</li>
-            <li><span class="ico green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M10 2.8h4V6l1.2 2.2V19a2 2 0 0 1-2 2h-2.4a2 2 0 0 1-2-2V8.2L10 6V2.8Z"/><path d="M9.2 11h5.6"/></svg></span> Rum Company</li>
-            <li><span class="ico blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3.5 15.5 5 19h14l1.5-3.5H3.5Z"/><path d="M5.5 15.5V11h13l-2 4.5"/><path d="M12 11V5l6.2 3"/></svg></span> Back to your ship on time</li>
-            <li><span class="ico plum" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="2.3"/><circle cx="15.8" cy="9" r="2"/><path d="M4.2 18.5c.5-3 2.5-4.6 4.8-4.6s4.3 1.6 4.8 4.6"/><path d="M14 13.7c1.8-.3 3.6.7 4.4 3.3"/></svg></span> Private, just your group</li>
-          </ul>
-        </div>
-        <div class="faq-item faq-card private">
-          <h3>Want something different?</h3>
-          <p class="lead">We can build a private day for your group.</p>
-          <ul class="icon-list">
-            <li><span class="ico yellow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="12" r="4.1"/><circle cx="15" cy="12" r="4.1"/></svg></span> Mix and match stops</li>
-            <li><span class="ico orange" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="2.3"/><circle cx="15.8" cy="9" r="2"/><path d="M4.2 18.5c.5-3 2.5-4.6 4.8-4.6s4.3 1.6 4.8 4.6"/><path d="M14 13.7c1.8-.3 3.6.7 4.4 3.3"/></svg></span> Groups of 5+ get group rates</li>
-            <li><span class="ico blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M21 12.2 14.2 10l-3.3-6.2H9.2L11.8 10 3 11.6v1.5l8.8-1.3-1.7 3.8-3.3 1.1 1.2 1.5 4.1-1.8 2.2 4.3 1.8-.6-1.5-4.4 4.4-2.1Z"/></svg></span> Airport and hotel pickups</li>
-          </ul>
-          <div class="book-row">
-            <a class="btn-book" id="private-wa" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.89-4.43 9.89-9.89C21.94 6.43 17.5 2 12.04 2zm5.76 14.05c-.24.68-1.4 1.25-1.93 1.33-.49.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.6-.59-2.82-1.22-4.66-4.07-4.8-4.26-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.94-2.25.24-.26.53-.33.7-.33.18 0 .35 0 .5.01.16.01.37-.06.58.44.24.58.81 2 .88 2.14.07.14.12.3.02.49-.09.18-.14.3-.27.46-.13.16-.28.36-.4.48-.13.14-.26.29-.11.56.15.26.66 1.09 1.42 1.76 1 .87 1.8 1.14 2.06 1.27.26.13.41.11.56-.07.15-.17.65-.76.83-1.02.17-.26.35-.22.58-.13.24.09 1.5.71 1.76.84.26.13.43.2.49.31.07.11.07.64-.17 1.32z"/></svg> Something Else? Message Us</a>
-            <a class="btn-messenger" id="private-ms" href="https://m.me/61578561253018" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.36 2 2 6.13 2 11.7c0 2.89 1.19 5.4 3.14 7.17V22l2.88-1.58c1.23.34 2.57.53 3.98.53 5.64 0 10-4.13 10-9.7C22 6.13 17.64 2 12 2zm.99 12.66-2.55-2.72-4.98 2.72 5.47-5.81 2.61 2.72 4.92-2.72-5.47 5.81z"/></svg> Book on Facebook Messenger</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="book">
-    <div class="wrap band-grid">
-      <div class="panel">
-        <div class="step-head">
-          <span class="badge o">2</span>
-          <div>
-            <p class="step-kicker">Step 2</p>
-            <h2 class="step-title">Tell us your date and group</h2>
-          </div>
-        </div>
-        <div class="field">
-          <label for="tour">Tour</label>
-          <select id="tour" name="tour">
-            <option value="sloths" selected>Sloths, Monkeys &amp; Zipline — $70</option>
-            <option value="sloths-monkeys">Sloths &amp; Monkeys — $50</option>
-            <option value="sloths-monkeys-vip">Sloths &amp; Monkeys + VIP Day at West Bay Beach ($60)</option>
-            <option value="beach">Beach &amp; Snorkel — $70</option>
-            <option value="horseback">Horseback Riding — $70</option>
-            <option value="atv">ATV Adventure — $70</option>
-            <option value="combo">Sloths, Monkeys &amp; Zipline plus ATVs — $120 for both (save $20)</option>
-            <option value="custom">A private day for your group — price on request</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="date">Date</label>
-          <input id="date" name="date" type="text" value="" placeholder="e.g. March 18, 2027" autocomplete="off">
-        </div>
-        <div class="field">
-          <label for="ship">Ship or airport</label>
-          <input id="ship" name="ship" type="text" value="" placeholder="e.g. cruise port or airport" autocomplete="off">
-        </div>
-        <div class="field">
-          <label for="allaboard">All-aboard time</label>
-          <input id="allaboard" name="allaboard" type="text" value="" placeholder="e.g. 4:30 p.m." autocomplete="off">
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="party">Ages 6 and up</label>
-            <input id="party" name="party" type="text" value="" placeholder="e.g. 2 guests" autocomplete="off">
-          </div>
-          <div class="field">
-            <label for="kids">Kids 5 and under</label>
-            <input id="kids" name="kids" type="text" value="" placeholder="e.g. 0" autocomplete="off">
-          </div>
-        </div>
-        <p class="hint">Kids 5 and under are free. The total and deposit update as you go.</p>
-      </div>
-
-      <div class="panel">
-        <div class="step-head">
-          <span class="badge p">3</span>
-          <div>
-            <p class="step-kicker">Step 3</p>
-            <h2 class="step-title">Pay a 30% deposit to hold it</h2>
-          </div>
-        </div>
-        <p class="pay-note">PayPal, Zelle or Venmo. Fully refundable if your ship doesn’t dock. The rest can be paid on tour day any way you like. We plan around all-aboard so you’re back with time to spare.</p>
-        <div class="pay-logos" aria-label="PayPal, Zelle or Venmo">
-          <img class="pay-logo paypal" src="/assets/logos/paypal.svg" alt="PayPal">
-          <img class="pay-logo zelle" src="/assets/logos/zelle.svg" alt="Zelle">
-          <img class="pay-logo venmo" src="/assets/logos/venmo.svg" alt="Venmo">
-        </div>
-        <div class="total-box" id="total-box">
-          <p class="who" id="summary-who">Sloths, Monkeys &amp; Zipline · add your party size</p>
-          <p class="sum" id="summary-total">Add your party size</p>
-          <p class="dep" id="summary-dep">30% deposit · refundable if the ship doesn’t dock</p>
-        </div>
-        <div class="book-row">
-          <a class="btn-book" id="wa-btn" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.89-4.43 9.89-9.89C21.94 6.43 17.5 2 12.04 2zm5.76 14.05c-.24.68-1.4 1.25-1.93 1.33-.49.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.6-.59-2.82-1.22-4.66-4.07-4.8-4.26-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.94-2.25.24-.26.53-.33.7-.33.18 0 .35 0 .5.01.16.01.37-.06.58.44.24.58.81 2 .88 2.14.07.14.12.3.02.49-.09.18-.14.3-.27.46-.13.16-.28.36-.4.48-.13.14-.26.29-.11.56.15.26.66 1.09 1.42 1.76 1 .87 1.8 1.14 2.06 1.27.26.13.41.11.56-.07.15-.17.65-.76.83-1.02.17-.26.35-.22.58-.13.24.09 1.5.71 1.76.84.26.13.43.2.49.31.07.11.07.64-.17 1.32z"/></svg> Book on WhatsApp</a>
-          <a class="btn-messenger" id="ms-btn" href="https://m.me/61578561253018" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.36 2 2 6.13 2 11.7c0 2.89 1.19 5.4 3.14 7.17V22l2.88-1.58c1.23.34 2.57.53 3.98.53 5.64 0 10-4.13 10-9.7C22 6.13 17.64 2 12 2zm.99 12.66-2.55-2.72-4.98 2.72 5.47-5.81 2.61 2.72 4.92-2.72-5.47 5.81z"/></svg> Book on Facebook Messenger</a>
-        </div>
-        <p class="wa-note">WhatsApp opens with your tour details filled in. Facebook Messenger opens a chat with Dunis Tours.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq" id="faq">
-    <div class="wrap">
-      <h2>A few common questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>Where do you pick us up?</h3>
-          <p>We pick you up at Isla Tropicale (formerly Mahogany Bay), the Port of Roatán in Coxen Hole, the airport, or your hotel. Tell us your ship or hotel when you write, and we’ll send meeting details.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can you just drop us at West Bay Beach?</h3>
-          <p>Yes. If you’d rather explore West Bay Beach on your own, a beach drop-off is $50 per person.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What if our ship doesn’t dock?</h3>
-          <p>A 30% deposit holds the tour, and it is fully refundable if the ship doesn’t dock.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can we hold the sloths or monkeys?</h3>
-          <p>Sloths and monkeys can be watched and photographed. We do not offer holding.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How do we pay?</h3>
-          <p>A 30% deposit holds the tour, by PayPal, Zelle or Venmo. The rest can be paid any way you like.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Are tips included?</h3>
-          <p>Tips for Dunis or your driver aren’t included, but they’re always appreciated if you had a great day. That’s separate from any tip you leave at the restaurant at West Bay Beach, which is paid directly to the restaurant.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Are food and drinks included?</h3>
-          <p>Food and drinks at West Bay Beach are served right to your spot and paid directly to the restaurant, along with any tip you’d like to leave there. That’s separate from any tip for Dunis or your driver.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Are there kids’ prices?</h3>
-          <p>Kids 5 and under are free. Ages 6 and up pay the adult price.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can kids do the ATV tour?</h3>
-          <p>Little ones can ride along with a parent. Just ask us and we’ll set it up.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How long is the tour?</h3>
-          <p>Tours are timed to your ship’s schedule, typically about 4–5 hours. We plan around all-aboard so you’re back with time to spare.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="foot">
-      <div class="foot-brand">
-        <div class="foot-logo"><img src="/assets/logo.png" alt=""></div>
+      </a>
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Horseback%20%26%20Beach%20Tour.">
+        <figure class="thumb"><img src="img/groups/tour-horseback.webp" width="960" height="720" loading="lazy" alt="Riders on horseback in the Caribbean shallows"></figure>
         <div>
-          <p>WhatsApp <a href="https://wa.me/50497754724">+504 9775-4724</a> (English)</p>
-          <p>WhatsApp <a href="https://wa.me/50496880728">+504 9688-0728</a> (En Español)</p>
-          <p><a href="mailto:roatandunistours@gmail.com">roatandunistours@gmail.com</a></p>
+          <h3>Horseback &amp; Beach</h3>
+          <p class="blurb">Jungle trails, then into the Caribbean, plus a free beach you pick.</p>
         </div>
-      </div>
-      <div class="foot-actions">
-        <div class="book-row">
-          <a class="btn-book" id="footer-wa" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.89-4.43 9.89-9.89C21.94 6.43 17.5 2 12.04 2zm5.76 14.05c-.24.68-1.4 1.25-1.93 1.33-.49.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.6-.59-2.82-1.22-4.66-4.07-4.8-4.26-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.94-2.25.24-.26.53-.33.7-.33.18 0 .35 0 .5.01.16.01.37-.06.58.44.24.58.81 2 .88 2.14.07.14.12.3.02.49-.09.18-.14.3-.27.46-.13.16-.28.36-.4.48-.13.14-.26.29-.11.56.15.26.66 1.09 1.42 1.76 1 .87 1.8 1.14 2.06 1.27.26.13.41.11.56-.07.15-.17.65-.76.83-1.02.17-.26.35-.22.58-.13.24.09 1.5.71 1.76.84.26.13.43.2.49.31.07.11.07.64-.17 1.32z"/></svg> Book on WhatsApp</a>
-          <a class="btn-messenger" id="footer-ms" href="https://m.me/61578561253018" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.36 2 2 6.13 2 11.7c0 2.89 1.19 5.4 3.14 7.17V22l2.88-1.58c1.23.34 2.57.53 3.98.53 5.64 0 10-4.13 10-9.7C22 6.13 17.64 2 12 2zm.99 12.66-2.55-2.72-4.98 2.72 5.47-5.81 2.61 2.72 4.92-2.72-5.47 5.81z"/></svg> Book on Facebook Messenger</a>
+        <div class="rates">
+          <div class="rate main"><strong>$80</strong><span>4–7 people</span></div>
+          <div class="rate"><strong>$75</strong><span>8 or more</span></div>
+          <div class="rate"><strong>$100</strong><span>2–3 people</span></div>
         </div>
-        <a class="btn-yellow foot-cta" href="https://www.tripadvisor.com/Attraction_Review-g292019-d34741853-Reviews-Roatan_Dunis_Tours-Roatan_Bay_Islands.html" target="_blank" rel="noopener">Leave a Review</a>
-      </div>
+      </a>
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Little%20French%20Key%20Tour.">
+        <figure class="thumb"><img src="img/groups/tour-mangrove.webp" width="867" height="1156" loading="lazy" alt="A boat in a mangrove canal on Roatán"></figure>
+        <div>
+          <h3>Little French Key</h3>
+          <p class="blurb">A private day at Little French Key, with island sightseeing on the way.</p>
+        </div>
+        <div class="rates">
+          <div class="rate main"><strong>$85</strong><span>4–7 people</span></div>
+          <div class="rate"><strong>$80</strong><span>8 or more</span></div>
+          <div class="rate"><strong>$105</strong><span>2–3 people</span></div>
+        </div>
+      </a>
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20ATV%20Tour.">
+        <figure class="thumb"><img src="img/groups/tour-atv.webp" width="1000" height="750" loading="lazy" alt="An ATV on a dirt trail in the Roatán hills">
+        </figure>
+        <div>
+          <h3>Sloths &amp; ATV</h3>
+          <p class="blurb">Sloths and monkeys, then an ATV ride. Kids ride with a parent.</p>
+        </div>
+        <div class="rates">
+          <div class="rate main"><strong>$100</strong><span>4–7 people</span></div>
+          <div class="rate"><strong>$95</strong><span>8 or more</span></div>
+          <div class="rate"><strong>$120</strong><span>2–3 people</span></div>
+        </div>
+      </a>
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Ultimate%20Tour.">
+        <figure class="thumb"><img src="img/groups/gallery-hilltop.webp" width="1000" height="1333" loading="lazy" alt="A group at a hilltop lookout on a full-day tour of Roatán"></figure>
+        <div>
+          <h3>Ultimate Tour</h3>
+          <p class="blurb">The full day: sloths, zipline, ATV, and a free beach you pick.</p>
+        </div>
+        <div class="rates">
+          <div class="rate main"><strong>$120</strong><span>4–7 people</span></div>
+          <div class="rate"><strong>$115</strong><span>8 or more</span></div>
+          <div class="rate"><strong>$140</strong><span>2–3 people</span></div>
+        </div>
+      </a>
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Island%20Tour.">
+        <figure class="thumb"><img src="img/groups/tour-photostop.webp" width="1000" height="750" loading="lazy" alt="A scenic photo stop on the Island Tour in Roatán"></figure>
+        <div>
+          <h3>Island Tour</h3>
+          <p class="blurb">Sightseeing around the island, the factory stops, and a free beach.</p>
+        </div>
+        <div class="rates">
+          <div class="rate main"><strong>$40</strong><span>4–7 people</span></div>
+          <div class="rate"><strong>$35</strong><span>8 or more</span></div>
+          <div class="rate"><strong>$60</strong><span>2–3 people</span></div>
+        </div>
+      </a>
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20Monkeys%20Tour.">
+        <figure class="thumb"><img src="img/groups/tour-sloth.webp" width="700" height="933" loading="lazy" alt="A sloth in the trees on a Roatán tour"></figure>
+        <div>
+          <h3>Sloths &amp; Monkeys</h3>
+          <p class="blurb">Meet sloths and monkeys, then the island stops and a free beach.</p>
+        </div>
+        <div class="rates">
+          <div class="rate main"><strong>$50</strong><span>4–7 people</span></div>
+          <div class="rate"><strong>$45</strong><span>8 or more</span></div>
+          <div class="rate"><strong>$70</strong><span>2–3 people</span></div>
+        </div>
+      </a>
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Snorkel%20%26%20Beach%20Tour.">
+        <figure class="thumb"><img src="img/groups/beach-westbay.webp" width="1400" height="788" loading="lazy" alt="Turquoise water and shoreline at West Bay Beach on Roatán"></figure>
+        <div>
+          <h3>Snorkel &amp; Beach</h3>
+          <p class="blurb">A boat snorkel with gear included, plus the island stops and a beach.</p>
+        </div>
+        <div class="rates">
+          <div class="rate main"><strong>$65</strong><span>4–7 people</span></div>
+          <div class="rate"><strong>$60</strong><span>8 or more</span></div>
+          <div class="rate"><strong>$85</strong><span>2–3 people</span></div>
+        </div>
+      </a>
     </div>
-  </footer>
+    <p class="ask">Want a different mix? Just ask Dunis.</p>
+  </div>
+</section>
 
+<section class="beach" id="beaches" aria-labelledby="beach-title">
+  <figure class="beach-photo">
+    <img src="img/groups/beach-westbay.webp" width="1400" height="788" alt="West Bay Beach on Roatán, with clear turquoise water and a sandy shore">
+  </figure>
+  <div class="wrap">
+    <h2 id="beach-title">You pick one included beach</h2>
+    <p class="intro">Every tour includes one of the two free beaches below, except Little French Key, which stays at the key. Food and drinks are served to your spot and paid at the venue.</p>
+    <ul class="beach-list">
+      <li>
+        <div>
+          <strong>West Bay Beach</strong>
+          <span class="desc">Time on your own at West Bay Beach.</span>
+        </div>
+        <span class="tag">Included</span>
+      </li>
+      <li>
+        <div>
+          <strong>Quiet Beach in West End</strong>
+          <span class="desc">A quieter stretch in West End. Not available with the Little French Key tour.</span>
+        </div>
+        <span class="tag">Included</span>
+      </li>
+      <li>
+        <div>
+          <strong>Beach Lounge at West Bay Beach</strong>
+          <span class="desc">A lounge setup on the sand at West Bay Beach.</span>
+        </div>
+        <span class="tag paid">+$15</span>
+      </li>
+      <li>
+        <div>
+          <strong>VIP Pool &amp; Beach</strong>
+          <span class="desc">Henry Morgan or Paradise. A pool and beach day with service to your spot.</span>
+        </div>
+        <span class="tag paid">+$25 or +$30</span>
+      </li>
+    </ul>
+    <p class="venue-note">VIP Pool &amp; Beach is +$25 at Henry Morgan or +$30 at Paradise.</p>
+  </div>
+</section>
+
+<section class="meet" id="dunis" aria-labelledby="meet-title">
+  <div class="wrap meet-grid">
+    <figure class="meet-photo">
+      <img src="img/cw/dunis-portrait.webp" width="400" height="400" alt="Portrait of Dunis, a local driver and guide on Roatán">
+    </figure>
+    <div>
+      <h2 id="meet-title">Meet Dunis</h2>
+      <p class="bio">Dunis has been a driver and guide on Roatán for 21 years. He times the day to your ship, knows the island’s best stops, and keeps your group together in a private car or van.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews" aria-labelledby="reviews-title">
+  <div class="wrap">
+    <h2 id="reviews-title">What guests say</h2>
+    <p class="stars-line">★★★★★ 5.0 on TripAdvisor · 7 reviews</p>
+    <div class="quotes">
+      <blockquote class="quote">
+        <p>“Dunis is very knowledgeable about the island and gave a wonderful tour of the island! 10/10 would recommend him!”</p>
+        <footer>Tanya R, Miami</footer>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“Dunis is one-of-a-kind! Is an excellent driver. Is trustworthy, friendly, has a good sense of humour and more. Highly recommend!”</p>
+        <footer>Beth C</footer>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“Dunis is the man! He knows all the best local spots and will take you to the best taco stand on the island!”</p>
+        <footer>Randy, Minnesota</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <h2 id="faq-title">Questions guests ask</h2>
+    <details open>
+      <summary>Can you take a family or a group of six or more?</summary>
+      <p>Yes. Your group rides together privately. Dunis arranges the right van for your headcount. Groups of 8 or more save $5 each. Kids 0–5 ride free and do not count toward the group size.</p>
+    </details>
+    <details>
+      <summary>What to bring</summary>
+      <p>A swimsuit, a towel, sunscreen, and cash for food and drinks at the beach. Water shoes help if you snorkel.</p>
+    </details>
+    <details>
+      <summary>How do I hold the tour?</summary>
+      <p>A $25 deposit per paying guest holds the tour. The deposit is refunded in full if the ship does not dock. Resort guests get a full refund if they cancel 48 hours ahead. Cash is fine on tour day for the balance.</p>
+    </details>
+    <details>
+      <summary>Where do you pick us up?</summary>
+      <p>Pickup is at Isla Tropicale (formerly Mahogany Bay), the Port of Roatán in Coxen Hole, the airport, or your hotel.</p>
+    </details>
+    <details>
+      <summary>How does pricing work?</summary>
+      <p>Kids 0–5 are free and do not count toward group size. One paying guest pays the 2-guest total. Two or three paying guests pay $20 more each. Four to seven guests pay the menu price. Groups of 8 or more save $5 each.</p>
+    </details>
+    <details>
+      <summary>Can we watch and photograph the animals?</summary>
+      <p>Yes. You can watch and photograph the sloths and monkeys during the visit.</p>
+    </details>
+    <details>
+      <summary>Are tips included?</summary>
+      <p>Tips are welcome if you had a great tour. You can thank Dunis directly.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <h2 id="cta-title">Ready to hold the tour?</h2>
+    <p>Message Dunis with your tour, your headcount, and your ship or hotel. A $25 deposit per paying guest holds the tour.</p>
+    <div class="cta-actions">
+      <a class="btn btn-gold" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20hold%20a%20tour.%20Our%20headcount%20is%20">WhatsApp in English</a>
+      <a class="btn btn-deep" href="https://wa.me/50496880728?text=Hi%2C%20I%27d%20like%20to%20hold%20a%20tour.%20Our%20headcount%20is%20">WhatsApp en español</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">Roatan Dunis Tours</p>
+      <p>Private Roatan shore excursions in the Caribbean. Tours on Roatán with Dunis, a local driver and guide for 21 years.</p>
+    </div>
+    <div>
+      <p><strong>English</strong></p>
+      <ul>
+        <li><a href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20a%20private%20tour.">+504 9775-4724</a></li>
+        <li><a href="mailto:roatandunistours@gmail.com">roatandunistours@gmail.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Español</strong></p>
+      <ul>
+        <li><a href="https://wa.me/50496880728?text=Hi%2C%20I%27d%20like%20a%20private%20tour.">+504 9688-0728</a></li>
+        <li><a href="https://www.tripadvisor.com/Attraction_Review-g292019-d34741853-Reviews-Roatan_Dunis_Tours-Roatan_Bay_Islands.html" target="_blank" rel="noopener">TripAdvisor</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="copyright">© 2026 Roatan Dunis Tours.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20a%20private%20tour%20for%20my%20group." aria-label="WhatsApp Dunis">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.4 2.15 11.84c0 1.74.46 3.44 1.34 4.94L2 22l5.37-1.4a10 10 0 0 0 4.67 1.18h.01c5.46 0 9.89-4.4 9.89-9.84C21.94 6.4 17.5 2 12.04 2zm5.76 14.15c-.24.68-1.4 1.25-1.93 1.33-.49.07-1.11.1-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.7-4.1-4.84-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.35.26-.28.57-.35.76-.35h.54c.17 0 .41-.07.64.49.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.16-.3.37-.42.5-.14.14-.28.29-.12.56.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+</a>
 <script>
-(function () {
-  const tours = {
-    sloths: { name: "Sloths, Monkeys & Zipline", price: 70 },
-    "sloths-monkeys": { name: "Sloths & Monkeys", price: 50 },
-    "sloths-monkeys-vip": { name: "Sloths & Monkeys + VIP Day at West Bay Beach", price: 60 },
-    beach: { name: "Beach & Snorkel", price: 70 },
-    horseback: { name: "Horseback Riding", price: 70 },
-    atv: { name: "ATV Adventure", price: 70 },
-    combo: { name: "Sloths, Monkeys & Zipline plus ATVs", price: 120 },
-    custom: { name: "a private day for your group", price: "request" }
-  };
-  const cards = Array.from(document.querySelectorAll(".card"));
-  const combo = document.getElementById("combo");
-  const tourEl = document.getElementById("tour");
-  const dateEl = document.getElementById("date");
-  const shipEl = document.getElementById("ship");
-  const allEl = document.getElementById("allaboard");
-  const partyEl = document.getElementById("party");
-  const kidsEl = document.getElementById("kids");
-  const whoEl = document.getElementById("summary-who");
-  const totalEl = document.getElementById("summary-total");
-  const depEl = document.getElementById("summary-dep");
-  const waBtn = document.getElementById("wa-btn");
-  const msBtn = document.getElementById("ms-btn");
-  const WA = "50497754724";
-  const ME = "https://m.me/61578561253018";
-
-  function leadRef() {
-    const code = window.DUNIS_LEAD_SOURCE || "W";
-    const safe = code === "G" || code === "F" || code === "T" || code === "B" || code === "W" ? code : "W";
-    return "(ref " + safe + ")";
-  }
-
-
-  function parseCount(el, fallback) {
-    const n = parseInt(String(el.value).replace(/[^\d]/g, ""), 10);
-    return Number.isFinite(n) && n >= 0 ? n : fallback;
-  }
-  function payingCount() {
-    if (!partyEl.value.trim()) return 0;
-    const n = parseCount(partyEl, 0);
-    return n > 0 ? n : 0;
-  }
-  function kidsCount() {
-    return parseCount(kidsEl, 0);
-  }
-
-  function setSelection(id, fromSelect) {
-    cards.forEach((c) => {
-      const cardId = c.getAttribute("data-id");
-      const on = cardId === id || (id === "combo" && cardId === "sloths") || (id === "sloths-monkeys-vip" && cardId === "sloths-monkeys");
-      c.classList.toggle("selected", on);
-    });
-    combo.setAttribute("aria-pressed", id === "combo" ? "true" : "false");
-    if (!fromSelect) tourEl.value = id;
-    update();
-  }
-
-  function update() {
-    const id = tourEl.value;
-    const tour = tours[id];
-    const featuredAmt = document.querySelector(".card.featured .price-amt");
-    if (featuredAmt) featuredAmt.textContent = id === "combo" ? "$120" : "$70";
-    const paying = payingCount();
-    const kids = kidsCount();
-    const parts = [];
-    if (paying === 1) parts.push("1 guest ages 6 and up");
-    else if (paying > 0) parts.push(paying + " guests ages 6 and up");
-    if (kids === 1) parts.push("1 child 5 and under");
-    else if (kids > 0) parts.push(kids + " kids 5 and under");
-    const guestLabel = parts.join(", ") || "add your party size";
-    const label = id === "custom" ? "A private day for your group" : tour.name;
-    whoEl.textContent = label + " · " + guestLabel;
-    if (tour.price === "request") {
-      totalEl.textContent = "Price on request";
-      depEl.textContent = "We’ll confirm the total and the 30% deposit in the chat · refundable if the ship doesn’t dock";
-    } else if (paying === 0) {
-      totalEl.textContent = "Add your party size";
-      depEl.textContent = "30% deposit · refundable if the ship doesn’t dock";
-    } else {
-      const total = tour.price * paying;
-      const deposit = Math.round(total * 0.3);
-      totalEl.textContent = "Total $" + total;
-      const freeNote = kids > 0 ? " · kids 5 and under are free" : "";
-      depEl.textContent = "30% deposit $" + deposit + " · refundable if the ship doesn’t dock" + freeNote;
-    }
-    const partyLine = [
-      paying ? (paying === 1 ? "1 guest ages 6 and up" : paying + " guests ages 6 and up") : null,
-      kids ? (kids === 1 ? "1 child 5 and under (free)" : kids + " kids 5 and under (free)") : null
-    ].filter(Boolean).join(", ");
-    const detailLines = [];
-    if (dateEl.value.trim()) detailLines.push("Date: " + dateEl.value.trim());
-    if (shipEl.value.trim()) detailLines.push("Ship or airport: " + shipEl.value.trim());
-    if (allEl.value.trim()) detailLines.push("All-aboard: " + allEl.value.trim());
-    if (partyLine) detailLines.push("Party: " + partyLine);
-    const msg = [
-      "Hi,",
-      "",
-      id === "custom"
-        ? "We’re interested in something else on Roatán."
-        : "We’re interested in " + tour.name + " on Roatán.",
-      ...detailLines,
-      "My question: ",
-      "",
-      leadRef()
-    ].join("\n");
-    const waHref = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
-    const msHref = ME + "?text=" + encodeURIComponent(msg);
-    waBtn.href = waHref;
-    if (msBtn) msBtn.href = msHref;
-    const footerWa = document.getElementById("footer-wa");
-    if (footerWa) footerWa.href = waHref;
-    const footerMs = document.getElementById("footer-ms");
-    if (footerMs) footerMs.href = msHref;
-    const privateBtn = document.getElementById("private-wa");
-    const privateMs = document.getElementById("private-ms");
-    if (privateBtn || privateMs) {
-      const privateMsg = [
-        "Hi,",
-        "",
-        "We’re interested in something else on Roatán.",
-        ...detailLines,
-        "My question: ",
-        "",
-        leadRef()
-      ].join("\n");
-      if (privateBtn) privateBtn.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(privateMsg);
-      if (privateMs) privateMs.href = ME + "?text=" + encodeURIComponent(privateMsg);
-    }
-  }
-
-  cards.forEach((card) => {
-    card.addEventListener("click", (e) => {
-      if (e.target.closest(".choose-tour") || e.target.closest(".card-addon")) return;
-      setSelection(card.getAttribute("data-id"));
-    });
-    const choose = card.querySelector(".choose-tour");
-    if (choose) {
-      choose.addEventListener("click", (e) => {
-        e.stopPropagation();
-        setSelection(card.getAttribute("data-id"));
-        const step2 = document.getElementById("book");
-        if (step2) step2.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    }
-  });
-  combo.addEventListener("click", (e) => {
-    e.stopPropagation();
-    setSelection("combo");
-    const step2 = document.getElementById("book");
-    if (step2) step2.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-  tourEl.addEventListener("change", () => setSelection(tourEl.value, true));
-  [dateEl, shipEl, allEl, partyEl, kidsEl].forEach((el) => el.addEventListener("input", update));
-  update();
-  document.addEventListener("DOMContentLoaded", update);
-})();
+(function(){var btn=document.querySelector(".menu-btn"),nav=document.getElementById("mobile-nav");if(!btn||!nav)return;btn.addEventListener("click",function(){var open=nav.classList.toggle("open");nav.hidden=!open;btn.setAttribute("aria-expanded",open?"true":"false");btn.setAttribute("aria-label",open?"Close menu":"Open menu")});nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");nav.hidden=true;btn.setAttribute("aria-expanded","false");btn.setAttribute("aria-label","Open menu")})})})();
 </script>
 </body>
 </html>
