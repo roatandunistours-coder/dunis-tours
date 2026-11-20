@@ -227,16 +227,19 @@ body>footer a.btn-messenger{color:#fff;text-decoration:none;margin-top:10px}
 .card h3{font-size:1.55rem}
 .card p{margin:0;color:var(--ink)}
 .badge{position:absolute;left:12px;bottom:12px;margin:0;background:var(--deep);color:#fff;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.rate-block{margin:8px 0 12px}
-.rates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.rates-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.rate{padding:7px 4px 8px;text-align:center;border-left:1px solid var(--line)}
-.rate:first-child{border-left:0}
-.rate>span{display:block;font-size:11px;font-weight:750;letter-spacing:.02em;color:var(--muted);line-height:1.2}
-.rate strong{display:block;margin-top:2px;font-family:Nunito,Outfit,sans-serif;font-size:1.15rem;line-height:1.15;color:var(--ink);letter-spacing:-0.03em;font-weight:800}
-.rate.main{background:rgba(232,137,0,.1);box-shadow:inset 0 -3px 0 var(--gold)}
-.rate.main>span{color:#A35F00}
-.rate-label{margin:5px 0 0;font-size:11.5px;font-weight:600;color:var(--muted)}
+.rate-block{margin:10px 0 14px}
+.rates{display:flex;flex-wrap:wrap;gap:8px}
+.rate{background:#fff;border-radius:14px;padding:8px 10px;min-width:5.4rem}
+.rate strong{display:block;font-family:Nunito,Outfit,sans-serif;font-size:1.4rem;color:var(--ink);letter-spacing:-0.03em;font-weight:800}
+.rate span{display:block;font-size:12px;font-weight:650;color:var(--muted)}
+.rate.main{background:var(--gold)}
+.card .rates{flex-wrap:nowrap;gap:6px}
+.card .rate{flex:1 1 0;min-width:0;padding:8px 6px}
+.card .rate strong{font-size:1.2rem}
+.card .rate span{font-size:11px;line-height:1.2;white-space:nowrap}
+.rate-label{margin:4px 0 0;font-size:11.5px;font-weight:500;color:var(--muted)}
+.btn-reserve{background:transparent;color:var(--deep);border:1.5px solid var(--deep);padding:7px 18px;font-size:14px}
+.tour-row:hover .btn-reserve{background:var(--deep);color:#fff}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;font-style:normal}
 .card .btn{margin-top:auto;width:100%}
 .feature-quote{background:var(--white);border-radius:28px;padding:24px 22px;border-left:4px solid var(--lagoon);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;align-self:stretch}
@@ -274,6 +277,9 @@ body>footer a.btn-messenger{color:#fff;text-decoration:none;margin-top:10px}
 .tour-row h3{font-size:1.12rem}
 .tour-row .blurb{margin:4px 0 0;font-size:14px;color:var(--muted)}
 .tour-row .rate-block{grid-column:1 / -1;margin:0}
+.tour-row .rate{flex:1;min-width:4.8rem}
+.tour-row .btn-reserve{width:100%;margin-top:10px}
+@media (max-width:599px){.rates{flex-wrap:nowrap;gap:6px}.rates .rate{flex:1 1 0;min-width:0;padding:8px 4px}.rates .rate strong{font-size:1.15rem}.rates .rate span{font-size:10.5px;line-height:1.2;white-space:nowrap;letter-spacing:-0.01em}}
 .ask{margin:18px 0 0;font-weight:650;color:var(--deep)}
 
 .beach{padding:0 0 56px}
@@ -334,9 +340,14 @@ body>footer li{margin:6px 0}
   .include-grid{grid-template-columns:1fr 1fr}
   .tour-row{grid-template-columns:120px 1fr auto;gap:10px 18px;align-items:center}
   .tour-row .thumb{width:120px;height:100px}
-  .tour-row .rate-block{grid-column:auto;justify-self:end;text-align:right}
-  .tour-row .rates{grid-template-columns:repeat(5,4.1rem);display:inline-grid}
-  .tour-row .rates-3{grid-template-columns:repeat(3,4.1rem)}
+  .tour-row .rate-block{display:grid;grid-template-columns:auto auto;justify-content:end;align-items:center;gap:2px 18px;margin-top:4px}
+  .tour-row .rates{justify-content:flex-end;flex:0 0 auto;flex-wrap:nowrap}
+  .tour-row .rate{flex:0 0 auto;min-width:5.2rem}
+  .tour-row .rate-label{grid-column:1;grid-row:2;text-align:right;margin:0 10px 0 0}
+  .tour-row .btn-reserve{grid-column:2;grid-row:1;width:auto;margin:0}
+}
+@media (min-width:1000px){
+  .tour-row .rate-block{grid-column:auto;margin-top:0}
 }
 @media (min-width:768px){
   :root{--header-h:72px}
@@ -477,13 +488,13 @@ body>footer li{margin:6px 0}
           <p>Meet sloths and monkeys, then island sightseeing, the Chocolate Factory, the Rum Company, and a free beach you pick.</p>
           <div class="rate-block">
             <div class="rates">
-              <div class="rate"><span>2<em class="sr"> people</em></span><strong>$75</strong></div>
-              <div class="rate"><span>3<em class="sr"> people</em></span><strong>$55</strong></div>
-              <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$50</strong></div>
-              <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$40</strong></div>
-              <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$35</strong></div>
+              <div class="rate"><strong>$75</strong><span>2 people</span></div>
+              <div class="rate"><strong>$55</strong><span>3 people</span></div>
+              <div class="rate main"><strong>$50</strong><span>4–7 people</span></div>
+              <div class="rate"><strong>$40</strong><span>8–14 people</span></div>
+              <div class="rate"><strong>$35</strong><span>15 or more</span></div>
             </div>
-            <p class="rate-label">Price per person, by group size</p>
+            <p class="rate-label">Price per person</p>
           </div>
           <a class="btn btn-gold" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20Monkeys%20Tour.">Reserve with a $25 deposit per person</a>
         </div>
@@ -497,13 +508,13 @@ body>footer li{margin:6px 0}
           <p>A boat snorkel on the Caribbean reef with gear included, plus island sightseeing, the Chocolate Factory, the Rum Company, and a free beach you pick.</p>
           <div class="rate-block">
             <div class="rates">
-              <div class="rate"><span>2<em class="sr"> people</em></span><strong>$90</strong></div>
-              <div class="rate"><span>3<em class="sr"> people</em></span><strong>$70</strong></div>
-              <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$65</strong></div>
-              <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$55</strong></div>
-              <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$50</strong></div>
+              <div class="rate"><strong>$90</strong><span>2 people</span></div>
+              <div class="rate"><strong>$70</strong><span>3 people</span></div>
+              <div class="rate main"><strong>$65</strong><span>4–7 people</span></div>
+              <div class="rate"><strong>$55</strong><span>8–14 people</span></div>
+              <div class="rate"><strong>$50</strong><span>15 or more</span></div>
             </div>
-            <p class="rate-label">Price per person, by group size</p>
+            <p class="rate-label">Price per person</p>
           </div>
           <a class="btn btn-gold" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Snorkel%20%26%20Beach%20Tour.">Reserve with a $25 deposit per person</a>
         </div>
@@ -556,7 +567,7 @@ body>footer li{margin:6px 0}
     <h2 id="menu-title">All ten tours</h2>
     <p class="intro">Every tour is private. Prices are per person, and the more people you bring, the more each person saves. Groups of 8–14 save $10 each, and groups of 15 or more save $15 each. Kids 0–5 ride free.</p>
     <div class="tour-list">
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20Zipline%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20Sloths%20%26%20Zipline%20tour.">
         <figure class="thumb"><img src="img/groups/tour-bridge.webp" width="900" height="1200" loading="lazy" alt="A hanging bridge on the zipline course in Roatan"></figure>
         <div>
           <h3>Sloths & Zipline</h3>
@@ -564,16 +575,17 @@ body>footer li{margin:6px 0}
         </div>
         <div class="rate-block">
           <div class="rates">
-            <div class="rate"><span>2<em class="sr"> people</em></span><strong>$95</strong></div>
-            <div class="rate"><span>3<em class="sr"> people</em></span><strong>$75</strong></div>
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$70</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$60</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$55</strong></div>
+            <div class="rate"><strong>$95</strong><span>2 people</span></div>
+            <div class="rate"><strong>$75</strong><span>3 people</span></div>
+            <div class="rate main"><strong>$70</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$60</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$55</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20Snorkel%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20Sloths%20%26%20Snorkel%20tour.">
         <figure class="thumb"><img src="img/groups/gallery-boat.webp" width="1000" height="660" loading="lazy" alt="A group on a mangrove boat, part of a snorkel tour in Roatan"></figure>
         <div>
           <h3>Sloths & Snorkel</h3>
@@ -581,16 +593,17 @@ body>footer li{margin:6px 0}
         </div>
         <div class="rate-block">
           <div class="rates">
-            <div class="rate"><span>2<em class="sr"> people</em></span><strong>$100</strong></div>
-            <div class="rate"><span>3<em class="sr"> people</em></span><strong>$80</strong></div>
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$75</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$65</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$60</strong></div>
+            <div class="rate"><strong>$100</strong><span>2 people</span></div>
+            <div class="rate"><strong>$80</strong><span>3 people</span></div>
+            <div class="rate main"><strong>$75</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$65</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$60</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Horseback%20%26%20Beach%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20Horseback%20%26%20Beach%20tour.">
         <figure class="thumb"><img src="img/groups/tour-horseback.webp" width="960" height="720" loading="lazy" alt="Riders on horseback in the Caribbean shallows"></figure>
         <div>
           <h3>Horseback & Beach</h3>
@@ -598,31 +611,33 @@ body>footer li{margin:6px 0}
         </div>
         <div class="rate-block">
           <div class="rates">
-            <div class="rate"><span>2<em class="sr"> people</em></span><strong>$105</strong></div>
-            <div class="rate"><span>3<em class="sr"> people</em></span><strong>$85</strong></div>
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$80</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$70</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$65</strong></div>
+            <div class="rate"><strong>$105</strong><span>2 people</span></div>
+            <div class="rate"><strong>$85</strong><span>3 people</span></div>
+            <div class="rate main"><strong>$80</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$70</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$65</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Little%20French%20Key%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20Little%20French%20Key%20tour.">
         <figure class="thumb"><img src="img/groups/tour-mangrove.webp" width="867" height="1156" loading="lazy" alt="A boat in a mangrove canal on Roatan"></figure>
         <div>
           <h3>Little French Key</h3>
           <p class="blurb">A private day at Little French Key, with island sightseeing on the way. For groups of 4 or more.</p>
         </div>
         <div class="rate-block">
-          <div class="rates rates-3">
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$85</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$75</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$70</strong></div>
+          <div class="rates">
+            <div class="rate main"><strong>$85</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$75</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$70</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20ATV%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20Sloths%20%26%20ATV%20tour.">
         <figure class="thumb"><img src="img/groups/tour-atv.webp" width="1000" height="750" loading="lazy" alt="An ATV on a dirt trail in the Roatan hills">
         </figure>
         <div>
@@ -631,16 +646,17 @@ body>footer li{margin:6px 0}
         </div>
         <div class="rate-block">
           <div class="rates">
-            <div class="rate"><span>2<em class="sr"> people</em></span><strong>$125</strong></div>
-            <div class="rate"><span>3<em class="sr"> people</em></span><strong>$105</strong></div>
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$100</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$90</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$85</strong></div>
+            <div class="rate"><strong>$125</strong><span>2 people</span></div>
+            <div class="rate"><strong>$105</strong><span>3 people</span></div>
+            <div class="rate main"><strong>$100</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$90</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$85</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Ultimate%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20Ultimate%20Tour.">
         <figure class="thumb"><img src="img/groups/gallery-hilltop.webp" width="1000" height="1333" loading="lazy" alt="A group at a hilltop lookout on a full-day tour of Roatan"></figure>
         <div>
           <h3>Ultimate Tour</h3>
@@ -648,16 +664,17 @@ body>footer li{margin:6px 0}
         </div>
         <div class="rate-block">
           <div class="rates">
-            <div class="rate"><span>2<em class="sr"> people</em></span><strong>$145</strong></div>
-            <div class="rate"><span>3<em class="sr"> people</em></span><strong>$125</strong></div>
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$120</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$110</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$105</strong></div>
+            <div class="rate"><strong>$145</strong><span>2 people</span></div>
+            <div class="rate"><strong>$125</strong><span>3 people</span></div>
+            <div class="rate main"><strong>$120</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$110</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$105</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Island%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20Island%20Tour.">
         <figure class="thumb"><img src="img/groups/tour-photostop.webp" width="1000" height="750" loading="lazy" alt="A scenic photo stop on the Island Tour in Roatan"></figure>
         <div>
           <h3>Island Tour</h3>
@@ -665,16 +682,17 @@ body>footer li{margin:6px 0}
         </div>
         <div class="rate-block">
           <div class="rates">
-            <div class="rate"><span>2<em class="sr"> people</em></span><strong>$65</strong></div>
-            <div class="rate"><span>3<em class="sr"> people</em></span><strong>$45</strong></div>
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$40</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$30</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$25</strong></div>
+            <div class="rate"><strong>$65</strong><span>2 people</span></div>
+            <div class="rate"><strong>$45</strong><span>3 people</span></div>
+            <div class="rate main"><strong>$40</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$30</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$25</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Sloths%20%26%20Monkeys%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20Sloths%20%26%20Monkeys%20tour.">
         <figure class="thumb"><img src="img/groups/tour-sloth.webp" width="700" height="933" loading="lazy" alt="A sloth in the trees on a Roatan tour"></figure>
         <div>
           <h3>Sloths & Monkeys</h3>
@@ -682,16 +700,17 @@ body>footer li{margin:6px 0}
         </div>
         <div class="rate-block">
           <div class="rates">
-            <div class="rate"><span>2<em class="sr"> people</em></span><strong>$75</strong></div>
-            <div class="rate"><span>3<em class="sr"> people</em></span><strong>$55</strong></div>
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$50</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$40</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$35</strong></div>
+            <div class="rate"><strong>$75</strong><span>2 people</span></div>
+            <div class="rate"><strong>$55</strong><span>3 people</span></div>
+            <div class="rate main"><strong>$50</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$40</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$35</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20Snorkel%20%26%20Beach%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20Snorkel%20%26%20Beach%20tour.">
         <figure class="thumb"><img src="img/groups/beach-westbay.webp" width="1400" height="788" loading="lazy" alt="Turquoise water and shoreline at West Bay Beach on Roatan"></figure>
         <div>
           <h3>Snorkel & Beach</h3>
@@ -699,28 +718,30 @@ body>footer li{margin:6px 0}
         </div>
         <div class="rate-block">
           <div class="rates">
-            <div class="rate"><span>2<em class="sr"> people</em></span><strong>$90</strong></div>
-            <div class="rate"><span>3<em class="sr"> people</em></span><strong>$70</strong></div>
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$65</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$55</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$50</strong></div>
+            <div class="rate"><strong>$90</strong><span>2 people</span></div>
+            <div class="rate"><strong>$70</strong><span>3 people</span></div>
+            <div class="rate main"><strong>$65</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$55</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$50</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
-      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20the%20East%20End%20Tour.">
+      <a class="tour-row" href="https://wa.me/50497754724?text=Hi%2C%20I%27d%20like%20to%20reserve%20the%20East%20End%3A%20Oak%20Ridge%20Mangrove%20Canals%20%26%20Punta%20Gorda%20Garifuna%20Dancing%20tour.">
         <figure class="thumb"><img src="img/groups/gallery-boat.webp" width="1000" height="660" loading="lazy" alt="Dunis and guests on a boat in the Oak Ridge mangrove canals on the east end of Roatan"></figure>
         <div>
           <h3>East End: Oak Ridge Mangrove Canals & Punta Gorda Garifuna Dancing</h3>
           <p class="blurb">A boat ride through the Oak Ridge mangrove canals, then Punta Gorda, the Garifuna village, for Garifuna dancing. $240 minimum for the day.</p>
         </div>
         <div class="rate-block">
-          <div class="rates rates-3">
-            <div class="rate main"><span>4–7<em class="sr"> people</em></span><strong>$60</strong></div>
-            <div class="rate"><span>8–14<em class="sr"> people</em></span><strong>$50</strong></div>
-            <div class="rate"><span>15<span aria-hidden="true">+</span><em class="sr"> or more people</em></span><strong>$45</strong></div>
+          <div class="rates">
+            <div class="rate main"><strong>$60</strong><span>4–7 people</span></div>
+            <div class="rate"><strong>$50</strong><span>8–14 people</span></div>
+            <div class="rate"><strong>$45</strong><span>15 or more</span></div>
           </div>
-          <p class="rate-label">Price per person, by group size</p>
+          <p class="rate-label">Price per person</p>
+          <span class="btn btn-reserve">Reserve</span>
         </div>
       </a>
     </div>
