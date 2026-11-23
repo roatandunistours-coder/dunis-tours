@@ -303,6 +303,8 @@ body>footer a.btn-messenger{color:#fff;text-decoration:none;margin-top:10px}
 .meet-grid{display:grid;gap:24px;align-items:center}
 .meet-photo{margin:0;width:min(280px,70%);border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow);justify-self:center}
 .meet-photo img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:50% 20%}
+.meet-sign{margin:4px 0 0;width:min(280px,100%);justify-self:center;border-radius:24px;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow);background:#fff}
+.meet-sign img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}
 .meet h2{font-size:clamp(2rem, 6vw, 3.4rem);margin-bottom:12px}
 .meet .bio{margin:0;font-size:1.12rem;max-width:36rem}
 
@@ -376,7 +378,14 @@ body>footer li{margin:6px 0}
   .quotes{grid-template-columns:1fr 1fr 1fr}
   .meet-grid{grid-template-columns:auto 1fr;gap:40px}
   .meet-photo{width:220px;justify-self:start}
+  .meet-sign{grid-column:1 / -1;width:min(260px,100%);justify-self:center;margin:8px 0 0}
   .foot-grid{grid-template-columns:1.3fr 1fr 1fr}
+}
+@media (min-width:1000px){
+  .meet-grid{grid-template-columns:220px minmax(0,1fr) 260px}
+  .meet-photo{grid-column:1;grid-row:1}
+  .meet-copy{grid-column:2;grid-row:1}
+  .meet-sign{grid-column:3;grid-row:1;width:260px;margin:0;justify-self:end}
 }
 @media (min-width:1100px){
   .logo-mark{width:60px;height:60px}
@@ -799,10 +808,27 @@ body>footer li{margin:6px 0}
     <figure class="meet-photo">
       <img src="img/cw/dunis-portrait.webp" width="400" height="400" alt="Portrait of Dunis, a local driver and guide on Roatan">
     </figure>
-    <div>
+    <div class="meet-copy">
       <h2 id="meet-title">Meet Dunis</h2>
       <p class="bio">Dunis has been a driver and guide on Roatán for 21 years. He times the day to your ship, knows the island’s best stops, and keeps your group together in a private car or van.</p>
     </div>
+    <figure class="meet-sign">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="img/cw/dunis-sign-480.webp 480w, img/cw/dunis-sign-720.webp 720w"
+          sizes="(min-width: 1000px) 260px, min(280px, 86vw)">
+        <img
+          src="img/cw/dunis-sign-720.jpg"
+          srcset="img/cw/dunis-sign-480.jpg 480w, img/cw/dunis-sign-720.jpg 720w"
+          sizes="(min-width: 1000px) 260px, min(280px, 86vw)"
+          width="720"
+          height="1280"
+          loading="lazy"
+          decoding="async"
+          alt="Dunis, your Roatan private driver, holding the Roatan Dunis Tours sign at the cruise port">
+      </picture>
+    </figure>
   </div>
 </section>
 
